@@ -1,0 +1,77 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=3,
+xmax=21.5,
+xlabel style={font=\color{white!15!black}},
+%xlabel={m (column number)},
+ymin=0,
+ymax=120000,
+ylabel style={font=\color{white!15!black}},
+%ylabel={Time (seconds)},
+ytick={20000, 40000, 60000, 80000, 100000, 120000},
+scaled y ticks=true,
+axis background/.style={fill=white},
+title style={font=\bfseries},
+%title={$\text{Average ticks until solution as a function of m. On n }\times\text{ m grid. (k = 3)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark=*, mark options={solid, mycolor1}, line width=2pt]
+  table[row sep=crcr]{%
+3	644.675\\
+6	3060.656\\
+9	7860.8345\\
+12	13998.8505\\
+15	20962.2475\\
+18	29140.732\\
+21	38404.74\\
+};
+%\addlegendentry{$\text{n = 18; T}_{\text{est}}\text{ = 3.879}\cdot\text{n}\cdot\text{m}^\text{2}\text{ + O(m)}$}
+
+\addplot [color=mycolor1, loosely dotted, line width=2pt]%, forget plot]
+  table[row sep=crcr]{%
+3	8784\\
+6	20160\\
+9	34128\\
+12	50688\\
+15	69840\\
+18	91584\\
+21	115920\\
+};
+\addplot [color=mycolor1, draw=none, line width=2pt, forget plot]
+ plot [error bars/.cd, y dir = both, y explicit, error bar style={line width=2pt}, error mark options={line width=1pt,mark size=4pt,rotate=90}]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+3	644.675	844	364\\
+6	3060.656	4664	2005\\
+9	7860.8345	10020	4940\\
+12	13998.8505	16776	8410\\
+15	20962.2475	25080	13824\\
+18	29140.732	34372	20614\\
+21	38404.74	43160	29396\\
+};
+\addplot [color=mycolor1, dashed, line width=2pt, forget plot]
+  table[row sep=crcr]{%
+3	308.441916666572\\
+6	3543.12221428571\\
+9	8034.52696428576\\
+12	13782.6561666667\\
+15	20787.5098214286\\
+18	29049.0879285714\\
+21	38567.3904880952\\
+};
+\end{axis}
+\end{tikzpicture}%

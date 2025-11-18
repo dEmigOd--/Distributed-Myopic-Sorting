@@ -1,0 +1,565 @@
+﻿Build started 20/01/2019 21:36:28.
+     1>Project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" on node 2 (Build target(s)).
+     1>Building with tools version "15.0".
+       Target "EnableIntermediateOutputPathMismatchWarning" skipped, due to false condition; ('$(RestoreProjectStyle)' == 'PackageReference') was evaluated as ('' == 'PackageReference').
+     1>Target "_CheckForInvalidConfigurationAndPlatform" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "SetTelemetryEnvironmentVariables" depends on it):
+       Task "Error" skipped, due to false condition; ( '$(_InvalidConfigurationError)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Task "Warning" skipped, due to false condition; ( '$(_InvalidConfigurationWarning)' == 'true' ) was evaluated as ( '' == 'true' ).
+       Using "Message" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "Message"
+         Configuration=Debug
+       Done executing task "Message".
+       Task "Message"
+         Platform=x64
+       Done executing task "Message".
+       Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\' != '' and !HasTrailingSlash('C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\')).
+       Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
+       Task "Error" skipped, due to false condition; ('$(IntermediateOutputPath)' != '' and !HasTrailingSlash('$(IntermediateOutputPath)')) was evaluated as ('x64\Debug\' != '' and !HasTrailingSlash('x64\Debug\')).
+       Task "Error" skipped, due to false condition; ( '$(_InitialMSBuildProjectExtensionsPath)' != '' And '$(MSBuildProjectExtensionsPath)' != '$(_InitialMSBuildProjectExtensionsPath)' ) was evaluated as ( 'C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\obj\' != '' And 'C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\obj\' != 'C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\obj\' ).
+       Task "Warning" skipped, due to false condition; ( '$(EnableBaseIntermediateOutputPathMismatchWarning)' == 'true' And '$(_InitialBaseIntermediateOutputPath)' != '$(BaseIntermediateOutputPath)' And '$(BaseIntermediateOutputPath)' != '$(MSBuildProjectExtensionsPath)' ) was evaluated as ( '' == 'true' And 'obj\' != 'obj\' And 'obj\' != 'C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\obj\' ).
+     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+     1>Target "SetTelemetryEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.DesignTime.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+       Using "SetEnv" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "SetEnv"
+         VSTEL_SolutionSessionID={01A4284E-579D-41EC-BA7B-125A87A75A97}
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_CurrentSolutionBuildID=470219218
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         VSTEL_ProjectID={FC9BD952-4F0A-4746-9DCD-1CFB51F9F546}
+       Done executing task "SetEnv".
+     1>Done building target "SetTelemetryEnvironmentVariables" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_PrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuild.IncludeFileToTool)'!='') was evaluated as (''!='').
+     1>Done building target "_PrepareForBuild" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_PrepareForReferenceResolution" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveReferences" depends on it):
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "_PrepareForReferenceResolution" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('MovesEnumeratorToLatex.cpp;PrintState.h'!='' and 'false'=='true' and '' != 'false').
+     1>Target "BeforeResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "BeforeResolveReferences" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "AssignProjectConfiguration" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveReferences" depends on it):
+       Using "AssignProjectConfiguration" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "AssignProjectConfiguration"
+       Done executing task "AssignProjectConfiguration".
+     1>Done building target "AssignProjectConfiguration" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "AssignProjectConfiguration" skipped. Previously built successfully.
+     1>Target "_SplitProjectReferencesByFileExistence" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Task "ResolveNonMSBuildProjectOutput" skipped, due to false condition; ('$(BuildingInsideVisualStudio)'=='true' and '@(ProjectReferenceWithConfiguration)'!='') was evaluated as ('true'=='true' and ''!='').
+     1>Done building target "_SplitProjectReferencesByFileExistence" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_GetProjectReferenceTargetFrameworkProperties" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareProjectReferences" depends on it):
+       Using "MSBuild" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "MSBuild"
+       Done executing task "MSBuild".
+       Task "GetReferenceNearestTargetFrameworkTask" skipped, due to false condition; ('@(_ProjectReferenceTargetFrameworkPossibilities->Count())' != '0' and '$(ReferringTargetFrameworkForProjectReferences)' != '') was evaluated as ('0' != '0' and '.NETFramework,Version=v4.0' != '').
+     1>Done building target "_GetProjectReferenceTargetFrameworkProperties" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "PrepareProjectReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveProjectReferences" depends on it):
+     1>Done building target "PrepareProjectReferences" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_RemoveNameMetadataFromProjectReferenceItems" skipped, due to false condition; ('@(ProjectReference)'!='') was evaluated as (''!='').
+     1>Target "ResolveProjectReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveReferences" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' != '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '15.0' != '10.0' and '' != '').
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' == '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '15.0' == '10.0' and '' != '').
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' != 'true' and 'true' == 'true' and '' != '').
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingProject)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' == 'true' and '' != '').
+       Task "Warning" skipped, due to false condition; ('@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceNonexistent)' != '') was evaluated as ('' != '' and '' != '').
+     1>Done building target "ResolveProjectReferences" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "FindInvalidProjectReferences" skipped, due to false condition; ('$(FindInvalidProjectReferences)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveNativeReferences" skipped, due to false condition; ('@(NativeReference)'!='') was evaluated as (''!='').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+     1>Target "GetFrameworkPaths" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.NETFramework.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+     1>Done building target "GetFrameworkPaths" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "GetWinFXPath" skipped, due to false condition; (('@(Page)' != '' or '@(ApplicationDefinition)' != '' or '@(Resource)' != '') and ('$(GetWinFXNativePath)' != '' or '$(GetWinFXWoWPath)' != '' )) was evaluated as (('' != '' or '' != '' or '' != '') and ('' != '' or '' != '' )).
+     1>Target "GetReferenceAssemblyPaths" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetReferenceAssemblyPaths" skipped, due to false condition; ('$(TargetFrameworkMoniker)' != '' and ('$(_TargetFrameworkDirectories)' == '' or '$(_FullFrameworkReferenceAssemblyPaths)' == '')) was evaluated as ('' != '' and ('C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '' or 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '')).
+     1>Done building target "GetReferenceAssemblyPaths" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "SetBuildDefaultEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Current.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "SetEnv"
+         PATH=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x86;C:\Program Files (x86)\Windows Kits\10\bin\10.0.17134.0\x86;;C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\tools;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\ide;C:\Program Files (x86)\HTML Help Workshop;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin;C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\;;C:\Windows\system32;C:\Windows;C:\Program Files\ImageMagick-7.0.8-Q16;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\MATLAB\R2015b\runtime\win64;C:\Program Files\MATLAB\R2015b\bin;C:\Program Files\MATLAB\R2015b\polyspace\bin;C:\Program Files (x86)\LyX 2.1\Perl\bin;C:\Program Files (x86)\CMake\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\MiKTeX 2.9\miktex\bin\x64\;C:\Program Files\texlive\2018\bin\win32;C:\Program Files (x86)\Bitvise SSH Client;C:\Program Files (x86)\PuTTY\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\GitExtensions\;C:\Users\dmitry.ra\Documents\opencv-master\build\bin\Debug\;C:\Users\dmitry.ra\Documents\opencv-master\build\bin\Release\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\GnuWin32\bin;C:\Users\dmitry.ra\AppData\Local\Microsoft\WindowsApps;;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIB=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\atlmfc\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\VS\lib\x64;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17134.0\ucrt\x64;;;C:\Program Files (x86)\Windows Kits\10\lib\10.0.17134.0\um\x64;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\lib\um\x64;;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Lib\um\x64
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         LIBPATH=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\atlmfc\lib\x64;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\lib\x64;
+       Done executing task "SetEnv".
+       Task "SetEnv"
+         INCLUDE=C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\include;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\atlmfc\include;;C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\VS\include;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\ucrt;;;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\shared;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\winrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.17134.0\cppwinrt;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\Include\um;
+       Done executing task "SetEnv".
+     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+     1>Target "GetResolvedWinMD" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareForBuild" depends on it):
+     1>Done building target "GetResolvedWinMD" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "PlatformPrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Cpp.Platform.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(_Error64bitToolsNotInstalled)' == 'true') was evaluated as ('' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v110').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v100') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v100').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' == 'v90') was evaluated as (''!='true' and 'true' != 'true' and 'v141' == 'v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(_ToolsetFound)' != 'true' and '$(PlatformToolset)' != 'v90' and '$(PlatformToolset)' != 'v100' and '$(PlatformToolset)' != 'v110') was evaluated as (''!='true' and 'true' != 'true' and 'v141' != 'v90' and 'v141' != 'v100' and 'v141' != 'v110').
+     1>Done building target "PlatformPrepareForBuild" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "Desktop_PlatformPrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Platforms\x64\PlatformToolsets\v141\Toolset.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareForBuild" depends on it):
+       Task "VCMessage" skipped, due to false condition; ($(MissingSDKProps) == 'true') was evaluated as ( == 'true').
+     1>Done building target "Desktop_PlatformPrepareForBuild" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "GetFrameworkPaths" skipped. Previously built successfully.
+       Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
+       Target "AssignLinkMetadata" skipped, due to false condition; ( '$(SynthesizeLinkMetadata)' == 'true' ) was evaluated as ( '' == 'true' ).
+     1>Target "SetCABuildNativeEnvironmentVariables" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\Microsoft\VisualStudio\v15.0\CodeAnalysis\Microsoft.CodeAnalysis.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareForBuild" depends on it):
+       Initializing task factory "CodeTaskFactory" from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Build.Tasks.Core.dll".
+       Using "SetEnvironmentVariable" task from the task factory "Code Task Factory".
+       Task "SetEnvironmentVariable"
+       Done executing task "SetEnvironmentVariable".
+     1>Done building target "SetCABuildNativeEnvironmentVariables" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "PrepareForBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(ConfigurationPlatformExists)' != 'true') was evaluated as ('' != 'true' and 'true' != 'true').
+       Using "MakeDir" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "MakeDir"
+       Done executing task "MakeDir".
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsAppContainer)'=='true' and '$(ConfigurationType)'!='Application' and '$(ConfigurationType)'!='DynamicLibrary' and '$(ConfigurationType)'!='StaticLibrary') was evaluated as (''!='true' and 'false'=='true' and 'Application'!='Application' and 'Application'!='DynamicLibrary' and 'Application'!='StaticLibrary').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and ('$(TargetFrameworkVersion)'=='v3.5' or '$(TargetFrameworkVersion)'=='v3.0' or '$(TargetFrameworkVersion)'=='v2.0' )) was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\'=='' and '' != 'true' and ('v4.0'=='v3.5' or 'v4.0'=='v3.0' or 'v4.0'=='v2.0' )).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true' and '$(PlatformToolset)'=='v90') was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\'=='' and '' != 'true' and 'v141'=='v90').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(VCToolsInstallDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(WindowsSDKDir)'=='' and '$(UseEnv)' != 'true') was evaluated as (''!='true' and 'C:\Program Files (x86)\Windows Kits\10\'=='' and '' != 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IntDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(OutDirTrailingSlashWarning)'=='true') was evaluated as (''!='true' and ''=='true').
+       Task "VCMessage" skipped, due to false condition; ('%(CompatibilityIssues.Identity)' != '' and '$(DesignTimeBuild)'!='true') was evaluated as ('' != '' and ''!='true').
+       Task "VCMessage" skipped, due to false condition; ('$(IgnoreWarnIntDirSharingDetected)' != 'true' and '$(IntDirSharingDetected)' == 'true') was evaluated as ('' != 'true' and '' == 'true').
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(IgnoreWarnIntDirInTempDetected)' != 'true' and ('$(_IntDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_IntDirFullpath.StartsWith($(Temp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Tmp), true, null))' == 'true' or '$(_OutDirFullpath.StartsWith($(Temp), true, null))' == 'true')) was evaluated as (''!='true' and '' != 'true' and ('False' == 'true' or 'False' == 'true' or 'False' == 'true' or 'False' == 'true')).
+       Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)' != 'true' and '$(SpectreMitigation)' != '' and '$(SpectreMitigation)' != 'false' and (('$(_VC_Target_Library_Platform)' == 'OneCore' and !Exists('$(VC_LibraryPath_VC_x86_OneCore)')) or ('$(_VC_Target_Library_Platform)' == 'Desktop' and !Exists('$(VC_LibraryPath_VC_x86_Desktop)')))) was evaluated as ('' != 'true' and 'false' != '' and 'false' != 'false' and (('Desktop' == 'OneCore' and !Exists('C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\lib\onecore\x86')) or ('Desktop' == 'Desktop' and !Exists('C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\lib\x86')))).
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "PrepareForBuild" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
+       Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('MovesEnumeratorToLatex.cpp;PrintState.h'!='' and 'false'=='true' and '' != 'false').
+       Target "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '') was evaluated as ('' != '').
+     1>Target "ResolveSDKReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "ResolveSDKReference" skipped, due to false condition; ('@(SDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ResolveSDKReferences" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ResolveSDKReferences" skipped. Previously built successfully.
+     1>Target "ExpandSDKReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+       Task "GetSDKReferenceFiles" skipped, due to false condition; ('@(ResolvedSDKReference)'!='') was evaluated as (''!='').
+     1>Done building target "ExpandSDKReferences" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ResolveNuGetPackageAssets" skipped, due to false condition; ('$(ResolveNuGetPackages)' == 'true' and exists('$(ProjectLockFile)')) was evaluated as ('true' == 'true' and exists('obj\project.assets.json')).
+     1>Target "ResolveAssemblyReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveReferences" depends on it):
+       Task "ResolveAssemblyReference" skipped, due to false condition; ('@(Reference)'!='' or '@(_ResolvedProjectReferencePaths)'!='' or '@(_ExplicitReference)' != '') was evaluated as (''!='' or ''!='' or '' != '').
+     1>Done building target "ResolveAssemblyReferences" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "GenerateBindingRedirects" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true') was evaluated as ('' == 'true' and 'true' == 'true').
+       Target "GenerateBindingRedirectsUpdateAppConfig" skipped, due to false condition; ('$(AutoGenerateBindingRedirects)' == 'true' and '$(GenerateBindingRedirectsOutputType)' == 'true' and Exists('$(_GenerateBindingRedirectsIntermediateAppConfig)')) was evaluated as ('' == 'true' and 'true' == 'true' and Exists('x64\Debug\MovesEnumeratorToLatex.exe.config')).
+       Target "ResolveComReferences" skipped, due to false condition; ('@(COMReference)'!='' or '@(COMFileReference)'!='') was evaluated as (''!='' or ''!='').
+     1>Target "AfterResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ResolveReferences" depends on it):
+     1>Done building target "AfterResolveReferences" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ImplicitlyExpandDesignTimeFacades" skipped, due to false condition; ('$(ImplicitlyExpandDesignTimeFacades)' == 'true') was evaluated as ('' == 'true').
+       Target "ResolveTestReferences" skipped, due to false condition; ('@(Shadow)'!='') was evaluated as (''!='').
+     1>Target "ResolveReferences" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+     1>Done building target "ResolveReferences" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "PrepareForBuild" skipped. Previously built successfully.
+     1>Target "InitializeBuildStatus" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+       Using "ReadLinesFromFile" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "ReadLinesFromFile"
+       Done executing task "ReadLinesFromFile".
+       Using "WriteLinesToFile" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "WriteLinesToFile"
+       Done executing task "WriteLinesToFile".
+       Using "Touch" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "Touch"
+         Touching "x64\Debug\MovesEnu.FC9BD952.tlog\unsuccessfulbuild".
+       Done executing task "Touch".
+     1>Done building target "InitializeBuildStatus" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildGenerateSourcesTraverse" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "BuildGenerateSources" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != '' and '' == 'true').
+     1>Done building target "BuildGenerateSourcesTraverse" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeBuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "BeforeBuildGenerateSources" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "PreBuildEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PreBuildEvent.Message)' != '' and '%(PreBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PreBuildEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PreBuildEvent" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
+       Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "Xsd" skipped, due to false condition; ('@(Xsd)' != '') was evaluated as ('' != '').
+     1>Target "_Xsd" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Xsd" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "MakeDirsForMidl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Midl" depends on it):
+       Task "Makedir"
+       Done executing task "Makedir".
+     1>Done building target "MakeDirsForMidl" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "Midl" skipped, due to false condition; ('@(Midl)' != '') was evaluated as ('' != '').
+       Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
+       Target "FxExport" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+       Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
+     1>Target "ComputeMIDLGeneratedCompileInputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "AfterMidl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Midl" depends on it):
+     1>Done building target "AfterMidl" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_Midl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "_Midl" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "AfterBuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSources" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "AfterBuildGenerateSourcesEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+     1>Done building target "AfterBuildGenerateSourcesEvent" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_BuildGenerateSourcesAction" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "BuildGenerateSources" depends on it):
+     1>Done building target "_BuildGenerateSourcesAction" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "BuildGenerateSources" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildGenerateSources" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildCompileTraverse" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "BuildCompile" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
+     1>Done building target "BuildCompileTraverse" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "BeforeClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "BeforeClCompile" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+     1>Target "ComputeCLInputPDBName" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "ComputeCLInputPDBName" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ComputeReferenceCLInput" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+       Task "WriteLinesToFile" skipped, due to false condition; (('@(_ReferenceCopyLocalPaths)'!='') and '$(DesignTimeBuild)' != 'true') was evaluated as ((''!='') and '' != 'true').
+       Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
+     1>Done building target "ComputeReferenceCLInput" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "WarnCompileDuplicatedFilename" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'MovesEnumeratorToLatex.cpp' != 'MovesEnumeratorToLatex.cpp' and 'x64\Debug\' == 'x64\Debug\').
+       Task "VCMessage" skipped, due to false condition; ('%(ClCompile.ExcludedFromBuild)' != 'true' and '%(Filename)%(Extension)' != '@(ClCompile->'%(Filename)%(Extension)')' and '%(ObjectFileName)' == '@(ClCompile->Metadata(ObjectFileName)->Distinct())') was evaluated as ('' != 'true' and 'PrintState.h' != 'PrintState.h' and 'x64\Debug\' == 'x64\Debug\').
+     1>Done building target "WarnCompileDuplicatedFilename" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "FixupCLCompileOptions" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "FixupCLCompileOptions" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "MakeDirsForCl" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForCl" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "InitializeBuildStatus" skipped. Previously built successfully.
+       Target "SetBuildDefaultEnvironmentVariables" skipped. Previously built successfully.
+       Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '' and '$(DesignTimeBuild)' != 'true') was evaluated as ('' != '' and '' != 'true').
+     1>Target "_SelectedFiles" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "SelectClCompile" depends on it):
+     1>Done building target "_SelectedFiles" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+       Target "ComputeCLInputPDBName" skipped. Previously built successfully.
+       Target "ComputeReferenceCLInput" skipped. Previously built successfully.
+       Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
+       Target "FixupCLCompileOptions" skipped. Previously built successfully.
+       Target "_SelectedFiles" skipped. Previously built successfully.
+     1>Target "SelectCustomBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "SelectClCompile" depends on it):
+     1>Done building target "SelectCustomBuild" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "SelectClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ClCompile" depends on it):
+     1>Done building target "SelectClCompile" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
+       Target "ManagedIncrementalBuildPreProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('MovesEnumeratorToLatex.cpp;PrintState.h' != '' and 'false' == 'True').
+     1>Target "ClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+       Task "Delete" skipped, due to false condition; ('%(ClCompile.DebugInformationFormat)' != '' and '%(ClCompile.DebugInformationFormat)' != 'None' and '%(ClCompile.DebugInformationFormat)' != 'OldStyle' and '%(ClCompile.ProgramDataBaseFileName)' != '' and !Exists(%(ClCompile.ProgramDataBaseFileName))) was evaluated as ('EditAndContinue' != '' and 'EditAndContinue' != 'None' and 'EditAndContinue' != 'OldStyle' and 'x64\Debug\vc141.pdb' != '' and !Exists(x64\Debug\vc141.pdb)).
+       Task "CL" skipped, due to false condition; ('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '') was evaluated as ('NotUsing' == 'Create' and ''!='true' and '' == '').
+       Using "CL" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "CL"
+         Read Tracking Logs:
+         	x64\Debug\MovesEnu.FC9BD952.tlog\CL.read.1.tlog
+         Outputs for C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX.CPP|C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\PRINTSTATE.H:
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.OBJ
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\PRINTSTATE.OBJ
+         MovesEnumeratorToLatex.cpp will be compiled because it was not found in the tracking log.
+         Outputs for C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX.CPP:
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.OBJ
+         Write Tracking Logs:
+         	x64\Debug\MovesEnu.FC9BD952.tlog\CL.write.1.tlog
+         Environment Variables passed to tool:
+           VS_UNICODE_OUTPUT=1992
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\CL.exe /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc141.pdb" /Gd /TP /FC /errorReport:prompt MovesEnumeratorToLatex.cpp
+         Tracking command:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\x64\Debug\MovesEnu.FC9BD952.tlog /r C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX.CPP /b MSBuildConsole_CancelEventad78af868121432a94aa03561583bb93  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\CL.exe"  /c /ZI /nologo /W3 /WX- /diagnostics:classic /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc141.pdb" /Gd /TP /FC /errorReport:prompt MovesEnumeratorToLatex.cpp
+         MovesEnumeratorToLatex.cpp
+       Done executing task "CL".
+     1>Done building target "ClCompile" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "RunSelectedFileNativeCodeAnalysis" skipped, due to false condition; ('$(RunCppAnalysis)'=='true' and '$(SelectedFiles)'!='') was evaluated as ('false'=='true' and ''!='').
+       Target "ManagedIncrementalBuildPostProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('MovesEnumeratorToLatex.cpp;PrintState.h' != '' and 'false' == 'True').
+     1>Target "AfterClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ClCompile" depends on it):
+     1>Done building target "AfterClCompile" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_ClCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildCompileAction" depends on it):
+     1>Done building target "_ClCompile" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_ResGen" skipped, due to false condition; ('@(EmbeddedResource)'!='') was evaluated as (''!='').
+     1>Target "BeforeResourceCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ResourceCompile" depends on it):
+     1>Done building target "BeforeResourceCompile" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "MakeDirsForResourceCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ResourceCompile" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForResourceCompile" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ResourceCompile" skipped, due to false condition; ('@(ResourceCompile)' != '') was evaluated as ('' != '').
+     1>Target "AfterResourceCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_ResourceCompile" depends on it):
+     1>Done building target "AfterResourceCompile" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_ResourceCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildCompileAction" depends on it):
+     1>Done building target "_ResourceCompile" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_ImpLib" skipped, due to false condition; ('$(ImpLibCompiled)' == 'true') was evaluated as ('' == 'true').
+       Target "_Lib" skipped, due to false condition; ('$(LibCompiled)' == 'true') was evaluated as ('' == 'true').
+     1>Target "AfterBuildCompileEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildCompileAction" depends on it):
+     1>Done building target "AfterBuildCompileEvent" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_BuildCompileAction" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "BuildCompile" depends on it):
+     1>Done building target "_BuildCompileAction" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "BuildCompile" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildCompile" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareProjectReferences" skipped. Previously built successfully.
+     1>Target "BuildLinkTraverse" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "BuildLink" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
+     1>Done building target "BuildLinkTraverse" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ComputeLegacyManifestEmbedding" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('$(RevertManifestEmbedding)' == 'true' and '$(_LegacyManifestEmbeddingDebug)' == 'true') was evaluated as ('' == 'true' and '' == 'true').
+     1>Done building target "ComputeLegacyManifestEmbedding" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "BeforeLink" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "BeforeLink" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeRCOutputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ComputeRCGeneratedLinkInputs" depends on it):
+     1>Done building target "ComputeRCOutputs" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeRCGeneratedLinkInputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeRCGeneratedLinkInputs" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeManifestGeneratedLinkerInputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeManifestGeneratedLinkerInputs" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeCustomBuildOutput" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+       Task "CreateItem" skipped, due to false condition; ('%(CustomBuildDirsToMake.OutputFileToTool)'!='') was evaluated as (''!='').
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "ComputeCustomBuildOutput" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
+       Target "ComputeCLInputPDBName" skipped. Previously built successfully.
+       Target "ComputeReferenceCLInput" skipped. Previously built successfully.
+       Target "WarnCompileDuplicatedFilename" skipped. Previously built successfully.
+       Target "FixupCLCompileOptions" skipped. Previously built successfully.
+     1>Target "ComputeCLOutputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "ComputeCLGeneratedLinkInputs" depends on it):
+     1>Done building target "ComputeCLOutputs" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeCLGeneratedLinkInputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeCLGeneratedLinkInputs" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeLinkInputsFromProject" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeLinkInputsFromProject" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeReferenceLinkInputs" skipped, due to false condition; (@(ProjectReference) != '') was evaluated as ( != '').
+     1>Target "ComputeManifestInputsTargets" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "ComputeManifestInputsTargets" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ManifestResourceCompile" skipped, due to false condition; ('$(EmbedManifestBy)' == 'LINK' and '@(Manifest)' != '') was evaluated as ('LINK' == 'LINK' and '' != '').
+       Target "AssignWinFXEmbeddedResource" skipped, due to false condition; ('@(WinFXEmbeddedResource)' != '') was evaluated as ('' != '').
+     1>Target "AssignTargetPaths" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareResourceNames" depends on it):
+       Using "AssignTargetPath" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+       Task "AssignTargetPath" skipped, due to false condition; ('@(_DeploymentBaseManifestWithTargetPath)'=='' and '%(None.Extension)'=='.manifest') was evaluated as (''=='' and ''=='.manifest').
+     1>Done building target "AssignTargetPaths" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "AssignTargetPaths" skipped. Previously built successfully.
+     1>Target "SplitResourcesByCulture" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareResourceNames" depends on it):
+       Task "Warning" skipped, due to false condition; ('@(ResxWithNoCulture)'!='') was evaluated as (''!='').
+       Task "Warning" skipped, due to false condition; ('@(ResxWithCulture)'!='') was evaluated as (''!='').
+       Task "Warning" skipped, due to false condition; ('@(NonResxWithCulture)'!='') was evaluated as (''!='').
+       Task "Warning" skipped, due to false condition; ('@(NonResxWithNoCulture)'!='') was evaluated as (''!='').
+       Using "AssignCulture" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "AssignCulture"
+       Done executing task "AssignCulture".
+     1>Done building target "SplitResourcesByCulture" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "CreateManifestResourceNames" skipped, due to false condition; ('@(EmbeddedResource)' != '') was evaluated as ('' != '').
+     1>Target "CreateCustomManifestResourceNames" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareResourceNames" depends on it):
+     1>Done building target "CreateCustomManifestResourceNames" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "PrepareResourceNames" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "PrepareResourceNames" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "MakeDirsForLink" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForLink" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "DoLinkOutputFilesMatch" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' == '') was evaluated as ('C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe' == '').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.FullPath)' != '$([System.IO.Path]::GetFullPath($(TargetPath)))') was evaluated as ('C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe' != '' and 'C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe' != 'C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Extension)' != '' and '%(_OutputFileFromLink.Extension)' != '$(TargetExt)') was evaluated as ('C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe' != '' and '.exe' != '' and '.exe' != '.exe').
+       Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Filename)' != '' and '%(_OutputFileFromLink.Filename)' != '$(TargetName)') was evaluated as ('C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe' != '' and 'MovesEnumeratorToLatex' != '' and 'MovesEnumeratorToLatex' != 'MovesEnumeratorToLatex').
+       Task "VCMessage" skipped, due to false condition; ('%(Link.MinimumRequiredVersion)' != '' and ('%(Link.Subsystem)' == '' or '%(Link.Subsystem)' == 'NotSet')) was evaluated as ('' != '' and ('Console' == '' or 'Console' == 'NotSet')).
+     1>Done building target "DoLinkOutputFilesMatch" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "PreLinkEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PreLinkEvent.Message)' != '' and '%(PreLinkEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PreLinkEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PreLinkEvent" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeLinkSwitches" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Link" depends on it):
+     1>Done building target "ComputeLinkSwitches" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "Link" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+       Using "Link" task from assembly "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CppTasks.Common.dll".
+       Task "Link"
+         Write Tracking Logs:
+         	x64\Debug\MovesEnu.FC9BD952.tlog\link.write.1.tlog
+         Read Tracking Logs:
+         	x64\Debug\MovesEnu.FC9BD952.tlog\link.read.1.tlog
+         Outputs for C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.OBJ|C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\PRINTSTATE.OBJ:
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.EXE
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.ILK
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.PDB
+         Inputs for C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.OBJ|C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\PRINTSTATE.OBJ:
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\KERNEL32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\USER32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\GDI32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\WINSPOOL.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\COMDLG32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\ADVAPI32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\SHELL32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\OLE32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\OLEAUT32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\UUID.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\ODBC32.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UM\X64\ODBCCP32.LIB
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.OBJ
+         	C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\PRINTSTATE.OBJ
+         	C:\WINDOWS\SYSTEM32\TZRES.DLL
+         	C:\WINDOWS\GLOBALIZATION\SORTING\SORTDEFAULT.NLS
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\COMMUNITY\VC\TOOLS\MSVC\14.14.26428\LIB\X64\MSVCPRTD.LIB
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\COMMUNITY\VC\TOOLS\MSVC\14.14.26428\LIB\X64\MSVCRTD.LIB
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\COMMUNITY\VC\TOOLS\MSVC\14.14.26428\LIB\X64\OLDNAMES.LIB
+         	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2017\COMMUNITY\VC\TOOLS\MSVC\14.14.26428\LIB\X64\VCRUNTIMED.LIB
+         	C:\PROGRAM FILES (X86)\WINDOWS KITS\10\LIB\10.0.17134.0\UCRT\X64\UCRTD.LIB
+         Source compilation required: input C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.OBJ is newer than output C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.PDB.
+         Environment Variables passed to tool:
+           VS_UNICODE_OUTPUT=1932
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.lib" /MACHINE:X64 x64\Debug\MovesEnumeratorToLatex.obj
+         x64\Debug\PrintState.obj
+         Tracking command:
+         C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\x64\Debug\MovesEnu.FC9BD952.tlog /r "C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\MOVESENUMERATORTOLATEX.OBJ|C:\USERS\DMITRY.RA\DESKTOP\STUDIES\ARTICLES\PHD\NPUZZLEMODEL\C++\ENUMERATENEXTMOVES\MOVESENUMERATORTOLATEX\MOVESENUMERATORTOLATEX\X64\DEBUG\PRINTSTATE.OBJ" /b MSBuildConsole_CancelEvent332dd250bcff492fa7c20886d2877855  /c "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.14.26428\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.lib" /MACHINE:X64 x64\Debug\MovesEnumeratorToLatex.obj
+         x64\Debug\PrintState.obj
+       Done executing task "Link".
+       Task "Message"
+         MovesEnumeratorToLatex.vcxproj -> C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\x64\Debug\MovesEnumeratorToLatex.exe
+       Done executing task "Message".
+       Task "VCMessage" skipped, due to false condition; (('$(EmbedManifestBy)' != 'LINK' or '$(LegacyManifestEmbedding)' != 'true' or '$(LinkSkippedExecution)' == 'true') and
+                    %(Link.GenerateDebugInformation) == 'DebugFastLink' and %(Link.ProgramDataBaseFileName) != '') was evaluated as (('LINK' != 'LINK' or '' != 'true' or 'False' == 'true') and
+                    DebugFastLink == 'DebugFastLink' and  != '').
+       Task "VCMessage" skipped, due to false condition; (('$(EmbedManifestBy)' != 'LINK' or '$(LegacyManifestEmbedding)' != 'true' or '$(LinkSkippedExecution)' == 'true') and
+                    %(Link.GenerateDebugInformation) == 'true' and %(Link.ProgramDataBaseFileName) != '') was evaluated as (('LINK' != 'LINK' or '' != 'true' or 'False' == 'true') and
+                    DebugFastLink == 'true' and  != '').
+     1>Done building target "Link" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "MetaGenInputsOutputs" skipped, due to false condition; ('$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('false' == 'True').
+       Target "ComputeMetaGenInputs" skipped, due to false condition; ('$(CLRSupport)'!='' and '$(CLRSupport)'!='false') was evaluated as ('false'!='' and 'false'!='false').
+       Target "MetaGen" skipped, due to false condition; ('@(MetaGen)' != '') was evaluated as ('' != '').
+     1>Target "ComputeLinkImportLibraryOutputsForClean" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+       Task "WriteLinesToFile" skipped, due to false condition; ('@(_LinkSecondaryOutput)' != '') was evaluated as ('' != '').
+     1>Done building target "ComputeLinkImportLibraryOutputsForClean" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "AfterLink" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_Link" depends on it):
+     1>Done building target "AfterLink" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_Link" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_Link" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_ALink" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_ALink" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeLegacyManifestEmbedding" skipped. Previously built successfully.
+     1>Target "_Manifest" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "CallTarget" skipped, due to false condition; ('$(LegacyManifestEmbedding)' == 'true') was evaluated as ('' == 'true').
+     1>Done building target "_Manifest" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "RegisterOutput" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'!='true').
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'=='true').
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'!='true').
+       Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'=='true').
+       Task "VCMessage" skipped, due to false condition; ('$(_RegisterOutputExitCode)' != '' and '$(_RegisterOutputExitCode)' != '0') was evaluated as ('' != '' and '' != '0').
+     1>Done building target "RegisterOutput" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "PrepareForBuild" skipped. Previously built successfully.
+       Target "ResolveReferences" skipped. Previously built successfully.
+     1>Target "ResolvedXDCMake" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_XdcMake" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.Extension)' == '.vcxproj' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '$(_ClCompileGenerateXMLDocumentationFiles)' == 'true') was evaluated as ('' == '.vcxproj' and '' != '' and '' != '' and '' == 'true').
+     1>Done building target "ResolvedXDCMake" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeCLCompileGeneratedXDCFiles" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_XdcMake" depends on it):
+     1>Done building target "ComputeCLCompileGeneratedXDCFiles" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "MakeDirsForXdcMake" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_XdcMake" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForXdcMake" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "XdcMake" skipped, due to false condition; ('@(XdcMake)' != '') was evaluated as ('' != '').
+     1>Target "_XdcMake" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_XdcMake" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "ComputeCLCompileGeneratedSbrFiles" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BscMake" depends on it):
+     1>Done building target "ComputeCLCompileGeneratedSbrFiles" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "MakeDirsForBscMake" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BscMake" depends on it):
+       Task "MakeDir"
+       Done executing task "MakeDir".
+     1>Done building target "MakeDirsForBscMake" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "BscMake" skipped, due to false condition; ('@(BscMake)' != '') was evaluated as ('' != '').
+       Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
+     1>Target "_BscMake" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_BscMake" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_GenerateSatelliteAssemblyInputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "CreateSatelliteAssemblies" depends on it):
+       Task "Warning" skipped, due to false condition; ('@(ManifestResourceWithCulture)'!='' and '%(ManifestResourceWithCulture.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
+       Task "Warning" skipped, due to false condition; ('@(ManifestNonResxWithCultureOnDisk)'!='' and '%(ManifestNonResxWithCultureOnDisk.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
+     1>Done building target "_GenerateSatelliteAssemblyInputs" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
+       Target "GenerateSatelliteAssemblies" skipped, due to false condition; ('@(_SatelliteAssemblyResourceInputs)' != '') was evaluated as ('' != '').
+     1>Target "CreateSatelliteAssemblies" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "CreateSatelliteAssemblies" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_Appverifier" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_Appverifier" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_Deploy" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "_Deploy" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
+       Target "_CopyFilesMarkedCopyLocal" skipped, due to false condition; ('@(ReferenceCopyLocalPaths)' != '') was evaluated as ('' != '').
+       Target "AssignTargetPaths" skipped. Previously built successfully.
+       Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
+       Target "_GetProjectReferenceTargetFrameworkProperties" skipped. Previously built successfully.
+     1>Target "GetCopyToOutputDirectoryXamlAppDefs" in file "C:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\Microsoft.Xaml.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "GetCopyToOutputDirectoryItems" depends on it):
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+     1>Done building target "GetCopyToOutputDirectoryXamlAppDefs" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "GetCopyToOutputDirectoryItems" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_CopySourceItemsToOutputDirectory" depends on it):
+       Task "MSBuild" skipped, due to false condition; ('@(_MSBuildProjectReferenceExistent)' != '' and '$(_GetChildProjectCopyToOutputDirectoryItems)' == 'true' and '%(_MSBuildProjectReferenceExistent.Private)' != 'false' and '$(UseCommonOutputDirectory)' != 'true') was evaluated as ('' != '' and 'true' == 'true' and '' != 'false' and 'false' != 'true').
+       Task "AssignTargetPath"
+       Done executing task "AssignTargetPath".
+     1>Done building target "GetCopyToOutputDirectoryItems" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_CopyOutOfDateSourceItemsToOutputDirectory" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectory)' != '' ) was evaluated as ( '' != '' ).
+       Target "_CopyOutOfDateSourceItemsToOutputDirectoryAlways" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectoryAlways)' != '' ) was evaluated as ( '' != '' ).
+     1>Target "_CopySourceItemsToOutputDirectory" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+     1>Done building target "_CopySourceItemsToOutputDirectory" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_CopyAppConfigFile" skipped, due to false condition; ( '@(AppConfigWithTargetPath)' != '' ) was evaluated as ( '' != '' ).
+       Target "_CopyManifestFiles" skipped, due to false condition; ( '$(_DeploymentCopyApplicationManifest)'=='true' or '$(GenerateClickOnceManifests)'=='true' ) was evaluated as ( ''=='true' or ''=='true' ).
+     1>Target "_CheckForCompileOutputs" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+     1>Done building target "_CheckForCompileOutputs" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_SGenCheckForOutputs" skipped, due to false condition; ('$(_SGenGenerateSerializationAssembliesConfig)' == 'On' or ('@(WebReferenceUrl)'!='' and '$(_SGenGenerateSerializationAssembliesConfig)' == 'Auto')) was evaluated as ('Off' == 'On' or (''!='' and 'Off' == 'Auto')).
+     1>Target "CopyFilesToOutputDirectory" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "PrepareForRun" depends on it):
+       Task "Copy" skipped, due to false condition; ('$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)' != 'true') was evaluated as ('true' == 'true' and 'true' != 'true').
+       Task "CopyRefAssembly" skipped, due to false condition; ('$(ProduceReferenceAssembly)' == 'true' and '$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)' != 'true') was evaluated as ('false' == 'true' and 'true' == 'true' and 'true' != 'true').
+       Task "Message" skipped, due to false condition; ('$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)'!='true') was evaluated as ('true' == 'true' and 'true'!='true').
+       Task "Copy" skipped, due to false condition; ('@(AddModules)' != '') was evaluated as ('' != '').
+       Task "Copy" skipped, due to false condition; ('$(_SGenDllCreated)'=='true') was evaluated as ('false'=='true').
+       Task "Copy" skipped, due to false condition; ('$(_DebugSymbolsProduced)'=='true' and '$(SkipCopyingSymbolsToOutputDirectory)' != 'true' and '$(CopyOutputSymbolsToOutputDirectory)'=='true') was evaluated as ('false'=='true' and '' != 'true' and 'true'=='true').
+       Task "Copy" skipped, due to false condition; ('$(_DocumentationFileProduced)'=='true') was evaluated as ('false'=='true').
+       Task "Copy" skipped, due to false condition; ('@(IntermediateSatelliteAssembliesWithTargetPath)' != '') was evaluated as ('' != '').
+       Task "Copy" skipped, due to false condition; ('@(ReferenceComWrappersToCopyLocal)' != '' or '@(ResolvedIsolatedComModules)' != '' or '@(_DeploymentLooseManifestFile)' != '' or '@(NativeReferenceFile)' != '' ) was evaluated as ('' != '' or '' != '' or '' != '' or '' != '' ).
+       Task "Copy" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '@(WinMDExpArtifacts)' != '') was evaluated as ('' != 'true' and '' != '').
+       Task "Message" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '$(_WindowsMetadataOutputPath)' != '') was evaluated as ('' != 'true' and '' != '').
+     1>Done building target "CopyFilesToOutputDirectory" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "PrepareForRun" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+     1>Done building target "PrepareForRun" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
+     1>Target "PostBuildEvent" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppCommon.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "_BuildLinkAction" depends on it):
+       Task "Message" skipped, due to false condition; ('%(PostBuildEvent.Message)' != '' and '%(PostBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
+       Task "Exec" skipped, due to false condition; ('%(PostBuildEvent.Command)' != '') was evaluated as ('' != '').
+     1>Done building target "PostBuildEvent" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "_BuildLinkAction" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "BuildLink" depends on it):
+     1>Done building target "_BuildLinkAction" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "BuildLink" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Common.CurrentVersion.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+     1>Done building target "BuildLink" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "AfterBuild" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+     1>Done building target "AfterBuild" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Target "FinalizeBuildStatus" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (target "Build" depends on it):
+       Using "Delete" task from assembly "Microsoft.Build.Tasks.Core, Version=15.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
+       Task "Delete"
+         Deleting file "x64\Debug\MovesEnu.FC9BD952.tlog\unsuccessfulbuild".
+       Done executing task "Delete".
+       Task "Touch"
+         Touching "x64\Debug\MovesEnu.FC9BD952.tlog\MovesEnumeratorToLatex.lastbuildstate".
+       Done executing task "Touch".
+     1>Done building target "FinalizeBuildStatus" in project "MovesEnumeratorToLatex.vcxproj".
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+       Target "_CheckForInvalidConfigurationAndPlatform" skipped. Previously built successfully.
+     1>Target "Build" in file "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.BuildSteps.Targets" from project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (entry point):
+     1>Done building target "Build" in project "MovesEnumeratorToLatex.vcxproj".
+     1>Done Building Project "C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\MovesEnumeratorToLatex.vcxproj" (Build target(s)).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.54

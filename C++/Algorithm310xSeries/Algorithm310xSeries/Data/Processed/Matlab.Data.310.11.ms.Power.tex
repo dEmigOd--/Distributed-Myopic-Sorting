@@ -1,0 +1,145 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor5}{rgb}{0.46600,0.67400,0.18800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.559in,
+at={(0.758in,0.488in)},
+scale only axis,
+xmode=log,
+xmin=4,
+xmax=128,
+xminorticks=true,
+xlabel style={font=\color{white!15!black}},
+xlabel={m (num columns)},
+ymode=log,
+ymin=50.9986693168976,
+ymax=10000,
+yminorticks=true,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+% title={$\text{Average ticks until solution as a function of m. On n }\times\text{ m grid. (free slots = 0.20)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.97,0.03)}, anchor=south east, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark size=1.4pt, mark=*, mark options={solid, mycolor1}]
+ plot [error bars/.cd, y dir = both, y explicit]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+4	73.838	22.8393306831024	22.8393306831024\\
+8	242.45	51.9146777658791	51.9146777658791\\
+16	544.688	106.958566397702	106.958566397702\\
+32	1078	235.396940164646	235.396940164646\\
+64	2142.48	488.349748185771	488.349748185771\\
+128	4139.472	925.058451934249	925.058451934249\\
+};
+\addlegendentry{$\text{n =  4; }\beta\text{ = 1.088}$}
+
+\addplot [color=mycolor1, forget plot]
+  table[row sep=crcr]{%
+4	106.124813028125\\
+8	225.629726141625\\
+16	479.70660080459\\
+32	1019.89408395174\\
+64	2168.3752959311\\
+128	4610.13697205325\\
+};
+\addplot [color=mycolor2, draw=none, mark size=1.4pt, mark=square, mark options={solid, mycolor2}]
+ plot [error bars/.cd, y dir = both, y explicit]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+4	110.11	21.8771826852657	21.8771826852657\\
+8	288.874	43.5839103165028	43.5839103165028\\
+16	616.326	74.1394161702135	74.1394161702135\\
+32	1303.794	125.69403145371	125.69403145371\\
+64	2651.46	221.444918894538	221.444918894538\\
+128	5290.824	439.037361318221	439.037361318221\\
+};
+\addlegendentry{$\text{n =  6; }\beta\text{ = 1.072}$}
+
+\addplot [color=mycolor2, forget plot]
+  table[row sep=crcr]{%
+4	133.980597390459\\
+8	281.689748842096\\
+16	592.243325886036\\
+32	1245.17189034511\\
+64	2617.93247595663\\
+128	5504.11593918081\\
+};
+\addplot [color=mycolor3, draw=none, mark size=1.4pt, mark=oplus, mark options={solid, mycolor3}]
+ plot [error bars/.cd, y dir = both, y explicit]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+4	122.362	21.0444456659417	21.0444456659417\\
+8	352.266	44.0571140975576	44.0571140975576\\
+16	712.998	71.531051849931	71.531051849931\\
+32	1404.272	119.131770630454	119.131770630454\\
+64	2845.472	226.001714076533	226.001714076533\\
+128	5779.844	414.295335375415	414.295335375415\\
+};
+\addlegendentry{$\text{n =  8; }\beta\text{ = 1.046}$}
+
+\addplot [color=mycolor3, forget plot]
+  table[row sep=crcr]{%
+4	157.388579357335\\
+8	324.910714021364\\
+16	670.740993513851\\
+32	1384.66803637127\\
+64	2858.48873035769\\
+128	5901.02292170703\\
+};
+\addplot [color=mycolor4, draw=none, mark size=1.4pt, mark=diamond*, mark options={solid, mycolor4}]
+ plot [error bars/.cd, y dir = both, y explicit]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+4	140.542	20.7426312096368	20.7426312096368\\
+8	388.82	45.1594325550864	45.1594325550864\\
+16	774.228	71.6403566252625	71.6403566252625\\
+32	1496.75	124.232680958096	124.232680958096\\
+64	2944.64	206.583396718127	206.583396718127\\
+128	5789.356	371.112071486777	371.112071486777\\
+};
+\addlegendentry{$\text{n = 10; }\beta\text{ = 1.012}$}
+
+\addplot [color=mycolor4, forget plot]
+  table[row sep=crcr]{%
+4	178.062983176778\\
+8	359.120090354825\\
+16	724.278774822173\\
+32	1460.73627665777\\
+64	2946.03479229097\\
+128	5941.60707588308\\
+};
+\addplot [color=mycolor5, draw=none, mark size=1.4pt, mark=halfsquare left*, mark options={solid, mycolor5}]
+ plot [error bars/.cd, y dir = both, y explicit]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+4	180.688	23.8240598482985	23.8240598482985\\
+8	437.946	47.4752449363195	47.4752449363195\\
+16	853.338	71.8069092806597	71.8069092806597\\
+32	1591.31	125.140185520336	125.140185520336\\
+64	3029.862	195.201060098882	195.201060098882\\
+128	5894.68	333.718338511563	333.718338511563\\
+};
+\addlegendentry{$\text{n = 12; }\beta\text{ = 0.963}$}
+
+\addplot [color=mycolor5, forget plot]
+  table[row sep=crcr]{%
+4	212.143512708752\\
+8	413.428031079751\\
+16	805.693913049969\\
+32	1570.14675524154\\
+64	3059.9223763065\\
+128	5963.21644315397\\
+};
+\end{axis}
+\end{tikzpicture}%

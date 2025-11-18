@@ -1,0 +1,173 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=0,
+xmax=40,
+xlabel style={font=\color{white!15!black}},
+xlabel={$k$},
+ymin=0,
+ymax=10000,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time, ticks},
+yticklabel style={
+            /pgf/number format/fixed,
+            /pgf/number format/precision=0,
+            /pgf/number format/fixed zerofill
+        },
+        scaled y ticks=false,
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={Average time to completion vs. available free slots ($k$)},
+axis x line*=bottom,
+axis y line*=left,
+every axis plot/.append style={ultra thick},
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1]
+  table[row sep=crcr]{%
+1	5280.28571428572\\
+2	8205.7\\
+3	6012.11173184358\\
+4	4076.15891472868\\
+5	3008.42026578073\\
+6	1571.69325842697\\
+7	1231.94288913774\\
+8	929.670794633643\\
+9	770.562118126272\\
+10	2438.94073275862\\
+11	1161.5751765893\\
+12	406.534534534534\\
+13	240.654\\
+14	785.367\\
+15	375.504999999999\\
+16	207.295\\
+17	339.671\\
+18	195.241\\
+19	248.221\\
+20	164.751\\
+21	248.754000000001\\
+22	172.795\\
+23	165.665000000001\\
+24	163.228999999999\\
+25	162.984\\
+26	157.433000000001\\
+27	158.365\\
+28	145.119000000001\\
+29	141.767\\
+30	149.418\\
+31	142.423000000001\\
+32	132.606\\
+33	146.401\\
+34	147.062\\
+35	144.457\\
+36	143.647999999999\\
+37	142.589\\
+38	136.277\\
+39	119.411\\
+40	152.804\\
+};
+\addlegendentry{Simulated annealing}
+
+\addplot [color=mycolor2]
+  table[row sep=crcr]{%
+1	9251.50570776256\\
+2	5427.42311557789\\
+3	3260.77\\
+4	2026.668\\
+5	1643.015\\
+6	1200.055\\
+7	971.518\\
+8	848.688\\
+9	771.835999999999\\
+10	753.449000000001\\
+11	653.206\\
+12	589.637000000001\\
+13	498.611000000001\\
+14	522.241\\
+15	462.879000000001\\
+16	479.284\\
+17	422.686\\
+19	343.284\\
+20	317.485000000001\\
+21	347.125\\
+22	332.559999999999\\
+23	334.272999999999\\
+25	295.819\\
+26	327.219999999999\\
+27	284.626\\
+28	290.904\\
+29	289.706\\
+30	276.383\\
+31	285.886\\
+32	262.767\\
+33	284.057000000001\\
+34	277.816000000001\\
+35	262.442000000001\\
+36	267.807000000001\\
+37	269.335999999999\\
+38	252.874\\
+39	243.001\\
+40	277.851000000001\\
+};
+\addlegendentry{Constant probabilities}
+
+\addplot [color=mycolor3]
+  table[row sep=crcr]{%
+1	3956.68661257606\\
+2	2013.542\\
+3	1124.201\\
+4	732.785\\
+5	652.794\\
+6	536.617\\
+7	507.854\\
+8	475.388\\
+9	410.62\\
+10	404.419\\
+11	364.82\\
+12	361.303\\
+13	324.056\\
+14	336.48\\
+15	309.602\\
+16	315.996\\
+17	299.425\\
+18	288.78\\
+19	260.388\\
+20	269.271\\
+22	252.876\\
+23	251.15\\
+24	248.641\\
+25	239.001\\
+26	254.116\\
+27	236.319\\
+28	243.585\\
+29	234.645\\
+30	230.4\\
+31	224.253\\
+32	223.554\\
+33	230.383\\
+34	227.697\\
+35	218.727\\
+36	213.125\\
+37	239.605\\
+38	206.568\\
+39	192.345\\
+40	211.748\\
+};
+\addlegendentry{Simulated annealing \textsuperscript{\ref{footnote.1}}}
+
+\end{axis}
+\end{tikzpicture}%

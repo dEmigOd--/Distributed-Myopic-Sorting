@@ -1,0 +1,107 @@
+\documentclass[tikz, border=0.5]{standalone}
+
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns, intersections}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% note, 
+%	0 - is an empty space; left uncolored
+%	1 - is an other agent; filled with black
+%	2 - is an edge; cross-hatched
+%	3 - is a do not care location
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	% model parameters\n
+	\pgfmathtruncatemacro{\memory}{3}
+	\pgfmathtruncatemacro{\visibility}{1}
+	\pgfmathsetmacro{\maxtablelength}{8}
+
+	% calculate the sizes of the neighborhood
+	\newcommand{\GetNeighborhoodSizes}[1]{%
+		\xdef\toleft{0}
+		\xdef\toright{0}
+		\xdef\toup{0}
+		\xdef\todown{0}
+
+		\pgfmathtruncatemacro{\tableSize}{2 * \visibility + 1}
+		\foreach \columnoffset/\rowoffset[count=\i] in #1 {%
+			\ifnum\columnoffset<\toleft%
+				\xdef\toleft{\columnoffset}%
+			\fi%
+			\ifnum\columnoffset>\toright%
+				\xdef\toright{\columnoffset}%
+			\fi%
+			\ifnum\rowoffset<\todown%
+				\xdef\todown{\rowoffset}%
+			\fi%
+			\ifnum\rowoffset>\toup%
+				\xdef\toup{\rowoffset}%
+			\fi%
+			\coordinate (anchor_\i) at (\columnoffset, \rowoffset);
+		}
+
+		\xdef\xbase{\toleft}
+		\xdef\ybase{\todown}
+		\pgfmathtruncatemacro{\pxsize}{\toright - \toleft + 1}
+		\xdef\xsize{\pxsize}
+		\pgfmathtruncatemacro{\pysize}{\toup - \todown + 1}
+		\xdef\ysize{\pysize}
+
+	}
+
+	\newcommand*{\ExtractCoordinate}[1]{\path[overlay] (#1); \pgfgetlastxy{\XCoord}{\YCoord}}%
+
+	% draw this neighborhood
+	\newcommand{\DrawNeighborhood}[1]{%
+		\begin{scope}[scale=\scalefactor]
+			\begin{scope}[shift={(-\xbase, -\ybase)}]
+				\draw[fill=black] (0.5, 0.5) circle (3pt);
+				\draw (0, 0) rectangle (1,1);
+
+				\foreach \value[count=\i] in #1 {%
+					\ExtractCoordinate{anchor_\i}
+					\begin{scope}[shift={(\XCoord, \YCoord)}]
+						\ifnum\value=0%
+							\draw (0, 0) rectangle (1, 1);
+						\fi%
+						\ifnum\value=1%
+							\draw[fill=black!70] (0, 0) rectangle (1, 1);
+						\fi%
+						\ifnum\value=2%
+							\begin{scope}[opacity=\opacityfactor, blend group=normal]
+								\draw[pattern=north west lines, draw = none] (0, 0) rectangle (1, 1);
+								\draw (0, 0) rectangle (1, 1);
+							\end{scope}
+						\fi%
+						\ifnum\value=3%
+							\begin{scope}[opacity=\opacityfactor]
+								\draw (0, 0) rectangle (1, 1);
+								\node at (0.5, 0.5) {\tiny $\mathrm{X}$};
+							\end{scope}
+						\fi%
+					\end{scope}
+				}
+			\end{scope}
+		\end{scope}
+	}
+
+	% drawing parameters
+	\pgfmathsetmacro{\scalefactor}{0.3}
+	\pgfmathsetmacro{\opacityfactor}{0.7}
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+	\pgfmathsetmacro{\tiklabelyoffset}{0.5}
+
+	\begin{tikzpicture}
+		\newcommand{\neighborsCoordinates}{0/-1, 0/1, -1/0, 1/0}
+		\newcommand{\neighbors}{}
+		\GetNeighborhoodSizes{\neighborsCoordinates}
+
+		\renewcommand{\neighbors}{0, 2, 2, 3}
+		\DrawNeighborhood{\neighbors}
+	\end{tikzpicture}
+\end{document}

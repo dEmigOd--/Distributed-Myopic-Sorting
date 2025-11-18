@@ -1,0 +1,87 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath, amssymb}
+\usepackage{subcaption}
+\usepackage{import}
+\usepackage{fmtcount}
+\usetikzlibrary{calc, patterns, intersections}
+
+\begin{document}
+	\begin{figure}[ht]
+		\centering
+		\begin{subfigure}[b]{0.24\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_1}
+			\caption{Position 1}
+			\label{subfig:fg_202_1}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.24\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_2}
+			\caption{Position 2}
+			\label{subfig:fg_202_2}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.24\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_3}
+			\caption{Position 3}
+			\label{subfig:fg_202_3}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.24\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_4}
+			\caption{Position 4}
+			\label{subfig:fg_202_4}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_202_1}) at position 1, (\subref{subfig:fg_202_2}) at position 2, (\subref{subfig:fg_202_3}) at position 3, (\subref{subfig:fg_202_4}) at position 4.}
+		\label{fig:fg_202_1}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.38\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_5}
+			\caption{Position 5}
+			\label{subfig:fg_202_5}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.29\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_6}
+			\caption{Position 6}
+			\label{subfig:fg_202_6}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.29\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_8}
+			\caption{Position 8}
+			\label{subfig:fg_202_8}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_202_5}) at position 5, (\subref{subfig:fg_202_6}) at position 6, (\subref{subfig:fg_202_8}) at position 8.}
+		\label{fig:fg_202_2}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_7}
+			\caption{Position 7}
+			\label{subfig:fg_202_7}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\subimport{Ver.202/}{Table.Ver_202.Position_9}
+			\caption{Position 9}
+			\label{subfig:fg_202_9}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_202_7}) at position 7, (\subref{subfig:fg_202_9}) at position 9.}
+		\label{fig:fg_202_3}
+	\end{figure}
+\end{document}

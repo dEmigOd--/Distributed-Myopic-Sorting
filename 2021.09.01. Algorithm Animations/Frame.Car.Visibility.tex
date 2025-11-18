@@ -1,0 +1,106 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage{fmtcount}
+\usetikzlibrary{calc, patterns, intersections}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{import}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+%\usepackage[showframe]{geometry}
+
+\newcommand{\lineinput}[1]{\begingroup\endlinechar=-1 \input{#1}\endgroup}
+
+\tikzset{
+	hatch distance/.store in=\hatchdistance,
+	hatch distance=10pt,
+	hatch thickness/.store in=\hatchthickness,
+	hatch thickness=2pt
+}
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+{\pgfqpoint{-\hatchdistance}{-\hatchdistance}}%0pt
+{\pgfqpoint{2\hatchdistance}{2\hatchdistance}}
+{\pgfpoint{\hatchdistance}{\hatchdistance}}%{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+{
+	\pgfsetcolor{\tikz@pattern@color}
+	\pgfsetlinewidth{\hatchthickness}
+	\pgfpathmoveto{\pgfqpoint{\hatchdistance}{-\hatchdistance}}%\pgfqpoint{0pt}{0pt}}
+	\pgfpathlineto{\pgfqpoint{-\hatchdistance}{\hatchdistance}}%\pgfqpoint{\hatchdistance}{\hatchdistance}}
+	\pgfusepath{stroke}
+}
+\makeatother
+
+\graphicspath{{../2020.11.10. Sorting Algorithm 310. Take 2/clipart/}{./images/}}
+
+\newcommand\righttrees{}
+\newcommand\lefttrees{}
+\newcommand\GreenCars{}
+\newcommand\RedCars{}
+
+\begin{document}
+	%\setlength{\fboxsep}{0pt}%
+	%\noindent%
+	%\framebox{%
+	\resizebox{\linewidth}{!}{%
+	\begin{tikzpicture}
+		\renewcommand\lefttrees{1.60,8.20,9.20,10.20,13.20}%
+		\renewcommand\righttrees{5.60,9.20,10.20}%
+		\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.00/3.00}%
+		\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.00/3.00,3.00/3.00,5.00/2.00}%
+		\pgfmathsetmacro{\distance}{8.2}%
+		
+		\begin{scope}[opacity=0.5]%
+			\node%[inner sep=0 cm] 
+			at (0, 0) {\includestandalone{./Frame.Moving.Cars}};%
+		\end{scope}%
+		
+		\begin{scope}%
+			\pgfmathsetmacro{\basicunit}{1}%
+			\pgfmathsetmacro{\corneroffset}{0.1}%
+			\pgfmathsetmacro{\xslide}{2 * \basicunit - 2 * \corneroffset}%
+			\pgfmathsetmacro{\yslide}{3 * \basicunit - 2 * \corneroffset}%
+			\path[clip] (2-2*\basicunit, 2-7 * \basicunit) --%
+				++ (0, -\basicunit + \corneroffset) --%
+				++ (0, 0) arc (180:270:\corneroffset) --%
+				++ (\xslide, 0) --%
+				++ (0,0) arc (90:0:\corneroffset) --%
+				++ (0, -\yslide) --%
+				++ (0, 0) arc (180:270:\corneroffset) --%
+				++ (\xslide, 0) --%
+				++ (0, 0) arc (270:360:\corneroffset) --%
+				++ (0, \yslide) --%
+				++ (0,0) arc (180:90:\corneroffset) --%
+				++ (\xslide, 0) --%
+				++ (0, 0) arc (270:360:\corneroffset) --%
+				++ (0, \yslide) --%
+				++ (0,0) arc (0:90:\corneroffset) --%
+				++ (-\xslide, 0) --%
+				++ (0, 0) arc (270:180:\corneroffset) --%
+				++ (0, \yslide) --%
+				++ (0,0) arc (0:90:\corneroffset) --%
+				++ (-\xslide, 0) --%
+				++ (0, 0) arc (90:180:\corneroffset) --%
+				++ (0, -\yslide) --%
+				++ (0,0) arc (0:-90:\corneroffset) --%
+				++ (-\xslide, 0) --%
+				++ (0, 0) arc (90:180:\corneroffset) --%
+				cycle%
+				;%
+			\node%[inner sep=0 cm] 
+			at (0, 0) {\includestandalone{./Frame.Moving.Cars}};%
+			\draw[pattern=flexible hatch, hatch distance=10pt, hatch thickness=1pt, draw=none]%, inner sep=0 cm]%
+				(4*\basicunit,-6*\basicunit) rectangle +(2 * \basicunit, 3 * \basicunit);%
+		\end{scope}%
+	\end{tikzpicture}%
+	}%
+	%}%
+\end{document}

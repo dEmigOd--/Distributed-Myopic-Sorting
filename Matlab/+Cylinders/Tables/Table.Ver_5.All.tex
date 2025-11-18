@@ -1,0 +1,70 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns, intersections}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\input{Table.Ver_5.Position_1}
+		\caption{State machine at position 1}
+	\end{figure}
+	\begin{figure}
+		\begin{subfigure}[b]{0.30\textwidth}
+			\centering
+			\input{Table.Ver_5.Position_2}
+			\caption{Position 2}
+			\label{fg5_2}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.30\textwidth}
+			\centering
+			\input{Table.Ver_5.Position_3}
+			\caption{Position 3}
+			\label{fg5_3}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.30\textwidth}
+			\centering
+			\input{Table.Ver_5.Position_4}
+			\caption{Position 4}
+			\label{fg5_4}
+		\end{subfigure}
+		\caption{State machines (\subref{fg5_2}) at position 2, (\subref{fg5_3}) at position 3, (\subref{fg5_4}) at position 4}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\input{Table.Ver_5.Position_5}
+		\caption{State machine at position 5}
+	\end{figure}
+	\begin{figure}
+		\begin{subfigure}[b]{0.30\textwidth}
+			\centering
+			\input{Table.Ver_5.Position_6}
+			\caption{Position 6}
+			\label{fg5_6}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.30\textwidth}
+			\centering
+			\input{Table.Ver_5.Position_7}
+			\caption{Position 7}
+			\label{fg5_7}
+		\end{subfigure}
+		\begin{subfigure}[b]{0.30\textwidth}
+			\centering
+			\input{Table.Ver_5.Position_8}
+			\caption{Position 8}
+			\label{fg5_8}
+		\end{subfigure}
+		\caption{State machines (\subref{fg5_6}) at position 6, (\subref{fg5_7}) at position 7, (\subref{fg5_8}) at position 8}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\input{Table.Ver_5.Position_9}
+		\caption{State machine at position 9}
+	\end{figure}
+
+\end{document}

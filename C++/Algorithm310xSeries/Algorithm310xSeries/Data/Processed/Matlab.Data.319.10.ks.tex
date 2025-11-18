@@ -1,0 +1,188 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor5}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor6}{rgb}{0.30100,0.74500,0.93300}%
+\definecolor{mycolor7}{rgb}{0.63500,0.07800,0.18400}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.527in,
+at={(0.758in,0.519in)},
+scale only axis,
+xmin=10,
+xmax=55,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\text{N}_\text{0}$},
+ymin=2000,
+ymax=18000,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time (seconds)},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+% title={$\text{Average ticks until solution as a function of N}_\text{0}\text{. On n }\times\text{ 2 grid}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, mark=*]
+  table[row sep=crcr]{%
+10	5947.366\\
+15	4516.422\\
+20	3803.412\\
+25	3445.81\\
+30	3148.134\\
+35	2969.012\\
+40	2783.404\\
+45	2719.266\\
+50	2616.992\\
+55	2576.512\\
+};
+\addlegendentry{n = 400}
+
+\addplot [color=mycolor2, mark=square]
+  table[row sep=crcr]{%
+10	7055.18\\
+15	5359.54\\
+20	4429.638\\
+25	3978.664\\
+30	3666.906\\
+35	3367.45\\
+40	3271.546\\
+45	3109.456\\
+50	3047.914\\
+55	2911.914\\
+};
+\addlegendentry{n = 450}
+
+\addplot [color=mycolor3, mark=oplus]
+  table[row sep=crcr]{%
+10	8206.872\\
+15	6197.19\\
+20	5128.884\\
+25	4543.77\\
+30	4163.164\\
+35	3847.9\\
+40	3749.974\\
+45	3467.62\\
+50	3384.558\\
+55	3363.286\\
+};
+\addlegendentry{n = 500}
+
+\addplot [color=mycolor4, mark=diamond*]
+  table[row sep=crcr]{%
+10	9468.932\\
+15	6939.82\\
+20	5695.582\\
+25	5147.484\\
+30	4700.646\\
+35	4347.176\\
+40	4217.756\\
+45	3900.174\\
+50	3812.644\\
+55	3680.862\\
+};
+\addlegendentry{n = 550}
+
+\addplot [color=mycolor5, mark=halfsquare left*]
+  table[row sep=crcr]{%
+10	10701.408\\
+15	7938.886\\
+20	6618.928\\
+25	5649.362\\
+30	5274.704\\
+35	4934.582\\
+40	4607.574\\
+45	4403.366\\
+50	4334.892\\
+55	4093.318\\
+};
+\addlegendentry{n = 600}
+
+\addplot [color=mycolor6, mark=otimes]
+  table[row sep=crcr]{%
+10	12028.146\\
+15	8862.55\\
+20	7288.81\\
+25	6349.22\\
+30	5760.172\\
+35	5424.338\\
+40	5143.666\\
+45	4862.174\\
+50	4724.252\\
+55	4556.89\\
+};
+\addlegendentry{n = 650}
+
+\addplot [color=mycolor7, mark=asterisk]
+  table[row sep=crcr]{%
+10	13260.728\\
+15	9697.394\\
+20	7960.4\\
+25	7028.118\\
+30	6341.872\\
+35	6074.918\\
+40	5515.88\\
+45	5315.46\\
+50	5089.872\\
+55	4935.378\\
+};
+\addlegendentry{n = 700}
+
+\addplot [color=mycolor1, mark=star]
+  table[row sep=crcr]{%
+10	14826.892\\
+15	10590.812\\
+20	8775.438\\
+25	7643.94\\
+30	6987.676\\
+35	6514.152\\
+40	5987.674\\
+45	5896.914\\
+50	5630.678\\
+55	5386.07\\
+};
+\addlegendentry{n = 750}
+
+\addplot [color=mycolor2, mark=triangle*]
+  table[row sep=crcr]{%
+10	16021.75\\
+15	11649.186\\
+20	9493.914\\
+25	8372.328\\
+30	7491.204\\
+35	6898.226\\
+40	6664.284\\
+45	6225.87\\
+50	6027.62\\
+55	5854.388\\
+};
+\addlegendentry{n = 800}
+
+\addplot [color=mycolor3, mark=halfdiamond]
+  table[row sep=crcr]{%
+10	17974.572\\
+15	12527.34\\
+20	10460.45\\
+25	8957.336\\
+30	8079.992\\
+35	7611.266\\
+40	7124.406\\
+45	6692.472\\
+50	6516.052\\
+55	6289.65\\
+};
+\addlegendentry{n = 850}
+
+\end{axis}
+\end{tikzpicture}%

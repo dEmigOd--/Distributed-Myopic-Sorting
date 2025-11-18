@@ -1,0 +1,457 @@
+SyncTeX Version:1
+Input:1:C:/Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\output.tex
+Input:2:C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls
+Input:3:C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo
+Input:4:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\silence\silence.sty
+Input:5:C:/Users\dmitry.ra\Desktop\Studies\Articles\PhD\Latex Technical\userdefinitions.v003.sty
+Input:6:C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty
+Input:7:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\datetime2\datetime2.sty
+Input:8:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\tracklang\tracklang.sty
+Input:9:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\tracklang\tracklang.tex
+Input:10:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\etoolbox\etoolbox.sty
+Input:11:C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty
+Input:12:C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex
+Input:13:C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex
+Input:14:C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex
+Input:15:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\datetime2\datetime2-calc.sty
+Input:16:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfkeys.sty
+Input:17:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.code.tex
+Input:18:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.tex
+Input:19:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfcalendar.sty
+Input:20:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgfrcs.sty
+Input:21:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-common.tex
+Input:22:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-common-lists.tex
+Input:23:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfutil-latex.def
+Input:24:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\ms\everyshi.sty
+Input:25:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfrcs.code.tex
+Input:26:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfcalendar.code.tex
+Input:27:C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty
+Input:28:C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty
+Input:29:C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+Input:30:C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty
+Input:31:C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
+Input:32:C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty
+Input:33:C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty
+Input:34:C:\Program Files\MiKTeX 2.9\tex\latex\amscls\amsthm.sty
+Input:35:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
+Input:36:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xparse\xparse.sty
+Input:37:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3.sty
+Input:38:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3-code.tex
+Input:39:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\l3pdfmode.def
+Input:40:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\stackengine\stackengine.sty
+Input:41:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\listofitems\listofitems.sty
+Input:42:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\listofitems\listofitems.tex
+Input:43:C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty
+Input:44:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mathtools.sty
+Input:45:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mhsetup.sty
+Input:46:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\bbm\bbm.sty
+Input:47:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\natbib\natbib.sty
+Input:48:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\subfig\subfig.sty
+Input:49:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
+Input:50:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
+Input:51:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\placeins\placeins.sty
+Input:52:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+Input:53:C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg
+Input:54:C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def
+Input:55:C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\xr-hyper.sty
+Input:56:C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty
+Input:57:C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty
+Input:58:C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty
+Input:59:C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty
+Input:60:C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty
+Input:61:C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty
+Input:62:C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def
+Input:63:C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg
+Input:64:C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\puenc.def
+Input:65:C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\psdextra.def
+Input:66:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\url\url.sty
+Input:67:C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def
+Input:68:C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty
+Input:69:C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\bookmark.sty
+Input:70:C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\bkm-pdftex.def
+Input:71:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\nomencl\nomencl.sty
+Input:72:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\soul\soul.sty
+Input:73:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithm2e\algorithm2e.sty
+Input:74:C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty
+Input:75:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\ifoddpage\ifoddpage.sty
+Input:76:C:\Program Files\MiKTeX 2.9\tex\latex\tools\xspace.sty
+Input:77:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\relsize\relsize.sty
+Input:78:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\cleveref\cleveref.sty
+Input:79:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\frontendlayer\tikz.sty
+Input:80:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgf.sty
+Input:81:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\basiclayer\pgfcore.sty
+Input:82:C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty
+Input:83:C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty
+Input:84:C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty
+Input:85:C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg
+Input:86:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\systemlayer\pgfsys.sty
+Input:87:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex
+Input:88:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgfkeys.code.tex
+Input:89:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
+Input:90:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def
+Input:91:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+Input:92:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.tex
+Input:93:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.tex
+Input:94:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex
+Input:95:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex
+Input:96:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathcalc.code.tex
+Input:97:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathutil.code.tex
+Input:98:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.code.tex
+Input:99:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex
+Input:100:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.tex
+Input:101:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometric.code.tex
+Input:102:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.random.code.tex
+Input:103:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.code.tex
+Input:104:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.tex
+Input:105:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.tex
+Input:106:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.tex
+Input:107:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfunctions.integerarithmetics.code.tex
+Input:108:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.code.tex
+Input:109:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+Input:110:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.code.tex
+Input:111:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.tex
+Input:112:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+Input:113:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.code.tex
+Input:114:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretransformations.code.tex
+Input:115:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex
+Input:116:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.tex
+Input:117:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.code.tex
+Input:118:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+Input:119:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex
+Input:120:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.tex
+Input:121:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.tex
+Input:122:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+Input:123:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.code.tex
+Input:124:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.tex
+Input:125:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex
+Input:126:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex
+Input:127:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.sty
+Input:128:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.sty
+Input:129:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\utilities\pgffor.sty
+Input:130:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\math\pgfmath.sty
+Input:131:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex
+Input:132:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.code.tex
+Input:133:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmath.code.tex
+Input:134:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex
+Input:135:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.code.tex
+Input:136:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex
+Input:137:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths.code.tex
+Input:138:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\pgfplots\pgfplots.sty
+Input:139:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.revision.tex
+Input:140:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.code.tex
+Input:141:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotscore.code.tex
+Input:142:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgfplotssysgeneric.code.tex
+Input:143:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgfplotslibrary.code.tex
+Input:144:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex
+Input:145:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryfpu.code.tex
+Input:146:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgflibraryfpu.code.tex
+Input:147:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgfmathfloat.code.tex
+Input:148:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_leq.code.tex
+Input:149:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsutil.code.tex
+Input:150:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructure.code.tex
+Input:151:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsliststructureext.code.tex
+Input:152:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsarray.code.tex
+Input:153:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsmatrix.code.tex
+Input:154:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\numtable\pgfplotstableshared.code.tex
+Input:155:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\liststructure\pgfplotsdeque.code.tex
+Input:156:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsbinary.code.tex
+Input:157:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsbinary.data.code.tex
+Input:158:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotsutil.verb.code.tex
+Input:159:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\pgflibrarypgfplots.surfshading.code.tex
+Input:160:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def
+Input:161:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotscolormap.code.tex
+Input:162:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\util\pgfplotscolor.code.tex
+Input:163:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsstackedplots.code.tex
+Input:164:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsplothandlers.code.tex
+Input:165:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsmeshplothandler.code.tex
+Input:166:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsmeshplotimage.code.tex
+Input:167:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.scaling.code.tex
+Input:168:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotscoordprocessing.code.tex
+Input:169:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.errorbars.code.tex
+Input:170:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.markers.code.tex
+Input:171:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplotsticks.code.tex
+Input:172:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfplots.paths.code.tex
+Input:173:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.code.tex
+Input:174:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmoduledecorations.code.tex
+Input:175:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathmorphing.code.tex
+Input:176:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathmorphing.code.tex
+Input:177:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarydecorations.pathreplacing.code.tex
+Input:178:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\decorations\pgflibrarydecorations.pathreplacing.code.tex
+Input:179:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryplotmarks.code.tex
+Input:180:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryplotmarks.code.tex
+Input:181:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarycalc.code.tex
+Input:182:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryangles.code.tex
+Input:183:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarythrough.code.tex
+Input:184:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryintersections.code.tex
+Input:185:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryintersections.code.tex
+Input:186:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypatterns.code.tex
+Input:187:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrarypatterns.code.tex
+Input:188:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\tikzlibrarypgfplots.fillbetween.code.tex
+Input:189:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfcontrib\tikzlibraryfillbetween.code.tex
+Input:190:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfcontrib\tikzlibrarydecorations.softclip.code.tex
+Input:191:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\pgfcontrib\pgflibraryfillbetween.code.tex
+Input:192:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\oldpgfcompatib\pgfplotsoldpgfsupp_pgflibraryintersections.code.tex
+Input:193:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\tikzlibrarypgfplots.decorations.softclip.code.tex
+Input:194:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryarrows.meta.code.tex
+Input:195:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryautomata.code.tex
+Input:196:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.multipart.code.tex
+Input:197:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes.multipart.code.tex
+Input:198:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarypositioning.code.tex
+Input:199:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgfplots\libs\tikzlibrarypgfplots.groupplots.code.tex
+Input:200:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\tikz-cd\tikzlibrarycd.code.tex
+Input:201:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarymatrix.code.tex
+Input:202:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryquotes.code.tex
+Input:203:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryshapes.geometric.code.tex
+Input:204:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes.geometric.code.tex
+Input:205:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibraryarrows.code.tex
+Input:206:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.tex
+Input:207:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\tcolorbox\tcolorbox.sty
+Input:208:C:\Program Files\MiKTeX 2.9\tex\latex\tools\verbatim.sty
+Input:209:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\environ\environ.sty
+Input:210:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\trimspaces\trimspaces.sty
+Input:211:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\standalone\standalone.sty
+Input:212:C:\Program Files\MiKTeX 2.9\tex\latex\tools\shellesc.sty
+Input:213:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\currfile\currfile.sty
+Input:214:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\filehook\filehook.sty
+Input:215:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\gincltex\gincltex.sty
+Input:216:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\svn-prov\svn-prov.sty
+Input:217:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\adjustbox\adjustbox.sty
+Input:218:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\adjustbox\adjcalc.sty
+Input:219:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\adjustbox\trimclip.sty
+Input:220:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\collectbox\collectbox.sty
+Input:221:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\adjustbox\tc-pdftex.def
+Input:222:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\varwidth\varwidth.sty
+Input:223:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\filemod\filemod-expmin.sty
+Input:224:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\units\nicefrac.sty
+Input:225:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\csquotes\csquotes.sty
+Input:226:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\csquotes\csquotes.def
+Input:227:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\csquotes\csquotes.cfg
+Input:228:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\wrapfig\wrapfig.sty
+Input:229:C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty
+Input:230:C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty
+Input:231:C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg
+Input:232:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\latex\import\import.sty
+Input:233:C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\build\output.aux
+Input:234:C:\Users\dmitry.ra\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+Input:235:C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty
+Input:236:C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty
+Input:237:C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty
+Input:238:C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty
+Output:pdf
+Magnification:1000
+Unit:1
+X Offset:0
+Y Offset:0
+Content:
+!23321
+{1
+[1,93:4736286,44687290:29483324,39951004,0
+h1,93:4736286,4736286:0,0,0
+h1,93:4736286,4736286:0,0,0
+[1,93:4736286,4736286:0,0,0
+(1,93:4736286,3761349:0,0,0
+k1,93:4736286,3761349:-1236760
+)
+]
+[1,93:4736286,44687290:29483324,39951004,0
+[1,93:6038827,44687290:28180783,40860160,0
+[1,93:6038827,4613562:28180783,786432,0
+(1,93:6038827,4613562:28180783,0,0
+h1,93:6038827,4613562:28180783,0,0
+)
+]
+[1,93:6038827,42721210:28180783,36469248,0
+(1,93:6038827,14096715:28180783,7844753,0
+h1,92:6038827,14096715:983040,0,0
+(1,92:7021867,14096715:5980074,7844753,0
+g1,92:8899653,14096715
+(1,92:8899653,8489571:0,0,0
+(1,92:8899653,8489571:0,0,0
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,11:8899653,8489571
+g1,12:8899653,8489571
+g1,13:8899653,8489571
+g1,14:8899653,8489571
+g1,17:8899653,8489571
+g1,18:8899653,8489571
+g1,19:8899653,8489571
+g1,21:8899653,8489571
+g1,24:8899653,8489571
+g1,25:8899653,8489571
+g1,34:8899653,8489571
+g1,34:8899653,8489571
+g1,34:8899653,8489571
+g1,34:8899653,8489571
+g1,42:8899653,8489571
+g1,42:8899653,8489571
+g1,42:8899653,8489571
+g1,42:8899653,8489571
+g1,50:8899653,8489571
+g1,50:8899653,8489571
+g1,54:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+(1,59:8899653,8489571:0,0,0
+(1,59:8899653,8489571:0,0,0
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+(1,59:8899653,8489571:0,0,0
+g1,59:9668152,8489571
+(1,59:9668152,7768403:0,0,0
+(1,59:9668152,7768403:0,0,0
+(1,59:9668152,7768403:327681,422343,0
+x1,59:9995833,7768403
+)
+)
+)
+g1,59:9668152,8489571
+)
+)
+)
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+(1,59:8899653,8489571:0,0,0
+(1,59:8899653,8489571:0,0,0
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+(1,59:8899653,8489571:0,0,0
+g1,59:11532831,8489571
+(1,59:11532831,9633081:0,0,0
+(1,59:11532831,9633081:0,0,0
+(1,59:11532831,9633081:327681,422343,0
+x1,59:11860512,9633081
+)
+)
+)
+g1,59:11532831,8489571
+)
+)
+)
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+(1,59:8899653,8489571:0,0,0
+(1,59:8899653,8489571:0,0,0
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+g1,59:8899653,8489571
+(1,59:8899653,8489571:0,0,0
+g1,59:11532831,8489571
+(1,59:11532831,11497760:0,0,0
+(1,59:11532831,11497760:0,0,0
+(1,59:11532831,11497760:327681,422343,0
+x1,59:11860512,11497760
+)
+)
+)
+g1,59:11532831,8489571
+)
+)
+)
+g1,59:8899653,8489571
+g1,61:8899653,8489571
+g1,66:8899653,8489571
+g1,66:8899653,8489571
+g1,66:8899653,8489571
+(1,66:8899653,8489571:0,0,0
+(1,66:8899653,8489571:0,0,0
+g1,66:8899653,8489571
+g1,66:8899653,8489571
+g1,66:8899653,8489571
+g1,66:8899653,8489571
+g1,66:8899653,8489571
+(1,66:8899653,8489571:0,0,0
+g1,66:11423604,8489571
+(1,66:11423604,7768403:0,0,0
+(1,66:11423604,7768403:0,0,0
+(1,66:11423604,7768403:546134,422343,0
+x1,66:11969738,7768403
+)
+)
+)
+g1,66:11423604,8489571
+)
+)
+)
+g1,66:8899653,8489571
+g1,68:8899653,8489571
+g1,73:8899653,8489571
+g1,73:8899653,8489571
+g1,73:8899653,8489571
+(1,73:8899653,8489571:0,0,0
+(1,73:8899653,8489571:0,0,0
+g1,73:8899653,8489571
+g1,73:8899653,8489571
+g1,73:8899653,8489571
+g1,73:8899653,8489571
+g1,73:8899653,8489571
+(1,73:8899653,8489571:0,0,0
+g1,73:9831992,8489571
+(1,73:9831992,9421910:0,0,0
+(1,73:9831992,9421910:0,0,0
+(1,73:9831992,9421910:0,0,0
+)
+)
+)
+g1,73:9831992,8489571
+)
+)
+)
+g1,73:8899653,8489571
+g1,76:8899653,8489571
+g1,77:8899653,8489571
+g1,79:8899653,8489571
+g1,87:8899653,8489571
+g1,87:8899653,8489571
+g1,87:8899653,8489571
+g1,87:8899653,8489571
+g1,87:8899653,8489571
+g1,92:8899653,8489571
+)
+g1,92:8899653,8489571
+)
+)
+k1,93:34219609,14096715:21217668
+g1,93:34219609,14096715
+)
+]
+(1,93:6038827,44687290:28180783,422343,0
+(1,93:6038827,44687290:28180783,422343,0
+k1,93:19965378,44687290:13926551
+x1,93:20293059,44687290
+k1,93:34219610,44687290:13926551
+)
+)
+]
+]
+]
+!4116
+}1
+Input:239:C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\build\output.aux
+!166
+Postamble:
+Count:202
+!26
+Post scriptum:

@@ -1,0 +1,9 @@
+\documentclass[tikz, border=0.5]{standalone}\n\n\usepackage{tikz}\n\usepackage{amsmath}\n\usepackage{amssymb}\n\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount\n\usetikzlibrary{calc, patterns, intersections}\n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n% note, \n%	0 - is an empty space; left uncolored\n%	1 - is an other agent; filled with black\n%	2 - is an edge; cross-hatched\n%	3 - is a do not care location\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n\begin{document}\n\n\t% model parameters\n\n\t\pgfmathtruncatemacro{\memory}{3}\n\t\pgfmathtruncatemacro{\visibility}{1}\n\t\pgfmathsetmacro{\maxtablelength}{8}\n\n\t% drawing parameters\n\t\pgfmathsetmacro{\scalefactor}{0.4}\n\t\pgfmathsetmacro{\tiklabelxoffset}{0.5}\n\t\pgfmathsetmacro{\tiklabelyoffset}{0.5}\n\n\t% put values into the table\n\t\newcommand{\SetTableValues}[4]{%%\n\n\t\t\xdef\pickedDirection{\text{,}}\n\t\t\\ifnum#4=0%\n\t\t\t\xdef\pickedDirection{\pickedDirection\text{N}}%\n\t\t\fi%\n\t\t\\ifnum#4=1%\n\t\t\t\xdef\pickedDirection{\pickedDirection\text{E}}%\n\t\t\fi%\n\t\t\\ifnum#4=2%\n\t\t\t\xdef\pickedDirection{\pickedDirection\text{S}}%\n\t\t\fi%\n\t\t\\ifnum#4=3%\n\t\t\t\xdef\pickedDirection{\pickedDirection\text{W}}%\n\t\t\fi%\n\t\t\\ifnum#4=4%\n\t\t\t\xdef\pickedDirection{\pickedDirection\varnothing}%\n\t\t\fi%\n\t\t\begin{scope}[shift={(0, -#2)}]\n\t\t\t\node at (\tiklabelxoffset, \tiklabelyoffset) {$\padzeroes[\memory]{\binarynum{#3}}\pickedDirection$};\n\t\t\end{scope}\n\t}\n\n\t\begin{tikzpicture}\n\n\t\t\SetTableValues{1}{1}{1}{4}
+\n\t\t\SetTableValues{1}{2}{6}{3}
+\n\t\t\SetTableValues{1}{3}{3}{4}
+\n\t\t\SetTableValues{1}{4}{0}{4}
+\n\t\t\SetTableValues{1}{5}{5}{4}
+\n\t\t\SetTableValues{1}{6}{2}{4}
+\n\t\t\SetTableValues{1}{7}{7}{4}
+\n\t\t\SetTableValues{1}{8}{4}{4}
+\n\n\t\end{tikzpicture}\n\end{document}\n

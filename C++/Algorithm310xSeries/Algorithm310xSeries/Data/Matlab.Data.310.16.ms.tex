@@ -1,0 +1,136 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor3}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor4}{rgb}{0.63500,0.07800,0.18400}%
+\definecolor{mycolor5}{rgb}{0.85000,0.32500,0.09800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=4,
+xmax=128,
+xlabel style={font=\color{white!15!black}},
+xlabel={m (Num columns)},
+ymin=0,
+ymax=70000,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={$\text{Average ticks until solution as a function of m. On n }\times\text{ m grid. (k = 40)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark=asterisk, mark options={solid, mycolor1}]
+  table[row sep=crcr]{%
+4	17.34\\
+8	35.288\\
+16	266.658\\
+32	1245.45\\
+64	5468.616\\
+128	24208.154\\
+};
+\addlegendentry{$\text{n =  6; T}_{\text{est}}\text{ = 1.615m}^\text{2}\text{ +  -18.5m + 106.2}$}
+
+\addplot [color=mycolor1, dashed, forget plot]
+  table[row sep=crcr]{%
+4	57.8517251968451\\
+8	61.2291579015294\\
+16	223.044033334392\\
+32	1166.9138242941\\
+64	5535.61356658942\\
+128	24196.8536926837\\
+};
+\addplot [color=mycolor2, draw=none, mark=asterisk, mark options={solid, mycolor2}]
+  table[row sep=crcr]{%
+4	22.83\\
+8	57.968\\
+16	467.464\\
+32	1735.01\\
+64	7891.244\\
+128	35731.548\\
+};
+\addlegendentry{$\text{n =  8; T}_{\text{est}}\text{ = 2.431m}^\text{2}\text{ +  -33.9m + 228.5}$}
+
+\addplot [color=mycolor2, dashed, forget plot]
+  table[row sep=crcr]{%
+4	131.649281102374\\
+8	112.56492236687\\
+16	307.749622882274\\
+32	1631.53269585873\\
+64	8012.75352959422\\
+128	35709.8139481955\\
+};
+\addplot [color=mycolor3, draw=none, mark=asterisk, mark options={solid, mycolor3}]
+  table[row sep=crcr]{%
+4	29.082\\
+8	95.948\\
+16	646.562\\
+32	2217.158\\
+64	9934.19\\
+128	46430.222\\
+};
+\addlegendentry{$\text{n = 10; T}_{\text{est}}\text{ = 3.227m}^\text{2}\text{ +  -53.8m + 407.1}$}
+
+\addplot [color=mycolor3, dashed, forget plot]
+  table[row sep=crcr]{%
+4	243.354407349071\\
+8	182.912547320287\\
+16	371.817825129115\\
+32	1988.78437221235\\
+64	10179.3414322411\\
+128	46386.951415748\\
+};
+\addplot [color=mycolor4, draw=none, mark=asterisk, mark options={solid, mycolor4}]
+  table[row sep=crcr]{%
+4	34.572\\
+8	159.332\\
+16	817.91\\
+32	2733.812\\
+64	11913.312\\
+128	57442.236\\
+};
+\addlegendentry{$\text{n = 12; T}_{\text{est}}\text{ = 4.070m}^\text{2}\text{ +  -77.7m + 632.7}$}
+
+\addplot [color=mycolor4, dashed, forget plot]
+  table[row sep=crcr]{%
+4	386.864495800514\\
+8	271.283252491315\\
+16	430.868836043732\\
+32	2313.03228383182\\
+64	12329.328302141\\
+128	57369.7968296916\\
+};
+\addplot [color=mycolor5, draw=none, mark=asterisk, mark options={solid, mycolor5}]
+  table[row sep=crcr]{%
+4	49.46\\
+8	239.476\\
+16	997.358\\
+32	3315.862\\
+64	13684.53\\
+128	68284.158\\
+};
+\addlegendentry{$\text{n = 14; T}_{\text{est}}\text{ = 4.930m}^\text{2}\text{ + -105.7m + 921.3}$}
+
+\addplot [color=mycolor5, dashed, forget plot]
+  table[row sep=crcr]{%
+4	577.48640104984\\
+8	391.417695546505\\
+16	492.572414880194\\
+32	2588.05037490901\\
+64	14351.6803804124\\
+128	68169.6367332021\\
+};
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,145 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{amsmath, amssymb}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns}
+\usepackage{import}
+\usepackage{standalone}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% note, 
+%	0 - is an empty space; left uncolored
+%	1 - is an other agent; filled with black
+%	2 - is an edge; cross-hatched
+%	3 - is a do not care location
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	%% print a single node values at specific location
+	\newcommand{\SetNodeValue}[4]{%
+		\begin{scope}[shift={(#1, #2)}]
+			\foreach \pickedDirection[count=\i] in {\uparrow, \rightarrow, \downarrow, \leftarrow, \varnothing}{%
+				\ifnum#4=\i
+					\node[above] at (0, 0) {$\padzeroes[\memwidth]{\binarynum{#3}}$};
+					\node[below] at (0, {\adjustdirectionlabel * mod(\i, 2)}) {$\pickedDirection$};
+				\fi%
+			}%
+		\end{scope}
+	}%
+
+	\begin{tikzpicture}
+		% table parameters
+		\pgfmathsetmacro{\scalevalue}{1.0}%
+		\pgfmathsetmacro{\partialopacity}{0.4}%
+		\pgfmathsetmacro{\scaleneighborhoods}{0.5}%
+		\pgfmathsetmacro{\adjustdirectionlabel}{0.1}%
+		\pgfmathsetmacro{\headeronescale}{0.50}%
+		\pgfmathsetmacro{\headertwoscale}{0.37}%
+		\pgfmathtruncatemacro{\numstates}{13}%
+		\pgfmathtruncatemacro{\memwidth}{5}%
+
+		\begin{scope}[scale=\scalevalue]
+			\begin{scope}[opacity = \partialopacity, transparency group]
+				\draw (-1, 0) grid ++(\numstates + 1, -12);
+				\draw (0, 0) grid ++(\numstates, 1);
+				\draw (0, 0)   -- ++(-1, 1);
+			\end{scope}
+
+			\begin{scope}[shift={(0.5, 0.5)}]
+				\foreach \valid/\where[count=\i] in {1/0, 0/1, 0/1, 0/1, 0/1, 0/1, 0/1, 0/1, 1/1, 0/2, 0/2, 0/2, 1/2, 0/3, 0/3, 0/3, 1/3, 0/4, 1/4, 0/5, 1/5, 0/6, 1/6, 0/7, 1/7, 1/8, 1/9, 1/10, 1/11, 1/12, 0/13, 0/13} {%
+					\ifnum\valid=1
+						\pgfmathtruncatemacro{\memory}{\i-1}
+						\node at (\where, 0) { $\padzeroes[\memwidth]{\binarynum{\memory}}$};
+					\fi%
+				}%
+
+				\foreach \reads/\base[count=\state] in {1/0, 1/1, 1/2, 1/3, 1/4, 1/5, 1/6, 1/7, 4/8}{%
+					\foreach \read in {1, ..., \reads}{%
+						\node at (-1, -\base-\read) {\scalebox{\scaleneighborhoods}{\subimport{./}{State_\state.Readings_\read}}};
+					}%
+				}%
+
+				\begin{scope}[shift={(-1, 0)}, rotate=-45, transform shape, font={\large}]
+					\node[scale=\headeronescale, above] at (0, 0) {state};
+					\node[scale=\headertwoscale, below] at (0, 0) {neighborhood};
+				\end{scope}
+
+				\SetNodeValue{0}{-1}{0}{4}
+				\SetNodeValue{7}{-1}{24}{4}
+				\SetNodeValue{9}{-1}{26}{4}
+				\SetNodeValue{11}{-1}{29}{4}
+				\SetNodeValue{0}{-2}{8}{1}
+				\SetNodeValue{7}{-2}{25}{1}
+				\SetNodeValue{9}{-2}{27}{1}
+				\SetNodeValue{12}{-2}{29}{1}
+				\SetNodeValue{0}{-3}{0}{3}
+				\SetNodeValue{1}{-3}{16}{2}
+				\SetNodeValue{2}{-3}{20}{2}
+				\SetNodeValue{8}{-3}{25}{2}
+				\SetNodeValue{10}{-3}{27}{2}
+				\SetNodeValue{12}{-3}{28}{2}
+				\SetNodeValue{0}{-4}{0}{3}
+				\SetNodeValue{3}{-4}{24}{3}
+				\SetNodeValue{4}{-4}{26}{3}
+				\SetNodeValue{5}{-4}{28}{3}
+				\SetNodeValue{6}{-4}{22}{5}
+				\SetNodeValue{8}{-4}{24}{3}
+				\SetNodeValue{10}{-4}{26}{3}
+				\SetNodeValue{11}{-4}{28}{3}
+				\SetNodeValue{0}{-5}{0}{4}
+				\SetNodeValue{7}{-5}{24}{4}
+				\SetNodeValue{9}{-5}{26}{4}
+				\SetNodeValue{11}{-5}{29}{4}
+				\SetNodeValue{12}{-5}{29}{1}
+				\SetNodeValue{0}{-6}{0}{3}
+				\SetNodeValue{1}{-6}{12}{1}
+				\SetNodeValue{2}{-6}{8}{1}
+				\SetNodeValue{7}{-6}{25}{1}
+				\SetNodeValue{8}{-6}{25}{2}
+				\SetNodeValue{9}{-6}{27}{1}
+				\SetNodeValue{10}{-6}{27}{2}
+				\SetNodeValue{12}{-6}{29}{1}
+				\SetNodeValue{0}{-7}{0}{3}
+				\SetNodeValue{3}{-7}{18}{2}
+				\SetNodeValue{4}{-7}{16}{2}
+				\SetNodeValue{5}{-7}{22}{2}
+				\SetNodeValue{6}{-7}{20}{2}
+				\SetNodeValue{8}{-7}{25}{2}
+				\SetNodeValue{10}{-7}{27}{2}
+				\SetNodeValue{11}{-7}{29}{2}
+				\SetNodeValue{12}{-7}{28}{2}
+				\SetNodeValue{0}{-8}{0}{3}
+				\SetNodeValue{7}{-8}{25}{3}
+				\SetNodeValue{8}{-8}{24}{3}
+				\SetNodeValue{9}{-8}{27}{3}
+				\SetNodeValue{10}{-8}{26}{3}
+				\SetNodeValue{11}{-8}{28}{3}
+				\SetNodeValue{0}{-9}{0}{3}
+				\SetNodeValue{0}{-10}{0}{3}
+				\SetNodeValue{0}{-11}{0}{3}
+				\SetNodeValue{0}{-12}{0}{3}
+				\SetNodeValue{7}{-9}{24}{4}
+				\SetNodeValue{7}{-10}{24}{4}
+				\SetNodeValue{7}{-11}{24}{4}
+				\SetNodeValue{7}{-12}{24}{4}
+				\SetNodeValue{8}{-9}{25}{2}
+				\SetNodeValue{8}{-10}{24}{1}
+				\SetNodeValue{9}{-9}{26}{4}
+				\SetNodeValue{9}{-10}{26}{4}
+				\SetNodeValue{9}{-11}{26}{4}
+				\SetNodeValue{9}{-12}{26}{4}
+				\SetNodeValue{10}{-9}{27}{2}
+				\SetNodeValue{10}{-10}{26}{1}
+				\SetNodeValue{11}{-9}{28}{3}
+				\SetNodeValue{11}{-11}{28}{3}
+				\SetNodeValue{12}{-9}{29}{1}
+				\SetNodeValue{12}{-10}{29}{1}
+				\SetNodeValue{12}{-11}{28}{4}
+				\SetNodeValue{12}{-12}{28}{4}
+			\end{scope}
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

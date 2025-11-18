@@ -1,0 +1,109 @@
+\documentclass[a4paper, english]{article}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/userdefinitions.v002"}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/additionaldefinitions.v001"}
+\usepackage{geometry}
+
+\begin{document}
+	\pgfmathsetmacro{\lengthlabelline}{0.8}
+	\pgfmathsetmacro{\labelxoffset}{0.5}
+	\pgfmathsetmacro{\labelyoffset}{0.1}
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+	\pgfmathsetmacro{\tiklabelyoffset}{0.3}
+	\pgfmathsetmacro{\width}{1.5}
+	
+	\newgeometry{left=2cm}
+	\begin{figure}
+		\centering
+		\subfloat[State Machine of agent at state 1\label{subfig1}]
+		{
+			\def\numdirections{2}
+			\def\directionone{N}
+			\def\directiontwo{W}
+
+			\input{template}
+		}
+		\subfloat[State Machine of agent at state 2\label{subfig2}]
+		{
+			\def\numdirections{2}
+			\def\directionone{N}
+			\def\directiontwo{E}
+
+			\input{template}
+		}
+		\qquad
+		\subfloat[State Machine of agent at state 3\label{subfig3}]
+		{
+			\def\numdirections{2}
+			\def\directionone{E}
+			\def\directiontwo{S}
+
+			\input{template}
+		}
+		\subfloat[State Machine of agent at state 4\label{subfig4}]
+		{
+			\def\numdirections{2}
+			\def\directionone{S}
+			\def\directiontwo{W}
+
+			\input{template}
+		}
+		\qquad
+		\subfloat[State Machine of agent at state 9\label{subfig9}]
+		{
+			\def\numdirections{2}
+			\def\directionone{N}
+			\def\directiontwo{S}
+
+			\input{template}
+		}
+		\qquad
+		\subfloat[State Machine of agent at state 5\label{subfig5}]
+		{
+			\def\numdirections{3}
+			\def\directionone{N}
+			\def\directiontwo{E}
+			\def\directionthree{W}
+
+			\input{template}
+		}
+	\end{figure}
+	\begin{figure}\ContinuedFloat
+		\centering
+		\subfloat[State Machine of agent at state 6\label{subfig6}]
+		{
+			\def\numdirections{3}
+			\def\directionone{N}
+			\def\directiontwo{E}
+			\def\directionthree{S}
+
+			\input{template}
+		}
+		\qquad
+		\subfloat[State Machine of agent at state 7\label{subfig7}]
+		{
+			\def\numdirections{3}
+			\def\directionone{E}
+			\def\directiontwo{S}
+			\def\directionthree{W}
+
+			\input{template}
+		}
+		\qquad
+		\subfloat[State Machine of agent at state 8\label{subfig8}]
+		{
+			\def\numdirections{3}
+			\def\directionone{N}
+			\def\directiontwo{S}
+			\def\directionthree{W}
+
+			\input{template}
+		}
+		\caption{Agent state machines at different positions on the patch, a tuple designates next memory state and a picked movement direction, or \textit{do nothing} otherwise. 
+			Empty hatched cells should be treated as erroneous states. Input direction is a position of empty cell at the beginning of time tick. In the absence of neighboring empty cell.}
+	\end{figure}
+	\restoregeometry
+\end{document}

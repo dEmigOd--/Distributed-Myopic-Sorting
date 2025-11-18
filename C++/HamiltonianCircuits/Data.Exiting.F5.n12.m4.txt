@@ -1,0 +1,15 @@
+Test : Time to finish as a function of the number of exiting vehicles (F = 5, n = 12)
+exiting,avg iterations
+[1,118.718;
+2,162.003;
+3,175.335;
+4,173.793;
+5,172.353;
+6,167.041;
+7,163.115;
+8,155.371;
+9,152.966;
+10,147.783;
+11,142.275;
+12,140.165;
+]

@@ -1,0 +1,82 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{amsmath, amssymb}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns}
+\usepackage{import}
+\usepackage{standalone}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% note, 
+%	0 - is an empty space; left uncolored
+%	1 - is an other agent; filled with black
+%	2 - is an edge; cross-hatched
+%	3 - is a do not care location
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	%% print a single node values at specific location
+	\newcommand{\SetNodeValue}[4]{%
+		\begin{scope}[shift={(#1, #2)}]
+			\foreach \pickedDirection[count=\i] in {\uparrow, \rightarrow, \downarrow, \leftarrow, \varnothing}{%
+				\ifnum#4=\i
+					\node[above] at (0, 0) {$\padzeroes[\memwidth]{\binarynum{#3}}$};
+					\node[below] at (0, {\adjustdirectionlabel * mod(\i, 2)}) {$\pickedDirection$};
+				\fi%
+			}%
+		\end{scope}
+	}%
+
+	\begin{tikzpicture}
+		% table parameters
+		\pgfmathsetmacro{\scalevalue}{1.0}%
+		\pgfmathsetmacro{\partialopacity}{0.4}%
+		\pgfmathsetmacro{\scaleneighborhoods}{0.8}%
+		\pgfmathsetmacro{\adjustdirectionlabel}{0.1}%
+		\pgfmathsetmacro{\headeronescale}{0.50}%
+		\pgfmathsetmacro{\headertwoscale}{0.37}%
+		\pgfmathtruncatemacro{\numstates}{2}%
+		\pgfmathtruncatemacro{\memwidth}{1}%
+
+		\begin{scope}[scale=\scalevalue]
+			\begin{scope}[opacity = \partialopacity, transparency group]
+				\draw (-1, 0) grid ++(\numstates + 1, -9);
+				\draw (0, 0) grid ++(\numstates, 1);
+				\draw (0, 0)   -- ++(-1, 1);
+			\end{scope}
+
+			\begin{scope}[shift={(0.5, 0.5)}]
+				\foreach \i in {1, ..., \numstates} {%
+					\pgfmathtruncatemacro{\x}{\i-1}
+					\node at (\x, 0) { $\padzeroes[\memwidth]{\binarynum{\x}}$};
+				}%
+
+				\foreach \state in {1, ..., 9} {%
+					\node at (-1, -\state) {\scalebox{\scaleneighborhoods}{\subimport{./}{State_\state.Readings_1}}};
+				}%
+
+				\begin{scope}[shift={(-1, 0)}, rotate=-45, transform shape, font={\large}]
+					\node[scale=\headeronescale, above] at (0, 0) {state};
+					\node[scale=\headertwoscale, below] at (0, 0) {neighborhood};
+				\end{scope}
+
+				\SetNodeValue{0}{-1}{1}{4}
+				\SetNodeValue{0}{-2}{0}{1}
+				\SetNodeValue{1}{-2}{0}{1}
+				\SetNodeValue{0}{-3}{0}{2}
+				\SetNodeValue{0}{-4}{0}{3}
+				\SetNodeValue{0}{-5}{1}{4}
+				\SetNodeValue{1}{-5}{1}{1}
+				\SetNodeValue{0}{-6}{0}{1}
+				\SetNodeValue{0}{-7}{0}{2}
+				\SetNodeValue{1}{-7}{0}{3}
+				\SetNodeValue{0}{-8}{0}{3}
+				\SetNodeValue{0}{-9}{0}{3}
+				\SetNodeValue{1}{-9}{1}{1}
+			\end{scope}
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

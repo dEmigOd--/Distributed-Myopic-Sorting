@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/userdefinitions.v003"}
+
+\begin{document}
+	\begin{figure}
+		\subfloat[caption 1]
+		{
+			\input{output}
+		}
+		\subfloat[caption 2]
+		{
+			\input{output}
+		}
+	\end{figure}
+\end{document}

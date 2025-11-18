@@ -1,0 +1,89 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=3,
+xmax=12.5,
+xlabel style={font=\color{white!15!black}},
+%xlabel={m (column number)},
+ymin=0,
+ymax=6000,
+ylabel style={font=\color{white!15!black}},
+%ylabel={Time (seconds)},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+% title={$\text{Average ticks until solution as a function of m. On n }\times\text{ m grid. (k = 5)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark=*, mark options={solid, mycolor1}, line width=2pt]
+  table[row sep=crcr]{%
+3	38.922\\
+4	85.334\\
+5	162.84\\
+6	257.966\\
+7	379.72\\
+8	533.968\\
+9	704.074\\
+10	899.646\\
+11	1141.9\\
+12	1391.172\\
+};
+%\addlegendentry{$\text{T}_{\text{est}}\text{ = 2.166}\cdot\text{n}\cdot\text{m}^\text{2}\text{ + O(m)}$}
+
+\addplot [color=mycolor1, loosely dotted, line width=2pt]%, forget plot]
+  table[row sep=crcr]{%
+3	720\\
+4	1075.2\\
+5	1488\\
+6	1958.4\\
+7	2486.4\\
+8	3072\\
+9	3715.2\\
+10	4416\\
+11	5174.4\\
+12	5990.4\\
+};
+%\addlegendentry{$\text{T}_{\text{ub}}\text{ = 4.8}\cdot\text{n}\cdot\text{m}^\text{2}\text{ + O(m)}$}
+
+\addplot [color=mycolor1, draw=none, line width=2pt, forget plot]
+ plot [error bars/.cd, y dir = both, y explicit, error bar style={line width=2pt}, error mark options={line width=1pt,mark size=4pt,rotate=90}]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+3	38.922	76	2\\
+4	85.334	132	16\\
+5	162.84	244	32\\
+6	257.966	356	117\\
+7	379.72	516	105\\
+8	533.968	713	164\\
+9	704.074	957	300\\
+10	899.646	1152	388\\
+11	1141.9	1564	528\\
+12	1391.172	1800	724\\
+};
+\addplot [color=mycolor1, dashed, line width=2pt, forget plot]
+  table[row sep=crcr]{%
+3	40.73536363636\\
+4	86.7016909090896\\
+5	158.665548484849\\
+6	256.626936363638\\
+7	380.585854545457\\
+8	530.542303030305\\
+9	706.496281818184\\
+10	908.447790909092\\
+11	1136.39683030303\\
+12	1390.3434\\
+};
+\end{axis}
+\end{tikzpicture}%

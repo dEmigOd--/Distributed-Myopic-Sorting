@@ -1,0 +1,74 @@
+\documentclass[tikz, border=0.5]{standalone}
+
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns, intersections}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% note, 
+%	0 - is an empty space; left uncolored
+%	1 - is an other agent; filled with black
+%	2 - is an edge; cross-hatched
+%	3 - is a do not care location
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	% model parameters\n
+	\pgfmathtruncatemacro{\memory}{3}
+	\pgfmathtruncatemacro{\visibility}{1}
+	\pgfmathsetmacro{\maxtablelength}{8}
+
+	% drawing parameters
+	\pgfmathsetmacro{\scalefactor}{0.3}
+	\pgfmathsetmacro{\opacityfactor}{0.7}
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+	\pgfmathsetmacro{\tiklabelyoffset}{0.5}
+
+	% put values into the table
+	\newcommand{\SetTableValues}[4]{%
+
+		\xdef\pickedDirection{\text{,}}
+		\\ifnum#4=0%
+			\xdef\pickedDirection{\pickedDirection\text{N}}%
+		\fi%
+		\\ifnum#4=1%
+			\xdef\pickedDirection{\pickedDirection\text{E}}%
+		\fi%
+		\\ifnum#4=2%
+			\xdef\pickedDirection{\pickedDirection\text{S}}%
+		\fi%
+		\\ifnum#4=3%
+			\xdef\pickedDirection{\pickedDirection\text{W}}%
+		\fi%
+		\\ifnum#4=4%
+			\xdef\pickedDirection{\pickedDirection\varnothing}%
+		\fi%
+		\begin{scope}[shift={(0, -#2)}]
+			\node at (\tiklabelxoffset, \tiklabelyoffset) {$\padzeroes[\memory]{\binarynum{#3}}\pickedDirection$};
+		\end{scope}
+	}
+
+	\begin{tikzpicture}
+
+		\SetTableValues{7}{1}{1}{4}
+
+		\SetTableValues{7}{2}{2}{4}
+
+		\SetTableValues{7}{3}{7}{4}
+
+		\SetTableValues{7}{4}{0}{4}
+
+		\SetTableValues{7}{5}{5}{4}
+
+		\SetTableValues{7}{6}{6}{4}
+
+		\SetTableValues{7}{7}{7}{4}
+
+		\SetTableValues{7}{8}{0}{4}
+
+
+	\end{tikzpicture}
+\end{document}
