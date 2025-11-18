@@ -1,0 +1,161 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor5}{rgb}{0.46600,0.67400,0.18800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.527in,
+at={(0.758in,0.519in)},
+scale only axis,
+xmin=200,
+xmax=1150,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\text{N}_\text{0}$},
+ymin=0,
+ymax=12000,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+% title={$\text{Average ticks until solution as a function of N}_\text{0}\text{. On n }\times\text{ 40 grid}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, mark=*]
+  table[row sep=crcr]{%
+200	4478.08\\
+250	3736.43\\
+300	3207.37\\
+350	2841.45\\
+400	2494.89\\
+450	2230.9\\
+500	1970.94\\
+550	1739.01\\
+600	1500.96\\
+650	1358.42\\
+700	1210.95\\
+750	1031.2\\
+800	908.19\\
+850	782.94\\
+900	690\\
+950	564.37\\
+1000	481.67\\
+1050	436.02\\
+1100	410.4\\
+1150	391.61\\
+};
+\addlegendentry{n = 40}
+
+\addplot [color=mycolor2, mark=square]
+  table[row sep=crcr]{%
+200	5794.71\\
+250	4800.58\\
+300	4129.96\\
+350	3638.99\\
+400	3250.84\\
+450	2930.78\\
+500	2622.8\\
+550	2383.17\\
+600	2118.27\\
+650	1886.14\\
+700	1705.88\\
+750	1497.34\\
+800	1387.14\\
+850	1227.34\\
+900	1114.21\\
+950	975.59\\
+1000	916.46\\
+1050	793.98\\
+1100	675.91\\
+1150	567.86\\
+};
+\addlegendentry{n = 48}
+
+\addplot [color=mycolor3, mark=oplus]
+  table[row sep=crcr]{%
+200	7270.02\\
+250	6055.72\\
+300	5189.48\\
+350	4522.5\\
+400	4064.74\\
+450	3623.26\\
+500	3290.66\\
+550	3013.05\\
+600	2719.55\\
+650	2460.9\\
+700	2213.17\\
+750	2027.42\\
+800	1839.09\\
+850	1681.81\\
+900	1543.25\\
+950	1390.4\\
+1000	1273.55\\
+1050	1182.67\\
+1100	1069.76\\
+1150	944.52\\
+};
+\addlegendentry{n = 56}
+
+\addplot [color=mycolor4, mark=diamond*]
+  table[row sep=crcr]{%
+200	8937.44\\
+250	7423.34\\
+300	6378.68\\
+350	5587.14\\
+400	4949.24\\
+450	4439.87\\
+500	4031.78\\
+550	3664.08\\
+600	3377.94\\
+650	3089.15\\
+700	2807.59\\
+750	2583.19\\
+800	2349.95\\
+850	2170.58\\
+900	2000.53\\
+950	1827.75\\
+1000	1699.34\\
+1050	1594.26\\
+1100	1460.21\\
+1150	1339.19\\
+};
+\addlegendentry{n = 64}
+
+\addplot [color=mycolor5, mark=halfsquare left*]
+  table[row sep=crcr]{%
+200	10756.27\\
+250	8792.08\\
+300	7653.84\\
+350	6692.68\\
+400	5939.94\\
+450	5276.35\\
+500	4850.55\\
+550	4391.43\\
+600	4103.83\\
+650	3753.29\\
+700	3423.26\\
+750	3152.81\\
+800	2888.81\\
+850	2647.47\\
+900	2509.41\\
+950	2316.33\\
+1000	2178.69\\
+1050	1998.16\\
+1100	1880.64\\
+1150	1748.64\\
+};
+\addlegendentry{n = 72}
+
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,87 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=6,
+xmax=15,
+xlabel style={font=\color{white!15!black}},
+xlabel={n (number rows)},
+ymin=0,
+ymax=12000,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time (seconds)},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={$\text{Average ticks until solution as a function of n. On n }\times\text{ m grid. (k = 5)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark=asterisk, mark options={solid, mycolor1}]
+  table[row sep=crcr]{%
+6	377.246\\
+7	472.358\\
+8	581.354\\
+9	704.34\\
+10	833.164\\
+11	982.628\\
+12	1150.17\\
+13	1323.426\\
+14	1523.172\\
+15	1732.586\\
+};
+\addlegendentry{$\text{m = 7; T}_{\text{est}}\text{ = 1.038}\cdot\text{m}\cdot\text{n}^\text{2}\text{ + O(n)}$}
+
+\addplot [color=mycolor1, dashdotted, forget plot]
+  table[row sep=crcr]{%
+6	2486.4\\
+7	3136\\
+8	3852.8\\
+9	4636.8\\
+10	5488\\
+11	6406.4\\
+12	7392\\
+13	8444.8\\
+14	9564.8\\
+15	10752\\
+};
+\addplot [color=mycolor1, draw=none, forget plot]
+ plot [error bars/.cd, y dir = both, y explicit]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+6	377.246	564	165\\
+7	472.358	692	202\\
+8	581.354	788	362\\
+9	704.34	976	494\\
+10	833.164	1137	568\\
+11	982.628	1260	588\\
+12	1150.17	1501	784\\
+13	1323.426	1736	937\\
+14	1523.172	1924	1101\\
+15	1732.586	2176	1294\\
+};
+\addplot [color=mycolor1, dashed, forget plot]
+  table[row sep=crcr]{%
+6	380.223072727265\\
+7	472.09096363636\\
+8	578.493506060606\\
+9	699.430700000003\\
+10	834.902545454549\\
+11	984.909042424247\\
+12	1149.45019090909\\
+13	1328.52599090909\\
+14	1522.13644242424\\
+15	1730.28154545454\\
+};
+\end{axis}
+\end{tikzpicture}%

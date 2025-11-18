@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath, amssymb}
+\usepackage{subcaption}
+\usepackage{import}
+\usepackage{fmtcount}
+\usetikzlibrary{calc, patterns, intersections}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.26\textwidth}
+			\centering
+			\subimport{Ver.3191/}{Table.Ver_3191.Position_1}
+			\caption{Position 1}
+			\label{subfig:fg_3191_1}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.44\textwidth}
+			\centering
+			\subimport{Ver.3191/}{Table.Ver_3191.Position_2}
+			\caption{Position 2}
+			\label{subfig:fg_3191_2}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.26\textwidth}
+			\centering
+			\subimport{Ver.3191/}{Table.Ver_3191.Position_4}
+			\caption{Position 4}
+			\label{subfig:fg_3191_4}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_3191_1}) at position 1, (\subref{subfig:fg_3191_2}) at position 2, (\subref{subfig:fg_3191_4}) at position 4.}
+		\label{fig:fg_3191_1}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\subimport{Ver.3191/}{Table.Ver_3191.Position_3}
+			\caption{Position 3}
+			\label{subfig:fg_3191_3}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\subimport{Ver.3191/}{Table.Ver_3191.Position_8}
+			\caption{Position 8}
+			\label{subfig:fg_3191_8}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_3191_3}) at position 3, (\subref{subfig:fg_3191_8}) at position 8.}
+		\label{fig:fg_3191_2}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.96\textwidth}
+			\centering
+			\subimport{Ver.3191/}{Table.Ver_3191.Position_6}
+			\caption{Position 6}
+			\label{subfig:fg_3191_6}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_3191_6}) at position 6.}
+		\label{fig:fg_3191_3}
+	\end{figure}
+\end{document}

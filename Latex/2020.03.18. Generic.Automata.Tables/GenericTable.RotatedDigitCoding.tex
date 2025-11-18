@@ -1,0 +1,220 @@
+\documentclass[tikz, border=0.5]{standalone}
+%\documentclass{article}
+
+\usepackage{tikz}
+\usetikzlibrary{calc, patterns, intersections}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% note, 
+%	0 - is an empty space
+%	1 - is an other agent
+%	2 - is an edge
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% model parameters
+\pgfmathtruncatemacro{\memory}{1}
+\pgfmathtruncatemacro{\visibility}{3}
+\pgfmathtruncatemacro{\obscure}{0}
+\pgfmathsetmacro{\maxtablelength}{16}
+
+\begin{document}
+	
+	\makeatletter
+	\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+	\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+	\makeatother
+	
+	\def\noAgent{0}%
+	\def\agent{1}%
+	\def\leftAppend{0}%
+	\def\rightAppend{1}%
+	\def\edge{2}%
+	\protected\def\Pzero{\phantom{\noAgent}}%
+
+	\newcommand{\AppendToStrBefore}[2]
+	{
+		\ifnum#2=\leftAppend%
+			\xdef\str{\str#1}%
+		\else%
+			\xdef\str{#1\str}%
+		\fi%
+	}
+	
+	\newcommand{\AppendToStrAfter}[2]
+	{
+		\ifnum#2=\leftAppend%
+			\xdef\str{#1\str}%
+		\else%
+			\xdef\str{\str#1}%
+		\fi%
+	}
+	
+	\newcommand{\CreateVStr}[2]
+	{%
+		\xdef\str{}%
+		\ifnum#1=1%
+			\xdef\str{\agent}%
+		\else%
+			\ifnum#1<\onesidestates%
+				\pgfmathtruncatemacro{\lastseen}{mod(#1, 2) + \agent}%
+				\xdef\str{\lastseen}%
+			\fi%
+			\pgfmathtruncatemacro{\zeros}{#1 / 2}%
+			\foreach \zero in {1, ..., \zeros}%
+			{%
+				\AppendToStrBefore{\noAgent}{#2}
+			}%
+		\fi%
+		\pgfmathtruncatemacro{\emptyspaces}{\visibility - int(#1 / 2) - 1}%
+		\ifnum\emptyspaces>0%
+			\foreach \zero in {1, ..., \emptyspaces}%
+			{%
+				\AppendToStrAfter{\Pzero}{#2}
+			}%
+		\fi%
+	}%
+
+	\newcommand{\CreateLeftStr}[1]
+	{%
+		\CreateVStr{#1}{\leftAppend}%
+		\xdef\leftstr{\str}%
+	}%
+	
+	\newcommand{\CreateRightStr}[1]
+	{%
+		\CreateVStr{#1}{\rightAppend}%
+		\xdef\rightstr{\str}%
+	}%
+
+	\newcommand{\CreateNStr}[3]
+	{
+		\xdef\str{}%
+		\foreach \i[evaluate=\i as \modx using 2^(\i+1)] in {0, ..., #1} % while loop
+		{
+			\ifnum#1>\i%
+				\pgfmathtruncatemacro{\modremainder}{mod(#2, \modx)}%
+				\pgfmathtruncatemacro{\modx}{\modx / 2}
+				\ifnum\modx>0%
+					\pgfmathtruncatemacro{\digit}{\modremainder / \modx}%
+				\else%
+					\pgfmathtruncatemacro{\digit}{\modremainder}%
+				\fi%
+				\AppendToStrBefore{\digit}{#3}%
+			\else%
+				\breakforeach%
+			\fi%
+		}
+		\ifnum#1<\visibility%
+			\AppendToStrAfter{\edge}{#3}%
+			\pgfmathtruncatemacro{\invisibleLength}{\visibility - #1 - 1}
+			\ifnum\invisibleLength>0%
+				\foreach \invisiblespace in {1,...,\invisibleLength}
+				{
+					\AppendToStrAfter{\Pzero}{#3}%
+				}
+			\fi%
+		\fi%
+	}
+
+	\newcommand{\CreateNLeftStr}[2]
+	{
+		\CreateNStr{#1}{#2}{\leftAppend}%
+		\xdef\leftStr{\str}%
+	}
+	\newcommand{\CreateNRightStr}[2]
+	{
+		\CreateNStr{#1}{#2}{\rightAppend}%
+		\xdef\rightStr{\str}%
+	}
+	
+	% drawing parameters
+	\pgfmathsetmacro{\lengthlabelline}{0.8}
+	\pgfmathsetmacro{\labelxoffset}{0.5}
+	\pgfmathsetmacro{\labelyoffset}{0.1}
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+	\pgfmathsetmacro{\tiklabelyoffset}{0.3}
+	\pgfmathsetmacro{\cellsize}{1}
+	\pgfmathsetmacro{\above}{0.5+\visibility/20}
+	\pgfmathsetmacro{\scalefactor}{0.8}
+	
+	\begin{tikzpicture}
+		% common code
+		\pgfmathtruncatemacro{\tableheight}{2^(\memory)}
+		\pgfmathtruncatemacro{\onesidestates}{ifthenelse(\obscure == 1, 2 * \visibility, 2 ^ (\visibility + 1) - 1)}
+		\pgfmathtruncatemacro{\numberofstates}{\onesidestates ^ 2}
+		\pgfmathtruncatemacro{\numberoftables}{ceil(\numberofstates / \maxtablelength)}
+		
+		\begin{scope}[scale=\cellsize]
+			% draw all the tables
+			\foreach \tablenum in {1, ..., \numberoftables}
+			{
+				\pgfmathtruncatemacro{\tablelength}{ifthenelse(\tablenum < \numberoftables, \maxtablelength, \numberofstates - (\numberoftables - 1) * \maxtablelength)}
+				\pgfmathsetmacro{\yoffset}{-(\tablenum - 1) * (\tableheight + 1.5)}
+				
+				\begin{scope}[yshift=\yoffset cm]
+					\coordinate (left_upper_corner_\tablenum) at (0, \tableheight);
+					\draw (0, 0) grid (\tablelength, \tableheight);
+					\begin{scope}[shift={(left_upper_corner_\tablenum)}]
+						\draw (0, 0) -- ++(135:\lengthlabelline);
+						\node[rotate=-45,scale=0.5] at ($(135:\labelxoffset)+(45:\labelyoffset)$) {input};
+						\node[rotate=-45,scale=0.5] at ($(135:\labelxoffset)+(180+45:\labelyoffset)$) {memory};
+					\end{scope}
+					\foreach \state in { 1, ..., \tableheight}
+					{
+						\pgfmathtruncatemacro{\memorystate}{\state-1}
+						\node (memory_\tablenum_\state) at (0 - \tiklabelyoffset, \tableheight - \state + \tiklabelxoffset) {$\memorystate$};
+					}					
+				\end{scope}
+			}
+			
+			\ifdim\obscure pt=1 pt%
+				% prepare obscured visible state in one dimension :left
+				\foreach \leftstate in {1, ..., \onesidestates}
+				{
+					\CreateLeftStr{\leftstate}
+					
+					% right part of visible state
+					\foreach \rightstate in {1, ..., \onesidestates}
+					{
+						\CreateRightStr{\rightstate}
+
+						\pgfmathtruncatemacro{\currentstate}{(\leftstate - 1) * \onesidestates + (\rightstate - 1)}
+						\pgfmathtruncatemacro{\tablenum}{ceil((\currentstate + 1) / \maxtablelength)}
+						\pgfmathtruncatemacro{\columnnum}{mod(\currentstate, \maxtablelength)}
+						\begin{scope}[shift={(left_upper_corner_\tablenum)}]
+							\node[above=\above cm, rotate=90, scale=\scalefactor] at (\columnnum + \scalefactor - 0.1, 0) {$\leftstr\bigcdot\rightstr$};
+						\end{scope}
+					}
+				}
+			\else%		
+				% prepare non-obscured visible state : left
+				\foreach \kleft in {0,...,\visibility}
+				{
+					\pgfmathtruncatemacro{\leftkstates}{2^\kleft - 1}
+					\foreach \jleft in {0,...,\leftkstates}
+					{
+						\CreateNLeftStr{\kleft}{\jleft}
+						
+						\foreach \kright in {0,...,\visibility}
+						{
+							\pgfmathtruncatemacro{\rightkstates}{2^\kright - 1}
+							\foreach \jright in {0,...,\rightkstates}
+							{
+								\CreateNRightStr{\kright}{\jright}
+								
+								\pgfmathtruncatemacro{\currentstate}{(2^\kleft + \jleft - 1) * \onesidestates + (2^\kright + \jright - 1)}
+								\pgfmathtruncatemacro{\tablenum}{ceil((\currentstate + 1) / \maxtablelength)}
+								\pgfmathtruncatemacro{\columnnum}{mod(\currentstate, \maxtablelength)}
+								
+								\begin{scope}[shift={(left_upper_corner_\tablenum)}]
+									\node[above=\above cm, rotate=90, scale=\scalefactor] at (\columnnum + \scalefactor - 0.1, 0) {$\leftStr\bigcdot\rightStr$};
+								\end{scope}
+							}
+						}						
+					}
+				}
+			\fi%
+
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

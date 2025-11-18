@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{fmtcount}
+\usetikzlibrary{calc, patterns, intersections}
+
+\newcommand{\lineinput}[1]{\begingroup\endlinechar=-1 \input{#1}\endgroup}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_1}
+			\caption{Position 1}
+			\label{subfig:fg_7_1}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_2}
+			\caption{Position 2}
+			\label{subfig:fg_7_2}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_3}
+			\caption{Position 3}
+			\label{subfig:fg_7_3}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_7_1}) at position 1, (\subref{subfig:fg_7_2}) at position 2, (\subref{subfig:fg_7_3}) at position 3.}
+		\label{fig:fg_7_1}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.36\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_4}
+			\caption{Position 4}
+			\label{subfig:fg_7_4}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.60\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_5}
+			\caption{Position 5}
+			\label{subfig:fg_7_5}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_7_4}) at position 4, (\subref{subfig:fg_7_5}) at position 5.}
+		\label{fig:fg_7_2}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_6}
+			\caption{Position 6}
+			\label{subfig:fg_7_6}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_7}
+			\caption{Position 7}
+			\label{subfig:fg_7_7}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_8}
+			\caption{Position 8}
+			\label{subfig:fg_7_8}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_7_6}) at position 6, (\subref{subfig:fg_7_7}) at position 7, (\subref{subfig:fg_7_8}) at position 8.}
+		\label{fig:fg_7_3}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.96\textwidth}
+			\centering
+			\lineinput{Ver.7/Table.Ver_7.Position_9}
+			\caption{Position 9}
+			\label{subfig:fg_7_9}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_7_9}) at position 9.}
+		\label{fig:fg_7_4}
+	\end{figure}
+\end{document}

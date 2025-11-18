@@ -1,0 +1,76 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=0,
+xmax=30,
+xlabel style={font=\color{white!15!black}},
+xlabel={n},
+ymin=0,
+ymax=100,
+ylabel style={font=\color{white!15!black}},
+ylabel={Failure rate, \%},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={Algorithm failures vs. number of rows ($n$)},
+axis x line*=bottom,
+axis y line*=left,
+every axis plot/.append style={ultra thick},
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1]
+  table[row sep=crcr]{%
+1	0\\
+2	0\\
+3	2.25\\
+4	0.25\\
+5	0\\
+6	0.5\\
+7	8.25\\
+8	9.5\\
+9	11.5\\
+10	30.75\\
+11	4\\
+12	0.75\\
+13	10.25\\
+14	4.5\\
+15	9\\
+16	16.75\\
+17	54.75\\
+18	18.25\\
+19	34.5\\
+20	52.5\\
+21	56.75\\
+22	71.75\\
+23	96.75\\
+24	71\\
+25	97.75\\
+26	90\\
+27	37.75\\
+28	97\\
+29	99.5\\
+30	76\\
+};
+\addlegendentry{Simulated annealing \textsuperscript{\ref{footnote.1}}}
+
+\addplot [color=mycolor2]
+  table[row sep=crcr]{%
+1	0\\
+30	0\\
+};
+\addlegendentry{Proposed deterministic algorithm}
+
+\end{axis}
+\end{tikzpicture}%

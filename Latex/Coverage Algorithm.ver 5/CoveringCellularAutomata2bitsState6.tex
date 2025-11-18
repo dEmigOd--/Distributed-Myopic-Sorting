@@ -1,0 +1,78 @@
+\documentclass{standalone}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/userdefinitions.v001"}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/additionaldefinitions.v001"}
+
+\begin{document}
+	\pgfmathsetmacro{\lengthlabelline}{0.8}
+	\pgfmathsetmacro{\labelxoffset}{0.5}
+	\pgfmathsetmacro{\labelyoffset}{0.1}
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+	\pgfmathsetmacro{\tiklabelyoffset}{0.3}
+	
+	\begin{tikzpicture}
+		% common code
+		\coordinate (left_upper_corner) at (0, 4);
+		\draw (0, 0) grid (4, 4);
+		\draw (left_upper_corner) -- ++(135:\lengthlabelline);
+		\node[rotate=-45,scale=0.5] (input_label) at ($(left_upper_corner)+(135:\labelxoffset)+(45:\labelyoffset)$) {input};
+		\node[rotate=-45,scale=0.5] (input_label) at ($(left_upper_corner)+(135:\labelxoffset)+(180+45:\labelyoffset)$) {memory};
+		\foreach \input/\name in { 0/N, 1/E, 2/S, 3/W}
+		{
+			\node (input_\input) at (\input + \tiklabelxoffset, 4 + \tiklabelyoffset) {\name};
+			\pgfmathtruncatemacro{\memory}{3 - \input}
+			\node (memory_\input) at (0 - \tiklabelyoffset, \input + \tiklabelxoffset) {\memory};
+		}
+		
+		% hatch columns
+		\foreach \column in {3}
+		{
+			\draw[pattern=north west lines, pattern color=black!50!white] (\column, 0) rectangle ({\column+1}, 4);
+		}
+		% hatch single cells
+		\foreach \x/\y in {1/0}
+		{
+			\draw[pattern=north west lines, pattern color=black!50!white] (\x, \y) rectangle ({\x+1}, {\y+1});
+		}
+		% hatch single cells
+		\foreach \x/\y in {0/0, 1/1, 2/0}
+		{
+			\draw[pattern=north east lines, pattern color=blue!50!white] (\x, \y) rectangle ({\x+1}, {\y+1});
+		}		
+		
+		% set cell values
+		\pgfmathsetmacro{\valuexoffset}{0.5}
+		\pgfmathsetmacro{\valueyoffset}{0.5}
+		
+		\coordinate (0N) at ({0+\valuexoffset}, {3+\valueyoffset});
+		\coordinate (1N) at ({0+\valuexoffset}, {2+\valueyoffset});
+		\coordinate (2N) at ({0+\valuexoffset}, {1+\valueyoffset});
+		\coordinate (3N) at ({0+\valuexoffset}, {0+\valueyoffset});
+		\coordinate (0E) at ({1+\valuexoffset}, {3+\valueyoffset});
+		\coordinate (1E) at ({1+\valuexoffset}, {2+\valueyoffset});
+		\coordinate (2E) at ({1+\valuexoffset}, {1+\valueyoffset});
+		\coordinate (3E) at ({1+\valuexoffset}, {0+\valueyoffset});
+		\coordinate (0S) at ({2+\valuexoffset}, {3+\valueyoffset});
+		\coordinate (1S) at ({2+\valuexoffset}, {2+\valueyoffset});
+		\coordinate (2S) at ({2+\valuexoffset}, {1+\valueyoffset});
+		\coordinate (3S) at ({2+\valuexoffset}, {0+\valueyoffset});
+		\coordinate (0W) at ({3+\valuexoffset}, {3+\valueyoffset});
+		\coordinate (1W) at ({3+\valuexoffset}, {2+\valueyoffset});
+		\coordinate (2W) at ({3+\valuexoffset}, {1+\valueyoffset});
+		\coordinate (3W) at ({3+\valuexoffset}, {0+\valueyoffset});
+		\node (n_0N) at (0N) {0, N};
+		\node (n_1N) at (1N) {2, $\emptyset$};
+		\node (n_2N) at (2N) {3, N};
+		\node (n_3N) at (3N) {3, $\emptyset$};
+		\node (n_0E) at (0E) {2, $\emptyset$};
+		\node (n_1E) at (1E) {2, $\emptyset$};
+		\node (n_2E) at (2E) {2, $\emptyset$};
+		\node (n_0S) at (0S) {1, $\emptyset$};
+		\node (n_1S) at (1S) {2, $\emptyset$};
+		\node (n_2S) at (2S) {3, S};
+		\node (n_3S) at (3S) {3, $\emptyset$};
+	\end{tikzpicture}
+\end{document}

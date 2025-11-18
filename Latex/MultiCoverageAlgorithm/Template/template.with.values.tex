@@ -1,0 +1,91 @@
+\documentclass[a4paper, english]{article}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/userdefinitions.v002"}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/additionaldefinitions.v001"}
+
+	\pgfmathsetmacro{\lengthlabelline}{0.8}
+	\pgfmathsetmacro{\labelxoffset}{0.5}
+	\pgfmathsetmacro{\labelyoffset}{0.1}
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+	\pgfmathsetmacro{\tiklabelyoffset}{0.5}
+	\pgfmathsetmacro{\width}{1.5}
+	
+	\def\numdirections{2}
+	\def\directionone{N}
+	\def\directiontwo{W}
+	
+	\newcommand{\decisionszero}{0/$\emptyset$, 2/N, 2/W, 2/N}
+	%\newcommand{\decisionsone}{1/$\emptyset$, 2/N, 2/W, 2/N}
+	\newcommand{\decisionstwo}{2/$\emptyset$, 2/N, 2/W, 2/N}
+	\newcommand{\decisionsthree}{3/$\emptyset$, 2/N, 2/W, 2/N}
+
+\begin{document}
+	\begin{tikzpicture}
+		% common code
+		\pgfmathtruncatemacro{\colnum}{2^\numdirections}
+		
+		\coordinate (left_upper_corner) at (0, 4);
+		\foreach \xline in {0, ..., 4}
+		{
+			\draw (0, \xline) -- (\width * \colnum, \xline);
+		}
+		\foreach \yline in {0, ..., \colnum}
+		{
+			\draw (\width * \yline, 0) -- (\width * \yline, 4);
+		}
+		% \draw (0, 0) grid (\width * \colnum, 4);
+		\draw (left_upper_corner) -- ++(135:\lengthlabelline);
+		\node[rotate=-45,scale=0.5] (input_label) at ($(left_upper_corner)+(135:\labelxoffset)+(45:\labelyoffset)$) {input};
+		\node[rotate=-45,scale=0.5] (input_label) at ($(left_upper_corner)+(135:\labelxoffset)+(180+45:\labelyoffset)$) {memory};
+		\ifthenelse{3 = \numdirections}
+		{
+			\foreach \input/\name in { 0/$\emptyset$, 1/\directionone, 2/\directiontwo, 3/\directionthree}
+			{
+				\node (input_\input) at (\width * \input + \width * \tiklabelxoffset, 4 + \tiklabelyoffset) {\name};
+				\pgfmathtruncatemacro{\memory}{3 - \input}
+				\node (memory_\input) at (0 - \tiklabelyoffset, \input + \tiklabelxoffset) {\memory};
+			}
+			\foreach \input/\name in {4/\directionone+\directiontwo, 5/\directionone+\directionthree, 6/\directiontwo+\directionthree, 7/\directionone+\directiontwo+\directionthree}
+			{
+				\node (input_\input) at (\width * \input + \width * \tiklabelxoffset, 4 + \tiklabelyoffset) {\name};
+			}
+		}
+		{
+			\foreach \input/\name in { 0/$\emptyset$, 1/\directionone, 2/\directiontwo, 3/\directionone+\directiontwo}
+			{
+				\node (input_\input) at (\width * \input + \width * \tiklabelxoffset, 4 + \tiklabelyoffset) {\name};
+				\pgfmathtruncatemacro{\memory}{3 - \input}
+				\node (memory_\input) at (0 - \tiklabelyoffset, \input + \tiklabelxoffset) {\memory};
+				
+			}
+		}
+		\foreach \memorystate/\memorystatename in {0/zero, 1/one, 2/two, 3/three}
+		{
+			\ifcsdef{decisions\memorystatename}
+			{ % if defined
+				\edef\decisions{\csname decisions\memorystatename \endcsname}
+				\foreach \decisionmemory/\decisiondirection [count=\di] in \decisions
+				{
+					\coordinate (\memorystate\di) at (\width * \di + \width * \tiklabelxoffset - \width * 1, 3 - \memorystate + \tiklabelyoffset);
+					\ifx\decisionmemory\empty
+						% if empty
+						\draw[pattern=north west lines, pattern color=black!50!white] (\width * \di - \width * 1, 3 - \memorystate) rectangle (\width * \di, 4 - \memorystate);
+					\else
+						% not empty
+						\node (n_\memorystate\di) at (\memorystate\di) {\decisionmemory, \decisiondirection};
+					\fi
+				}
+			}
+			{ % else
+				% hatch columns
+				\foreach \column in {1, ..., \colnum}
+				{
+					\draw[pattern=north west lines, pattern color=black!50!white] (\width * \column - \width * 1, 3 - \memorystate) rectangle (\width * \column, 4 - \memorystate);
+				}
+			}
+		}
+	\end{tikzpicture}
+\end{document}

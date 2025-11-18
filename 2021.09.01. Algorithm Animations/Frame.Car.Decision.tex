@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{fmtcount}
+\usetikzlibrary{calc, patterns, intersections}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{import}
+%\usepackage[showframe]{geometry}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+\newcommand{\lineinput}[1]{\begingroup\endlinechar=-1 \input{#1}\endgroup}
+
+\tikzset{
+	hatch distance/.store in=\hatchdistance,
+	hatch distance=10pt,
+	hatch thickness/.store in=\hatchthickness,
+	hatch thickness=2pt
+}
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+{\pgfqpoint{-\hatchdistance}{-\hatchdistance}}%0pt
+{\pgfqpoint{2\hatchdistance}{2\hatchdistance}}
+{\pgfpoint{\hatchdistance}{\hatchdistance}}%{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+{
+	\pgfsetcolor{\tikz@pattern@color}
+	\pgfsetlinewidth{\hatchthickness}
+	\pgfpathmoveto{\pgfqpoint{\hatchdistance}{-\hatchdistance}}%\pgfqpoint{0pt}{0pt}}
+	\pgfpathlineto{\pgfqpoint{-\hatchdistance}{\hatchdistance}}%\pgfqpoint{\hatchdistance}{\hatchdistance}}
+	\pgfusepath{stroke}
+}
+\makeatother
+
+\graphicspath{{../2020.11.10. Sorting Algorithm 310. Take 2/clipart/}{./images/}}
+
+\newcommand\righttrees{}
+\newcommand\lefttrees{}
+\newcommand\GreenCars{}
+\newcommand\RedCars{}
+
+\begin{document}
+	\setlength{\fboxsep}{0pt}%
+	\begin{multicols}{2}
+		\noindent%
+			%\framebox{%
+			\resizebox{\linewidth}{!}{%
+				\import{./}{Frame.Car.Visibility}}%
+			%}%
+			\\\noindent%
+			%\framebox{%
+			\resizebox{\linewidth}{!}{%
+			\tikz{%
+				\node[left] at (0, 0) { mem $ = \phantom{00}0_2 = 0$};%
+				\node[left] at (0,-1) { timer $ = \phantom{0}10_2 = 2$};%
+				\node[left] at (0,-2) { state $ = 010_2 = 2$};%
+				\begin{scope}[thick, red]
+					% upper red ellipse
+					\begin{scope}[xshift=-29pt]
+						\draw (0,0) ellipse (0.1cm and 0.2cm);
+					\end{scope}
+					% lower red ellipse
+					\begin{scope}[xshift=-39pt, yshift=-2cm]
+						\draw (0,0) ellipse (0.1cm and 0.2cm);
+					\end{scope}
+				\end{scope}
+				\begin{scope}[thick, blue, xshift=-31pt]
+					% upper blue ellipse
+					\begin{scope}[yshift=-1cm]
+						\draw (0,0) ellipse (0.2cm and 0.2cm);
+					\end{scope}
+					% lower red ellipse
+					\begin{scope}[yshift=-2cm]
+						\draw (0,0) ellipse (0.2cm and 0.2cm);
+					\end{scope}
+				\end{scope}
+			}}%
+			%}%
+	
+		\columnbreak
+			\vspace*{4cm}
+			\centering
+			%\framebox{%
+			\resizebox{0.5\linewidth}{!}{%
+				\import{../Matlab/+Cylinders/Tables}{Ver.3101/State_8.Readings_1}%
+				}%
+			%}%
+			\vspace{1.5cm}
+			\\\noindent%
+			%\framebox{%
+			\resizebox{!}{0.5\textheight}{%
+				\begin{tikzpicture}%
+					\begin{scope}[shift={(0.5+0.2-0.03,0.5+0.05)}, opacity=0.5]%
+						\draw[fill=red!40, draw=none] (1, 1) rectangle (-2, 0);%(-2.34, 0);%
+						\draw[fill=yellow!40, draw=none] (-1, 4-0.09) rectangle (0, -5);%
+					\end{scope}%
+					\node[inner sep=0 cm] at (0, 0) {\includestandalone{../Matlab/+Cylinders/Tables/Ver.3101/Table.Ver_3101.Position_8}};%
+				\end{tikzpicture}%
+				}%
+			%}%
+	\end{multicols}
+\end{document}
+

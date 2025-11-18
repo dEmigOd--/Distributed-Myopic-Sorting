@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/userdefinitions.v003"}
+
+\begin{document}
+	\begin{figure}
+		\subfloat[State Machine of agent at state 1\label{2bit.algo.fsm.subfig1}]
+		{
+			\input{State.1.tex}
+		}
+		\subfloat[State Machine of agent at state 2\label{2bit.algo.fsm.subfig2}]
+		{
+			\input{State.2.tex}
+		}
+		\subfloat[State Machine of agent at state 3\label{2bit.algo.fsm.subfig3}]
+		{
+			\input{State.3.tex}
+		}
+		\qquad
+		\subfloat[State Machine of agent at state 4\label{2bit.algo.fsm.subfig4}]
+		{
+			\input{State.4.tex}
+		}
+		\subfloat[State Machine of agent at state 5\label{2bit.algo.fsm.subfig5}]
+		{
+			\input{State.5.tex}
+		}
+		\subfloat[State Machine of agent at state 6\label{2bit.algo.fsm.subfig6}]
+		{
+			\input{State.6.tex}
+		}
+		\qquad
+		\subfloat[State Machine of agent at state 7\label{2bit.algo.fsm.subfig7}]
+		{
+			\input{State.7.tex}
+		}
+		\subfloat[State Machine of agent at state 8\label{2bit.algo.fsm.subfig8}]
+		{
+			\input{State.8.tex}
+		}
+		\subfloat[State Machine of agent at state 9\label{2bit.algo.fsm.subfig9}]
+		{
+			\input{State.9.tex}
+		}
+		\qquad
+		\caption{Agent state machines at different positions on the patch, a tuple designates next memory state and a picked movement direction, or \textit{do nothing} otherwise.
+		Empty hatched cells should be treated as erroneous states. Input direction is a position of empty cell at the beginning of time tick.
+		In the absence of neighboring empty cell agents \textit{do nothing} (not shown).}
+		\label{2bit.coverage.algo.ver7.FSMs}
+	\end{figure}
+\end{document}

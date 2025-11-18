@@ -1,0 +1,75 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=3,
+xmax=21,
+xlabel style={font=\color{white!15!black}},
+xlabel={m (column number)},
+ymin=0,
+ymax=50000,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time (seconds)},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={$\text{Average ticks until solution as a function of m. On n }\times\text{ m grid. (k = 7)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark=asterisk, mark options={solid, mycolor1}]
+  table[row sep=crcr]{%
+3	261.4765\\
+6	1407.14\\
+9	2715.6265\\
+12	4528.745\\
+15	7447.77\\
+18	11111.8155\\
+21	15323.4505\\
+};
+\addlegendentry{$\text{n = 18; T}_{\text{est}}\text{ = 2.155}\cdot\text{n}\cdot\text{m}^\text{2}\text{ + O(m)}$}
+
+\addplot [color=mycolor1, dashdotted, forget plot]
+  table[row sep=crcr]{%
+3	3764.57142857143\\
+6	8640\\
+9	14626.2857142857\\
+12	21723.4285714286\\
+15	29931.4285714286\\
+18	39250.2857142857\\
+21	49680\\
+};
+\addplot [color=mycolor1, draw=none, forget plot]
+ plot [error bars/.cd, y dir = both, y explicit]
+ table[row sep=crcr, y error plus index=2, y error minus index=3]{%
+3	261.4765	348	145\\
+6	1407.14	1816	892\\
+9	2715.6265	3488	2034\\
+12	4528.745	6544	3206\\
+15	7447.77	10200	5156\\
+18	11111.8155	13884	7732\\
+21	15323.4505	18037	9841\\
+};
+\addplot [color=mycolor1, dashed, forget plot]
+  table[row sep=crcr]{%
+3	430.98651190478\\
+6	1161.75939285715\\
+9	2590.61478571428\\
+12	4717.55269047618\\
+15	7542.57310714285\\
+18	11065.6760357143\\
+21	15286.8614761905\\
+};
+\end{axis}
+\end{tikzpicture}%

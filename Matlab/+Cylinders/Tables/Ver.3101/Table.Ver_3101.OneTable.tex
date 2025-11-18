@@ -1,0 +1,33 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{amsmath, amssymb}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns}
+\usepackage{import}
+\usepackage{standalone}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% note, 
+%	0 - is an empty space; left uncolored
+%	1 - is an other agent; filled with black
+%	2 - is an edge; cross-hatched
+%	3 - is a do not care location
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	%% print a single node values at specific location
+	\newcommand{\SetNodeValue}[4]{%
+		\begin{scope}[shift={(#1, #2)}]
+			\foreach \pickedDirection[count=\i] in {\uparrow, \rightarrow, \downarrow, \leftarrow, \varnothing}{%
+				\ifnum#4=\i
+					\node[above] at (0, 0) {$\padzeroes[\memwidth]{\binarynum{#3}}$};
+					\node[below] at (0, {\adjustdirectionlabel * mod(\i, 2)}) {$\pickedDirection$};
+				\fi%
+			}%
+		\end{scope}
+	}%
+
+	\begin{tikzpicture}

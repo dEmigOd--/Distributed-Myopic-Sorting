@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Algorithms">
+      <UniqueIdentifier>{598dd825-6d0f-431d-a519-9cf99cb3d1bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Tests">
+      <UniqueIdentifier>{40c9441c-c76e-4a3f-84a0-850326b6ab88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Output">
+      <UniqueIdentifier>{54ffea23-a888-4daf-9c45-470226ecd80a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Grids">
+      <UniqueIdentifier>{4641d2d7-a7e3-44dc-bf74-19adfcae0b73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TwoLanes">
+      <UniqueIdentifier>{0fcdf2af-89d9-4be2-bdce-c86d89b47076}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Algorithm310xSeries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AlgorithmsTwoLanesSeries.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Enums.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm310.h">
+      <Filter>Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Agent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Mask.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Collector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MultiPermutator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Algorithm.h">
+      <Filter>Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="MatlabBackedAlgorithm.h">
+      <Filter>Header Files\Algorithms</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicTest.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="KTester.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="MatlabPrint.h">
+      <Filter>Header Files\Output</Filter>
+    </ClInclude>
+    <ClInclude Include="MTester.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="NTester.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Testers.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="SimulationParameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parameters.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MultistepTest.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="VariableExitingNumberTest.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstantlyFreeRoadTest.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="VEMTester.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="VENTester.h">
+      <Filter>Header Files\Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>Header Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="LLGrid.h">
+      <Filter>Header Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="FastGrid.h">
+      <Filter>Header Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCreator.h">
+      <Filter>Header Files\Grids</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_BasicTest.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_MultistepTest.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_KTester.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_NTester.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_Testers.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_VariableExitingNumberTest.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_ConstantlyFreeRoadTest.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+    <ClInclude Include="TL_VENTester.h">
+      <Filter>Header Files\TwoLanes</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

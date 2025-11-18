@@ -1,0 +1,17 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{standalone}
+\usepackage{import}
+\usepackage{graphicx}
+
+\begin{document}
+	\begin{tikzpicture}
+		\begin{scope}[opacity=0.5]
+			\import{.}{Question.Inner}
+		\end{scope}
+		\begin{scope}
+			\clip (2,1) rectangle (6, 4);
+			\import{.}{Question.Inner}
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

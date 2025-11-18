@@ -1,0 +1,91 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor5}{rgb}{0.46600,0.67400,0.18800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=4,
+xmax=128,
+xlabel style={font=\color{white!15!black}},
+xlabel={$m$},
+ymin=0,
+ymax=1200,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+%title={Average ticks until solution as a function of m. On n 	imes m grid. (free slots = 0.60)},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, mark=triangle*]
+  table[row sep=crcr]{%
+4	16.854\\
+8	39.618\\
+16	92.454\\
+32	177.804\\
+64	331.936\\
+128	592.008\\
+};
+\addlegendentry{n = 4}
+
+\addplot [color=mycolor2, mark=*]
+  table[row sep=crcr]{%
+4	25.596\\
+8	50.52\\
+16	112.964\\
+32	235.542\\
+64	453.938\\
+128	810.35\\
+};
+\addlegendentry{n = 6}
+
+\addplot [color=mycolor3, mark=star]
+  table[row sep=crcr]{%
+4	34.712\\
+8	61.38\\
+16	131.038\\
+32	274.094\\
+64	521.512\\
+128	954.886\\
+};
+\addlegendentry{n = 8}
+
+\addplot [color=mycolor4, mark=square*]
+  table[row sep=crcr]{%
+4	43.814\\
+8	73.146\\
+16	136.51\\
+32	295.03\\
+64	584.76\\
+128	1067.218\\
+};
+\addlegendentry{n = 10}
+
+\addplot [color=mycolor5, mark=diamond*]
+  table[row sep=crcr]{%
+4	54.004\\
+8	86.202\\
+16	149.558\\
+32	318.366\\
+64	625.626\\
+128	1168.292\\
+};
+\addlegendentry{n = 12}
+
+\end{axis}
+\end{tikzpicture}%

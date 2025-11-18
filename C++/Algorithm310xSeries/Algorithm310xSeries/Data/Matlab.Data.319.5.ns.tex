@@ -1,0 +1,318 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor3}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor4}{rgb}{0.63500,0.07800,0.18400}%
+\definecolor{mycolor5}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor6}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor7}{rgb}{0.30100,0.74500,0.93300}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=80,
+xmax=125,
+xlabel style={font=\color{white!15!black}},
+xlabel={n (row number)},
+ymin=30,
+ymax=70,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time (seconds)},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={$\text{Average ticks until solution as a function of n. On n }\times\text{ m grid. (free slots = 0.20)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark=asterisk, mark options={solid, mycolor1}]
+  table[row sep=crcr]{%
+80	32.8237\\
+85	32.5926\\
+90	32.075\\
+95	32.0967\\
+100	31.76655\\
+105	31.7179\\
+110	31.6396\\
+115	31.33055\\
+120	31.369\\
+125	31.1958\\
+};
+\addlegendentry{$\text{one = 20; T}_{\text{est}}\text{ = -0.0n + O(1)}$}
+
+\addplot [color=mycolor1, dashed, forget plot]
+  table[row sep=crcr]{%
+80	32.6341536363636\\
+85	32.4622839393939\\
+90	32.2904142424242\\
+95	32.1185445454545\\
+100	31.9466748484848\\
+105	31.7748051515151\\
+110	31.6029354545455\\
+115	31.4310657575758\\
+120	31.2591960606061\\
+125	31.0873263636364\\
+};
+\addplot [color=mycolor2, draw=none, mark=asterisk, mark options={solid, mycolor2}]
+  table[row sep=crcr]{%
+80	35.8134\\
+85	35.30725\\
+90	35.12425\\
+95	34.73905\\
+100	34.5268\\
+105	34.15915\\
+110	33.979\\
+115	33.93185\\
+120	33.73015\\
+125	33.5805\\
+};
+\addlegendentry{$\text{one = 24; T}_{\text{est}}\text{ = -0.0n + O(1)}$}
+
+\addplot [color=mycolor2, dashed, forget plot]
+  table[row sep=crcr]{%
+80	35.5731109090909\\
+85	35.3322284848485\\
+90	35.0913460606061\\
+95	34.8504636363636\\
+100	34.6095812121212\\
+105	34.3686987878788\\
+110	34.1278163636364\\
+115	33.8869339393939\\
+120	33.6460515151515\\
+125	33.4051690909091\\
+};
+\addplot [color=mycolor3, draw=none, mark=asterisk, mark options={solid, mycolor3}]
+  table[row sep=crcr]{%
+80	38.62105\\
+85	38.44385\\
+90	37.6681\\
+95	37.25555\\
+100	36.9732\\
+105	36.59235\\
+110	36.2383\\
+115	36.06685\\
+120	36.14105\\
+125	35.7309\\
+};
+\addlegendentry{$\text{one = 28; T}_{\text{est}}\text{ = -0.1n + O(1)}$}
+
+\addplot [color=mycolor3, dashed, forget plot]
+  table[row sep=crcr]{%
+80	38.4341145454545\\
+85	38.1094490909091\\
+90	37.7847836363636\\
+95	37.4601181818182\\
+100	37.1354527272727\\
+105	36.8107872727273\\
+110	36.4861218181818\\
+115	36.1614563636363\\
+120	35.8367909090909\\
+125	35.5121254545454\\
+};
+\addplot [color=mycolor4, draw=none, mark=asterisk, mark options={solid, mycolor4}]
+  table[row sep=crcr]{%
+80	41.46045\\
+85	41.0029\\
+90	40.30425\\
+95	39.81085\\
+100	39.2488\\
+105	38.9351\\
+110	38.81165\\
+115	38.2476\\
+120	38.2023\\
+125	37.87205\\
+};
+\addlegendentry{$\text{one = 32; T}_{\text{est}}\text{ = -0.1n + O(1)}$}
+
+\addplot [color=mycolor4, dashed, forget plot]
+  table[row sep=crcr]{%
+80	41.1758045454544\\
+85	40.778869090909\\
+90	40.3819336363636\\
+95	39.9849981818181\\
+100	39.5880627272727\\
+105	39.1911272727273\\
+110	38.7941918181818\\
+115	38.3972563636364\\
+120	38.000320909091\\
+125	37.6033854545455\\
+};
+\addplot [color=mycolor5, draw=none, mark=asterisk, mark options={solid, mycolor5}]
+  table[row sep=crcr]{%
+80	44.44325\\
+85	43.9395\\
+90	42.881\\
+95	42.3907\\
+100	41.59705\\
+105	41.2387\\
+110	40.96205\\
+115	40.429\\
+120	40.1639\\
+125	39.95685\\
+};
+\addlegendentry{$\text{one = 36; T}_{\text{est}}\text{ = -0.1n + O(1)}$}
+
+\addplot [color=mycolor5, dashed, forget plot]
+  table[row sep=crcr]{%
+80	44.0832299999999\\
+85	43.5758899999999\\
+90	43.06855\\
+95	42.56121\\
+100	42.05387\\
+105	41.54653\\
+110	41.03919\\
+115	40.53185\\
+120	40.0245100000001\\
+125	39.5171700000001\\
+};
+\addplot [color=mycolor6, draw=none, mark=asterisk, mark options={solid, mycolor6}]
+  table[row sep=crcr]{%
+80	47.86685\\
+85	46.80165\\
+90	45.63485\\
+95	44.8863\\
+100	44.17385\\
+105	43.5407\\
+110	43.10605\\
+115	42.6328\\
+120	42.23025\\
+125	41.85655\\
+};
+\addlegendentry{$\text{one = 40; T}_{\text{est}}\text{ = -0.1n + O(1)}$}
+
+\addplot [color=mycolor6, dashed, forget plot]
+  table[row sep=crcr]{%
+80	47.1932572727273\\
+85	46.5443078787879\\
+90	45.8953584848485\\
+95	45.2464090909091\\
+100	44.5974596969697\\
+105	43.9485103030303\\
+110	43.2995609090909\\
+115	42.6506115151515\\
+120	42.0016621212121\\
+125	41.3527127272727\\
+};
+\addplot [color=mycolor7, draw=none, mark=asterisk, mark options={solid, mycolor7}]
+  table[row sep=crcr]{%
+80	51.5666\\
+85	49.99575\\
+90	48.6791\\
+95	47.8198\\
+100	46.7938\\
+105	46.1347\\
+110	45.38145\\
+115	44.7989\\
+120	44.3082\\
+125	43.9907\\
+};
+\addlegendentry{$\text{one = 44; T}_{\text{est}}\text{ = -0.2n + O(1)}$}
+
+\addplot [color=mycolor7, dashed, forget plot]
+  table[row sep=crcr]{%
+80	50.6388390909091\\
+85	49.8184081818182\\
+90	48.9979772727273\\
+95	48.1775463636364\\
+100	47.3571154545455\\
+105	46.5366845454545\\
+110	45.7162536363636\\
+115	44.8958227272727\\
+120	44.0753918181818\\
+125	43.2549609090909\\
+};
+\addplot [color=mycolor1, draw=none, mark=asterisk, mark options={solid, mycolor1}]
+  table[row sep=crcr]{%
+80	55.95085\\
+85	53.73895\\
+90	52.0418\\
+95	50.60045\\
+100	49.4852\\
+105	48.67675\\
+110	47.69735\\
+115	47.2629\\
+120	46.55495\\
+125	45.8881\\
+};
+\addlegendentry{$\text{one = 48; T}_{\text{est}}\text{ = -0.2n + O(1)}$}
+
+\addplot [color=mycolor1, dashed, forget plot]
+  table[row sep=crcr]{%
+80	54.5424118181817\\
+85	53.4862603030302\\
+90	52.4301087878787\\
+95	51.3739572727272\\
+100	50.3178057575757\\
+105	49.2616542424242\\
+110	48.2055027272728\\
+115	47.1493512121213\\
+120	46.0931996969698\\
+125	45.0370481818183\\
+};
+\addplot [color=mycolor2, draw=none, mark=asterisk, mark options={solid, mycolor2}]
+  table[row sep=crcr]{%
+80	61.4801\\
+85	58.08365\\
+90	55.5771\\
+95	53.75525\\
+100	52.46545\\
+105	51.1464\\
+110	50.1399\\
+115	49.25415\\
+120	48.59585\\
+125	47.96835\\
+};
+\addlegendentry{$\text{one = 52; T}_{\text{est}}\text{ = -0.3n + O(1)}$}
+
+\addplot [color=mycolor2, dashed, forget plot]
+  table[row sep=crcr]{%
+80	59.1684436363637\\
+85	57.763593939394\\
+90	56.3587442424243\\
+95	54.9538945454546\\
+100	53.5490448484849\\
+105	52.1441951515151\\
+110	50.7393454545454\\
+115	49.3344957575757\\
+120	47.929646060606\\
+125	46.5247963636363\\
+};
+\addplot [color=mycolor3, draw=none, mark=asterisk, mark options={solid, mycolor3}]
+  table[row sep=crcr]{%
+80	68.2612\\
+85	63.4077\\
+90	60.15385\\
+95	57.65615\\
+100	55.6555\\
+105	54.0952\\
+110	53.0296\\
+115	51.9374\\
+120	50.9852\\
+125	50.0339\\
+};
+\addlegendentry{$\text{one = 56; T}_{\text{est}}\text{ = -0.4n + O(1)}$}
+
+\addplot [color=mycolor3, dashed, forget plot]
+  table[row sep=crcr]{%
+80	64.9086263636363\\
+85	63.044836060606\\
+90	61.1810457575757\\
+95	59.3172554545454\\
+100	57.4534651515151\\
+105	55.5896748484848\\
+110	53.7258845454546\\
+115	51.8620942424243\\
+120	49.998303939394\\
+125	48.1345136363637\\
+};
+\end{axis}
+\end{tikzpicture}%

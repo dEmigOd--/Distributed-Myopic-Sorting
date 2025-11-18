@@ -1,0 +1,190 @@
+\documentclass[tikz, border=0.5]{standalone}
+
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns, intersections}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% note, 
+%	0 - is an empty space; left uncolored
+%	1 - is an other agent; filled with black
+%	2 - is an edge; cross-hatched
+%	3 - is a do not care location
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	% model parameters\n
+	\pgfmathtruncatemacro{\memory}{3}
+	\pgfmathtruncatemacro{\visibility}{1}
+	\pgfmathsetmacro{\maxtablelength}{8}
+
+	% calculate the sizes of the neighborhood
+	\newcommand{\GetNeighborhoodSizes}[1]{%
+		\xdef\toleft{0}
+		\xdef\toright{0}
+		\xdef\toup{0}
+		\xdef\todown{0}
+
+		\pgfmathtruncatemacro{\tableSize}{2 * \visibility + 1}
+		\foreach \columnoffset/\rowoffset[count=\i] in #1 {%
+			\ifnum\columnoffset<\toleft%
+				\xdef\toleft{\columnoffset}%
+			\fi%
+			\ifnum\columnoffset>\toright%
+				\xdef\toright{\columnoffset}%
+			\fi%
+			\ifnum\rowoffset<\todown%
+				\xdef\todown{\rowoffset}%
+			\fi%
+			\ifnum\rowoffset>\toup%
+				\xdef\toup{\rowoffset}%
+			\fi%
+			\coordinate (anchor_\i) at (\columnoffset, \rowoffset);
+		}
+
+		\xdef\xbase{\toleft}
+		\xdef\ybase{\todown}
+		\pgfmathtruncatemacro{\pxsize}{\toright - \toleft + 1}
+		\xdef\xsize{\pxsize}
+		\pgfmathtruncatemacro{\pysize}{\toup - \todown + 1}
+		\xdef\ysize{\pysize}
+
+	}
+
+	\newcommand*{\ExtractCoordinate}[1]{\path[overlay] (#1); \pgfgetlastxy{\XCoord}{\YCoord}}%
+
+	% draw this neighborhood
+	\newcommand{\DrawNeighborhood}[1]{%
+		\begin{scope}[scale=\scalefactor]
+			\begin{scope}[shift={(-\xbase, -\ybase)}]
+				\draw[fill=black] (0.5, 0.5) circle (3pt);
+				\draw (0, 0) rectangle (1,1);
+
+				\foreach \value[count=\i] in #1 {%
+					\ExtractCoordinate{anchor_\i}
+					\begin{scope}[shift={(\XCoord, \YCoord)}]
+						\ifnum\value=0%
+							\draw (0, 0) rectangle (1, 1);
+						\fi%
+						\ifnum\value=1%
+							\draw[fill=black!70] (0, 0) rectangle (1, 1);
+						\fi%
+						\ifnum\value=2%
+							\begin{scope}[opacity=\opacityfactor, blend group=normal]
+								\draw[pattern=north west lines, draw = none] (0, 0) rectangle (1, 1);
+								\draw (0, 0) rectangle (1, 1);
+							\end{scope}
+						\fi%
+						\ifnum\value=3%
+							\begin{scope}[opacity=\opacityfactor]
+								\draw (0, 0) rectangle (1, 1);
+								\node at (0.5, 0.5) {\tiny $\mathrm{X}$};
+							\end{scope}
+						\fi%
+					\end{scope}
+				}
+			\end{scope}
+		\end{scope}
+	}
+
+	%% set column and table num
+	\newcommand{\DrawAtIndex}[1]{%
+		\pgfmathtruncatemacro{\currentstate}{#1}
+		\pgfmathtruncatemacro{\tablenum}{ceil((\currentstate + 1) / \maxtablelength)}
+		\pgfmathtruncatemacro{\columnnum}{mod(\currentstate, \maxtablelength)}
+
+		\pgfmathsetmacro{\startoffset}{(1 - \xsize * \scalefactor) / 2}
+		\begin{scope}[shift={($(left_upper_corner_\tablenum) + (\columnnum + \startoffset, 0)$)}]
+			\DrawNeighborhood{\neighbors}
+		\end{scope}
+	}
+
+	% put values into the table
+	\newcommand{\SetTableValues}[4]{%
+		\pgfmathtruncatemacro{\currentstate}{#1}
+		\pgfmathtruncatemacro{\tablenum}{ceil((\currentstate + 1) / \maxtablelength)}
+		\pgfmathtruncatemacro{\columnnum}{mod(\currentstate, \maxtablelength)}
+
+		\xdef\pickedDirection{\text{,}}
+		\ifnum#4=0%
+			\xdef\pickedDirection{\pickedDirection\text{N}}%
+		\fi%
+		\ifnum#4=1%
+			\xdef\pickedDirection{\pickedDirection\text{E}}%
+		\fi%
+		\ifnum#4=2%
+			\xdef\pickedDirection{\pickedDirection\text{S}}%
+		\fi%
+		\ifnum#4=3%
+			\xdef\pickedDirection{\pickedDirection\text{W}}%
+		\fi%
+		\ifnum#4=4%
+			\xdef\pickedDirection{\pickedDirection\varnothing}%
+		\fi%
+		\begin{scope}[shift={($(left_upper_corner_\tablenum) + (\columnnum, -#2)$)}]
+			\node at (\tiklabelxoffset, \tiklabelyoffset) {$\padzeroes[\memory]{\binarynum{#3}}\pickedDirection$};
+		\end{scope}
+	}
+
+	% drawing parameters
+	\pgfmathsetmacro{\scalefactor}{0.3}
+	\pgfmathsetmacro{\opacityfactor}{0.7}
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+	\pgfmathsetmacro{\tiklabelyoffset}{0.5}
+	\pgfmathsetmacro{\lengthlabelline}{0.8}
+	\pgfmathsetmacro{\labelxoffset}{0.5}
+	\pgfmathsetmacro{\labelyoffset}{0.1}
+	\pgfmathsetmacro{\mintablespace}{0.7}
+	\pgfmathsetmacro{\cellsize}{1}
+
+	\begin{tikzpicture}
+		% common code
+		\pgfmathtruncatemacro{\tableheight}{2^(\memory)}
+		\pgfmathtruncatemacro{\numberofstates}{2}
+		\pgfmathtruncatemacro{\numberoftables}{ceil(\numberofstates / \maxtablelength)}
+
+		\newcommand{\neighborsCoordinates}{0/-1, 0/1, 1/0, -1/0}
+		\newcommand{\neighbors}{}
+		\GetNeighborhoodSizes{\neighborsCoordinates}
+
+		\begin{scope}[scale=\cellsize]
+			% draw all the tables
+			\foreach \tablenum in {1, ..., \numberoftables}{%
+				\pgfmathtruncatemacro{\tablelength}{ifthenelse(\tablenum < \numberoftables, \maxtablelength, \numberofstates - (\numberoftables - 1) * \maxtablelength)}
+				\pgfmathsetmacro{\yoffset}{-(\tablenum - 1) * (\tableheight + \mintablespace + \scalefactor * \ysize)}
+
+				\begin{scope}[yshift=\yoffset cm]
+					\coordinate (left_upper_corner_\tablenum) at (0, \tableheight);
+					\draw (0, 0) grid (\tablelength, \tableheight);
+					\begin{scope}[shift={(left_upper_corner_\tablenum)}]
+						\draw (0, 0) -- ++(135:\lengthlabelline);
+						\node[rotate=-45,scale=0.5] at ($(135:\labelxoffset)+(45:\labelyoffset)$) {input};
+						\node[rotate=-45,scale=0.5] at ($(135:\labelxoffset)+(180+45:\labelyoffset)$) {memory};
+					\end{scope}
+					\foreach \state in { 1, ..., \tableheight}{%
+						\pgfmathtruncatemacro{\memorystate}{\state-1}
+						\node (memory_\tablenum_\state) at (-1 + \tiklabelxoffset, \tableheight - \state + \tiklabelyoffset) {$\padzeroes[\memory]{\binarynum{\memorystate}}$};
+					}
+				\end{scope}
+			}
+
+			\renewcommand{\neighbors}{0, 2, 2, 3}
+			\DrawAtIndex{0}
+			\renewcommand{\neighbors}{1, 2, 2, 3}
+			\DrawAtIndex{1}
+
+			\SetTableValues{0}{1}{1}{2}
+			\SetTableValues{1}{1}{1}{4}
+			\SetTableValues{0}{2}{2}{4}
+			\SetTableValues{1}{2}{2}{4}
+			\SetTableValues{0}{3}{3}{4}
+			\SetTableValues{1}{3}{3}{4}
+			\SetTableValues{0}{4}{0}{4}
+			\SetTableValues{1}{4}{0}{4}
+
+		\end{scope}
+	\end{tikzpicture}
+\end{document}

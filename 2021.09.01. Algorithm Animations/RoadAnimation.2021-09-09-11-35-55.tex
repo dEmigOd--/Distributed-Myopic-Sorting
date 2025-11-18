@@ -1,0 +1,3262 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath,amssymb}
+\usepackage{subcaption}
+\usepackage{fmtcount}
+\usetikzlibrary{calc, patterns, intersections}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{import}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+
+\newcommand{\lineinput}[1]{\begingroup\endlinechar=-1 \input{#1}\endgroup}
+
+\tikzset{
+	hatch distance/.store in=\hatchdistance,
+	hatch distance=10pt,
+	hatch thickness/.store in=\hatchthickness,
+	hatch thickness=2pt
+}
+
+\makeatletter
+\pgfdeclarepatternformonly[\hatchdistance,\hatchthickness]{flexible hatch}
+{\pgfqpoint{-\hatchdistance}{-\hatchdistance}}%0pt
+{\pgfqpoint{2\hatchdistance}{2\hatchdistance}}
+{\pgfpoint{\hatchdistance}{\hatchdistance}}%{\hatchdistance-1pt}{\hatchdistance-1pt}}%
+{
+	\pgfsetcolor{\tikz@pattern@color}
+	\pgfsetlinewidth{\hatchthickness}
+	\pgfpathmoveto{\pgfqpoint{\hatchdistance}{-\hatchdistance}}%\pgfqpoint{0pt}{0pt}}
+	\pgfpathlineto{\pgfqpoint{-\hatchdistance}{\hatchdistance}}%\pgfqpoint{\hatchdistance}{\hatchdistance}}
+	\pgfusepath{stroke}
+}
+\makeatother
+
+\graphicspath{{../2020.11.10. Sorting Algorithm 310. Take 2/clipart/}{./images/}}
+
+\newcommand\righttrees{}
+\newcommand\lefttrees{}
+\newcommand\GreenCars{}
+\newcommand\RedCars{}
+
+\begin{document}
+	\setlength{\fboxsep}{0pt}%
+	% frame No: 1
+	\renewcommand\lefttrees{0.00,1.00,2.00,5.00}
+	\renewcommand\righttrees{1.00,2.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,5.00/0.00,0.00/1.00,1.00/1.00,2.00/1.00,4.00/1.00,3.00/2.00,0.00/3.00,1.00/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{0}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 2
+	\renewcommand\lefttrees{0.20,1.20,2.20,5.20}
+	\renewcommand\righttrees{1.20,2.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,5.00/0.00,0.00/1.00,1.00/1.00,2.00/1.00,4.00/1.00,3.00/2.00,0.00/3.00,1.00/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{0.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 3
+	\renewcommand\lefttrees{0.40,1.40,2.40,5.40}
+	\renewcommand\righttrees{1.40,2.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.95/0.00,0.00/1.00,1.00/1.00,2.05/1.00,4.00/1.00,3.05/2.00,0.00/3.00,1.05/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{0.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 4
+	\renewcommand\lefttrees{0.60,1.60,2.60,5.60}
+	\renewcommand\righttrees{1.60,2.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.89/0.00,0.00/1.00,1.00/1.00,2.11/1.00,4.00/1.00,3.11/2.00,0.00/3.00,1.11/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{0.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 5
+	\renewcommand\lefttrees{0.80,1.80,2.80,5.80}
+	\renewcommand\righttrees{1.80,2.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.84/0.00,0.00/1.00,1.00/1.00,2.16/1.00,4.00/1.00,3.16/2.00,0.00/3.00,1.16/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{0.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 6
+	\renewcommand\lefttrees{1.00,2.00,3.00,6.00}
+	\renewcommand\righttrees{2.00,3.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.79/0.00,0.00/1.00,1.00/1.00,2.21/1.00,4.00/1.00,3.21/2.00,0.00/3.00,1.21/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{1}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 7
+	\renewcommand\lefttrees{1.20,2.20,3.20,6.20}
+	\renewcommand\righttrees{2.20,3.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.74/0.00,0.00/1.00,1.00/1.00,2.26/1.00,4.00/1.00,3.26/2.00,0.00/3.00,1.26/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{1.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 8
+	\renewcommand\lefttrees{1.40,2.40,3.40,6.40}
+	\renewcommand\righttrees{2.40,3.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.68/0.00,0.00/1.00,1.00/1.00,2.32/1.00,4.00/1.00,3.32/2.00,0.00/3.00,1.32/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{1.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 9
+	\renewcommand\lefttrees{1.60,2.60,3.60,6.60}
+	\renewcommand\righttrees{2.60,3.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.63/0.00,0.00/1.00,1.00/1.00,2.37/1.00,4.00/1.00,3.37/2.00,0.00/3.00,1.37/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{1.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 10
+	\renewcommand\lefttrees{1.80,2.80,3.80,6.80}
+	\renewcommand\righttrees{2.80,3.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.58/0.00,0.00/1.00,1.00/1.00,2.42/1.00,4.00/1.00,3.42/2.00,0.00/3.00,1.42/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{1.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 11
+	\renewcommand\lefttrees{2.00,3.00,4.00,7.00}
+	\renewcommand\righttrees{3.00,4.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.53/0.00,0.00/1.00,1.00/1.00,2.47/1.00,4.00/1.00,3.47/2.00,0.00/3.00,1.47/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 12
+	\renewcommand\lefttrees{2.20,3.20,4.20,7.20}
+	\renewcommand\righttrees{3.20,4.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.47/0.00,0.00/1.00,1.00/1.00,2.53/1.00,4.00/1.00,3.53/2.00,0.00/3.00,1.53/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{2.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 13
+	\renewcommand\lefttrees{2.40,3.40,4.40,7.40}
+	\renewcommand\righttrees{3.40,4.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.42/0.00,0.00/1.00,1.00/1.00,2.58/1.00,4.00/1.00,3.58/2.00,0.00/3.00,1.58/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{2.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 14
+	\renewcommand\lefttrees{2.60,3.60,4.60,7.60}
+	\renewcommand\righttrees{0.00,3.60,4.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.37/0.00,0.00/1.00,1.00/1.00,2.63/1.00,4.00/1.00,3.63/2.00,0.00/3.00,1.63/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{2.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 15
+	\renewcommand\lefttrees{2.80,3.80,4.80,7.80}
+	\renewcommand\righttrees{0.20,3.80,4.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.32/0.00,0.00/1.00,1.00/1.00,2.68/1.00,4.00/1.00,3.68/2.00,0.00/3.00,1.68/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{2.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 16
+	\renewcommand\lefttrees{3.00,4.00,5.00,8.00}
+	\renewcommand\righttrees{0.40,4.00,5.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.26/0.00,0.00/1.00,1.00/1.00,2.74/1.00,4.00/1.00,3.74/2.00,0.00/3.00,1.74/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{3}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 17
+	\renewcommand\lefttrees{3.20,4.20,5.20,8.20}
+	\renewcommand\righttrees{0.60,4.20,5.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.21/0.00,0.00/1.00,1.00/1.00,2.79/1.00,4.00/1.00,3.79/2.00,0.00/3.00,1.79/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{3.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 18
+	\renewcommand\lefttrees{3.40,4.40,5.40,8.40}
+	\renewcommand\righttrees{0.80,4.40,5.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.16/0.00,0.00/1.00,1.00/1.00,2.84/1.00,4.00/1.00,3.84/2.00,0.00/3.00,1.84/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{3.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 19
+	\renewcommand\lefttrees{3.60,4.60,5.60,8.60}
+	\renewcommand\righttrees{1.00,4.60,5.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.11/0.00,0.00/1.00,1.00/1.00,2.89/1.00,4.00/1.00,3.89/2.00,0.00/3.00,1.89/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{3.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 20
+	\renewcommand\lefttrees{3.80,4.80,5.80,8.80}
+	\renewcommand\righttrees{1.20,4.80,5.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.05/0.00,0.00/1.00,1.00/1.00,2.95/1.00,4.00/1.00,3.95/2.00,0.00/3.00,1.95/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{3.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 21
+	\renewcommand\lefttrees{4.00,5.00,6.00,9.00}
+	\renewcommand\righttrees{1.40,5.00,6.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.00/3.00,2.00/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 22
+	\renewcommand\lefttrees{4.20,5.20,6.20,9.20}
+	\renewcommand\righttrees{1.60,5.20,6.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/1.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.00/3.00,2.00/3.00,5.00/3.00}
+	\pgfmathsetmacro{\distance}{4.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 23
+	\renewcommand\lefttrees{4.40,5.40,6.40,9.40}
+	\renewcommand\righttrees{1.80,5.40,6.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.95,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.05/3.00,2.05/3.00,5.00/2.95}
+	\pgfmathsetmacro{\distance}{4.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 24
+	\renewcommand\lefttrees{4.60,5.60,6.60,9.60}
+	\renewcommand\righttrees{2.00,5.60,6.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.89,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.11/3.00,2.11/3.00,5.00/2.89}
+	\pgfmathsetmacro{\distance}{4.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 25
+	\renewcommand\lefttrees{4.80,5.80,6.80,9.80}
+	\renewcommand\righttrees{2.20,5.80,6.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.84,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.16/3.00,2.16/3.00,5.00/2.84}
+	\pgfmathsetmacro{\distance}{4.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 26
+	\renewcommand\lefttrees{5.00,6.00,7.00,10.00}
+	\renewcommand\righttrees{2.40,6.00,7.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.79,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.21/3.00,2.21/3.00,5.00/2.79}
+	\pgfmathsetmacro{\distance}{5}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 27
+	\renewcommand\lefttrees{5.20,6.20,7.20,10.20}
+	\renewcommand\righttrees{2.60,6.20,7.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.74,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.26/3.00,2.26/3.00,5.00/2.74}
+	\pgfmathsetmacro{\distance}{5.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 28
+	\renewcommand\lefttrees{5.40,6.40,7.40,10.40}
+	\renewcommand\righttrees{2.80,6.40,7.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.68,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.32/3.00,2.32/3.00,5.00/2.68}
+	\pgfmathsetmacro{\distance}{5.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 29
+	\renewcommand\lefttrees{5.60,6.60,7.60,10.60}
+	\renewcommand\righttrees{3.00,6.60,7.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.63,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.37/3.00,2.37/3.00,5.00/2.63}
+	\pgfmathsetmacro{\distance}{5.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 30
+	\renewcommand\lefttrees{5.80,6.80,7.80,10.80}
+	\renewcommand\righttrees{3.20,6.80,7.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.58,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.42/3.00,2.42/3.00,5.00/2.58}
+	\pgfmathsetmacro{\distance}{5.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 31
+	\renewcommand\lefttrees{6.00,7.00,8.00,11.00}
+	\renewcommand\righttrees{3.40,7.00,8.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.53,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.47/3.00,2.47/3.00,5.00/2.53}
+	\pgfmathsetmacro{\distance}{6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 32
+	\renewcommand\lefttrees{6.20,7.20,8.20,11.20}
+	\renewcommand\righttrees{3.60,7.20,8.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.47,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.53/3.00,2.53/3.00,5.00/2.47}
+	\pgfmathsetmacro{\distance}{6.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 33
+	\renewcommand\lefttrees{6.40,7.40,8.40,11.40}
+	\renewcommand\righttrees{3.80,7.40,8.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.42,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.58/3.00,2.58/3.00,5.00/2.42}
+	\pgfmathsetmacro{\distance}{6.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 34
+	\renewcommand\lefttrees{0.00,6.60,7.60,8.60,11.60}
+	\renewcommand\righttrees{4.00,7.60,8.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.37,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.63/3.00,2.63/3.00,5.00/2.37}
+	\pgfmathsetmacro{\distance}{6.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 35
+	\renewcommand\lefttrees{0.20,6.80,7.80,8.80,11.80}
+	\renewcommand\righttrees{4.20,7.80,8.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.32,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.68/3.00,2.68/3.00,5.00/2.32}
+	\pgfmathsetmacro{\distance}{6.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 36
+	\renewcommand\lefttrees{0.40,7.00,8.00,9.00,12.00}
+	\renewcommand\righttrees{4.40,8.00,9.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.26,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.74/3.00,2.74/3.00,5.00/2.26}
+	\pgfmathsetmacro{\distance}{7}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 37
+	\renewcommand\lefttrees{0.60,7.20,8.20,9.20,12.20}
+	\renewcommand\righttrees{4.60,8.20,9.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.21,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.79/3.00,2.79/3.00,5.00/2.21}
+	\pgfmathsetmacro{\distance}{7.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 38
+	\renewcommand\lefttrees{0.80,7.40,8.40,9.40,12.40}
+	\renewcommand\righttrees{4.80,8.40,9.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.16,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.84/3.00,2.84/3.00,5.00/2.16}
+	\pgfmathsetmacro{\distance}{7.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 39
+	\renewcommand\lefttrees{1.00,7.60,8.60,9.60,12.60}
+	\renewcommand\righttrees{5.00,8.60,9.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.11,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.89/3.00,2.89/3.00,5.00/2.11}
+	\pgfmathsetmacro{\distance}{7.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 40
+	\renewcommand\lefttrees{1.20,7.80,8.80,9.80,12.80}
+	\renewcommand\righttrees{5.20,8.80,9.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.05,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,0.95/3.00,2.95/3.00,5.00/2.05}
+	\pgfmathsetmacro{\distance}{7.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 41
+	\renewcommand\lefttrees{1.40,8.00,9.00,10.00,13.00}
+	\renewcommand\righttrees{5.40,9.00,10.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.00/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 42
+	% here we present a visibility range and decisions
+	\renewcommand\lefttrees{1.60,8.20,9.20,10.20,13.20}
+	\renewcommand\righttrees{5.60,9.20,10.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.00/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{8.2}
+	\import{.}{Frame.Moving.Cars}
+
+	\import{.}{Frame.Car.Visibility}
+	% and decision
+	\import{.}{Frame.Car.Decision}
+	
+	% frame No: 43
+	\renewcommand\lefttrees{1.80,8.40,9.40,10.40,13.40}
+	\renewcommand\righttrees{5.80,9.40,10.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.05/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.05,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.05/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{8.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 44
+	\renewcommand\lefttrees{2.00,8.60,9.60,10.60,13.60}
+	\renewcommand\righttrees{6.00,9.60,10.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.11/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.11,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.11/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{8.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 45
+	\renewcommand\lefttrees{2.20,8.80,9.80,10.80,13.80}
+	\renewcommand\righttrees{6.20,9.80,10.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.16/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.16,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.16/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{8.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 46
+	\renewcommand\lefttrees{2.40,9.00,10.00,11.00,14.00}
+	\renewcommand\righttrees{6.40,10.00,11.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.21/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.21,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.21/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{9}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 47
+	\renewcommand\lefttrees{2.60,9.20,10.20,11.20,14.20}
+	\renewcommand\righttrees{6.60,10.20,11.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.26/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.26,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.26/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{9.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 48
+	\renewcommand\lefttrees{2.80,9.40,10.40,11.40,14.40}
+	\renewcommand\righttrees{6.80,10.40,11.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.32/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.32,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.32/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{9.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 49
+	\renewcommand\lefttrees{3.00,9.60,10.60,11.60,14.60}
+	\renewcommand\righttrees{0.00,7.00,10.60,11.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.37/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.37,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.37/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{9.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 50
+	\renewcommand\lefttrees{3.20,9.80,10.80,11.80,14.80}
+	\renewcommand\righttrees{0.20,7.20,10.80,11.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.42/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.42,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.42/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{9.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 51
+	\renewcommand\lefttrees{3.40,10.00,11.00,12.00,15.00}
+	\renewcommand\righttrees{0.40,7.40,11.00,12.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.47/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.47,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.47/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{10}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 52
+	\renewcommand\lefttrees{3.60,10.20,11.20,12.20,15.20}
+	\renewcommand\righttrees{0.60,7.60,11.20,12.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.53/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.53,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.53/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{10.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 53
+	\renewcommand\lefttrees{3.80,10.40,11.40,12.40,15.40}
+	\renewcommand\righttrees{0.80,7.80,11.40,12.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.58/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.58,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.58/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{10.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 54
+	\renewcommand\lefttrees{4.00,10.60,11.60,12.60,15.60}
+	\renewcommand\righttrees{0.00,1.00,8.00,11.60,12.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.63/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.63,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.63/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{10.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 55
+	\renewcommand\lefttrees{4.20,10.80,11.80,12.80,15.80}
+	\renewcommand\righttrees{0.20,1.20,8.20,11.80,12.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.68/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.68,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.68/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{10.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 56
+	\renewcommand\lefttrees{4.40,11.00,12.00,13.00,16.00}
+	\renewcommand\righttrees{0.40,1.40,8.40,12.00,13.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.74/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.74,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.74/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{11}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 57
+	\renewcommand\lefttrees{4.60,11.20,12.20,13.20,16.20}
+	\renewcommand\righttrees{0.60,1.60,8.60,12.20,13.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.79/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.79,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.79/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{11.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 58
+	\renewcommand\lefttrees{4.80,11.40,12.40,13.40,16.40}
+	\renewcommand\righttrees{0.80,1.80,8.80,12.40,13.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.84/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.84,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.84/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{11.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 59
+	\renewcommand\lefttrees{5.00,11.60,12.60,13.60,16.60}
+	\renewcommand\righttrees{1.00,2.00,9.00,12.60,13.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.89/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.89,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.89/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{11.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 60
+	\renewcommand\lefttrees{5.20,11.80,12.80,13.80,16.80}
+	\renewcommand\righttrees{1.20,2.20,9.20,12.80,13.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,4.95/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/1.95,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,1.95/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{11.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 61
+	\renewcommand\lefttrees{5.40,12.00,13.00,14.00,17.00}
+	\renewcommand\righttrees{1.40,2.40,9.40,13.00,14.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{12}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 62
+	\renewcommand\lefttrees{5.60,12.20,13.20,14.20,17.20}
+	\renewcommand\righttrees{1.60,2.60,9.60,13.20,14.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/2.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/3.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{12.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 63
+	\renewcommand\lefttrees{5.80,12.40,13.40,14.40,17.40}
+	\renewcommand\righttrees{1.80,2.80,9.80,13.40,14.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.95,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.05,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.05,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.95,5.00/2.00}
+	\pgfmathsetmacro{\distance}{12.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 64
+	\renewcommand\lefttrees{6.00,12.60,13.60,14.60,17.60}
+	\renewcommand\righttrees{2.00,3.00,10.00,13.60,14.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.89,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.11,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.11,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.89,5.00/2.00}
+	\pgfmathsetmacro{\distance}{12.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 65
+	\renewcommand\lefttrees{6.20,12.80,13.80,14.80,17.80}
+	\renewcommand\righttrees{2.20,3.20,10.20,13.80,14.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.84,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.16,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.16,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.84,5.00/2.00}
+	\pgfmathsetmacro{\distance}{12.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 66
+	\renewcommand\lefttrees{6.40,13.00,14.00,15.00,18.00}
+	\renewcommand\righttrees{2.40,3.40,10.40,14.00,15.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.79,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.21,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.21,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.79,5.00/2.00}
+	\pgfmathsetmacro{\distance}{13}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 67
+	\renewcommand\lefttrees{6.60,13.20,14.20,15.20,18.20}
+	\renewcommand\righttrees{2.60,3.60,10.60,14.20,15.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.74,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.26,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.26,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.74,5.00/2.00}
+	\pgfmathsetmacro{\distance}{13.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 68
+	\renewcommand\lefttrees{6.80,13.40,14.40,15.40,18.40}
+	\renewcommand\righttrees{2.80,3.80,10.80,14.40,15.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.68,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.32,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.32,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.68,5.00/2.00}
+	\pgfmathsetmacro{\distance}{13.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 69
+	\renewcommand\lefttrees{7.00,13.60,14.60,15.60,18.60}
+	\renewcommand\righttrees{3.00,4.00,11.00,14.60,15.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.63,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.37,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.37,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.63,5.00/2.00}
+	\pgfmathsetmacro{\distance}{13.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 70
+	\renewcommand\lefttrees{7.20,13.80,14.80,15.80,18.80}
+	\renewcommand\righttrees{3.20,4.20,11.20,14.80,15.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.58,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.42,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.42,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.58,5.00/2.00}
+	\pgfmathsetmacro{\distance}{13.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 71
+	\renewcommand\lefttrees{7.40,14.00,15.00,16.00,19.00}
+	\renewcommand\righttrees{3.40,4.40,11.40,15.00,16.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.53,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.47,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.47,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.53,5.00/2.00}
+	\pgfmathsetmacro{\distance}{14}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 72
+	\renewcommand\lefttrees{7.60,14.20,15.20,16.20,19.20}
+	\renewcommand\righttrees{3.60,4.60,11.60,15.20,16.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.47,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.53,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.53,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.47,5.00/2.00}
+	\pgfmathsetmacro{\distance}{14.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 73
+	\renewcommand\lefttrees{7.80,14.40,15.40,16.40,19.40}
+	\renewcommand\righttrees{3.80,4.80,11.80,15.40,16.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.42,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.58,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.58,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.42,5.00/2.00}
+	\pgfmathsetmacro{\distance}{14.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 74
+	\renewcommand\lefttrees{8.00,14.60,15.60,16.60,19.60}
+	\renewcommand\righttrees{4.00,5.00,12.00,15.60,16.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.37,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.63,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.63,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.37,5.00/2.00}
+	\pgfmathsetmacro{\distance}{14.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 75
+	\renewcommand\lefttrees{8.20,14.80,15.80,16.80,19.80}
+	\renewcommand\righttrees{4.20,5.20,12.20,15.80,16.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.32,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.68,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.68,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.32,5.00/2.00}
+	\pgfmathsetmacro{\distance}{14.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 76
+	\renewcommand\lefttrees{8.40,15.00,16.00,17.00,20.00}
+	\renewcommand\righttrees{4.40,5.40,12.40,16.00,17.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.26,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.74,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.74,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.26,5.00/2.00}
+	\pgfmathsetmacro{\distance}{15}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 77
+	\renewcommand\lefttrees{8.60,15.20,16.20,17.20,20.20}
+	\renewcommand\righttrees{4.60,5.60,12.60,16.20,17.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.21,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.79,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.79,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.21,5.00/2.00}
+	\pgfmathsetmacro{\distance}{15.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 78
+	\renewcommand\lefttrees{8.80,15.40,16.40,17.40,20.40}
+	\renewcommand\righttrees{4.80,5.80,12.80,16.40,17.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.16,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.84,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.84,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.16,5.00/2.00}
+	\pgfmathsetmacro{\distance}{15.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 79
+	\renewcommand\lefttrees{9.00,15.60,16.60,17.60,20.60}
+	\renewcommand\righttrees{0.00,5.00,6.00,13.00,16.60,17.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.11,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.89,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.89,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.11,5.00/2.00}
+	\pgfmathsetmacro{\distance}{15.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 80
+	\renewcommand\lefttrees{9.20,15.80,16.80,17.80,20.80}
+	\renewcommand\righttrees{0.20,5.20,6.20,13.20,16.80,17.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.05,5.00/3.00}
+	\renewcommand\RedCars{0.00/0.95,1.00/0.00,2.00/0.00,4.00/0.00,0.00/2.95,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.05,5.00/2.00}
+	\pgfmathsetmacro{\distance}{15.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 81
+	\renewcommand\lefttrees{9.40,16.00,17.00,18.00,21.00}
+	\renewcommand\righttrees{0.40,5.40,6.40,13.40,17.00,18.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{16}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 82
+	\renewcommand\lefttrees{9.60,16.20,17.20,18.20,21.20}
+	\renewcommand\righttrees{0.60,5.60,6.60,13.60,17.20,18.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,1.00/0.00,2.00/0.00,4.00/0.00,0.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.00/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{16.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 83
+	\renewcommand\lefttrees{9.80,16.40,17.40,18.40,21.40}
+	\renewcommand\righttrees{0.80,5.80,6.80,13.80,17.40,18.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.95/0.00,2.00/0.00,4.00/0.00,0.05/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.05/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{16.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 84
+	\renewcommand\lefttrees{0.00,10.00,16.60,17.60,18.60,21.60}
+	\renewcommand\righttrees{1.00,6.00,7.00,14.00,17.60,18.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.89/0.00,2.00/0.00,4.00/0.00,0.11/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.11/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{16.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 85
+	\renewcommand\lefttrees{0.20,10.20,16.80,17.80,18.80,21.80}
+	\renewcommand\righttrees{1.20,6.20,7.20,14.20,17.80,18.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.84/0.00,2.00/0.00,4.00/0.00,0.16/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.16/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{16.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 86
+	\renewcommand\lefttrees{0.40,10.40,17.00,18.00,19.00,22.00}
+	\renewcommand\righttrees{1.40,6.40,7.40,14.40,18.00,19.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.79/0.00,2.00/0.00,4.00/0.00,0.21/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.21/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{17}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 87
+	\renewcommand\lefttrees{0.60,10.60,17.20,18.20,19.20,22.20}
+	\renewcommand\righttrees{1.60,6.60,7.60,14.60,18.20,19.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.74/0.00,2.00/0.00,4.00/0.00,0.26/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.26/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{17.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 88
+	\renewcommand\lefttrees{0.80,10.80,17.40,18.40,19.40,22.40}
+	\renewcommand\righttrees{1.80,6.80,7.80,14.80,18.40,19.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.68/0.00,2.00/0.00,4.00/0.00,0.32/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.32/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{17.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 89
+	\renewcommand\lefttrees{1.00,11.00,17.60,18.60,19.60,22.60}
+	\renewcommand\righttrees{2.00,7.00,8.00,15.00,18.60,19.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.63/0.00,2.00/0.00,4.00/0.00,0.37/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.37/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{17.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 90
+	\renewcommand\lefttrees{1.20,11.20,17.80,18.80,19.80,22.80}
+	\renewcommand\righttrees{2.20,7.20,8.20,15.20,18.80,19.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.58/0.00,2.00/0.00,4.00/0.00,0.42/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.42/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{17.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 91
+	\renewcommand\lefttrees{1.40,11.40,18.00,19.00,20.00,23.00}
+	\renewcommand\righttrees{2.40,7.40,8.40,15.40,19.00,20.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.53/0.00,2.00/0.00,4.00/0.00,0.47/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.47/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{18}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 92
+	\renewcommand\lefttrees{1.60,11.60,18.20,19.20,20.20,23.20}
+	\renewcommand\righttrees{2.60,7.60,8.60,15.60,19.20,20.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.47/0.00,2.00/0.00,4.00/0.00,0.53/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.53/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{18.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 93
+	\renewcommand\lefttrees{1.80,11.80,18.40,19.40,20.40,23.40}
+	\renewcommand\righttrees{2.80,7.80,8.80,15.80,19.40,20.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.42/0.00,2.00/0.00,4.00/0.00,0.58/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.58/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{18.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 94
+	\renewcommand\lefttrees{0.00,2.00,12.00,18.60,19.60,20.60}
+	\renewcommand\righttrees{3.00,8.00,9.00,16.00,19.60,20.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.37/0.00,2.00/0.00,4.00/0.00,0.63/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.63/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{18.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 95
+	\renewcommand\lefttrees{0.20,2.20,12.20,18.80,19.80,20.80}
+	\renewcommand\righttrees{3.20,8.20,9.20,16.20,19.80,20.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.32/0.00,2.00/0.00,4.00/0.00,0.68/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.68/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{18.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 96
+	\renewcommand\lefttrees{0.40,2.40,12.40,19.00,20.00,21.00}
+	\renewcommand\righttrees{3.40,8.40,9.40,16.40,20.00,21.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.26/0.00,2.00/0.00,4.00/0.00,0.74/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.74/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{19}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 97
+	\renewcommand\lefttrees{0.60,2.60,12.60,19.20,20.20,21.20}
+	\renewcommand\righttrees{3.60,8.60,9.60,16.60,20.20,21.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.21/0.00,2.00/0.00,4.00/0.00,0.79/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.79/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{19.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 98
+	\renewcommand\lefttrees{0.80,2.80,12.80,19.40,20.40,21.40}
+	\renewcommand\righttrees{3.80,8.80,9.80,16.80,20.40,21.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.16/0.00,2.00/0.00,4.00/0.00,0.84/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.84/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{19.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 99
+	\renewcommand\lefttrees{1.00,3.00,13.00,19.60,20.60,21.60}
+	\renewcommand\righttrees{0.00,4.00,9.00,10.00,17.00,20.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.11/0.00,2.00/0.00,4.00/0.00,0.89/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.89/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{19.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 100
+	\renewcommand\lefttrees{1.20,3.20,13.20,19.80,20.80,21.80}
+	\renewcommand\righttrees{0.20,4.20,9.20,10.20,17.20,20.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.05/0.00,2.00/0.00,4.00/0.00,0.95/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,2.95/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{19.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 101
+	\renewcommand\lefttrees{1.40,3.40,13.40,20.00,21.00,22.00}
+	\renewcommand\righttrees{0.40,4.40,9.40,10.40,17.40,21.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.00/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{20}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 102
+	\renewcommand\lefttrees{1.60,3.60,13.60,20.20,21.20,22.20}
+	\renewcommand\righttrees{0.60,4.60,9.60,10.60,17.60,21.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.00/3.00,3.00/2.00,5.00/2.00}
+	\pgfmathsetmacro{\distance}{20.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 103
+	\renewcommand\lefttrees{1.80,3.80,13.80,20.40,21.40,22.40}
+	\renewcommand\righttrees{0.80,4.80,9.80,10.80,17.80,21.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.95/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.05/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.05/3.00,2.95/2.00,5.00/1.95}
+	\pgfmathsetmacro{\distance}{20.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 104
+	\renewcommand\lefttrees{2.00,4.00,14.00,20.60,21.60,22.60}
+	\renewcommand\righttrees{1.00,5.00,10.00,11.00,18.00,21.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.89/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.11/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.11/3.00,2.89/2.00,5.00/1.89}
+	\pgfmathsetmacro{\distance}{20.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 105
+	\renewcommand\lefttrees{2.20,4.20,14.20,20.80,21.80,22.80}
+	\renewcommand\righttrees{1.20,5.20,10.20,11.20,18.20,21.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.84/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.16/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.16/3.00,2.84/2.00,5.00/1.84}
+	\pgfmathsetmacro{\distance}{20.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 106
+	\renewcommand\lefttrees{2.40,4.40,14.40,21.00,22.00,23.00}
+	\renewcommand\righttrees{1.40,5.40,10.40,11.40,18.40,22.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.79/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.21/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.21/3.00,2.79/2.00,5.00/1.79}
+	\pgfmathsetmacro{\distance}{21}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 107
+	\renewcommand\lefttrees{2.60,4.60,14.60,21.20,22.20,23.20}
+	\renewcommand\righttrees{1.60,5.60,10.60,11.60,18.60,22.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.74/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.26/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.26/3.00,2.74/2.00,5.00/1.74}
+	\pgfmathsetmacro{\distance}{21.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 108
+	\renewcommand\lefttrees{2.80,4.80,14.80,21.40,22.40,23.40}
+	\renewcommand\righttrees{1.80,5.80,10.80,11.80,18.80,22.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.68/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.32/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.32/3.00,2.68/2.00,5.00/1.68}
+	\pgfmathsetmacro{\distance}{21.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 109
+	\renewcommand\lefttrees{0.00,3.00,5.00,15.00,21.60,22.60}
+	\renewcommand\righttrees{2.00,6.00,11.00,12.00,19.00,22.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.63/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.37/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.37/3.00,2.63/2.00,5.00/1.63}
+	\pgfmathsetmacro{\distance}{21.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 110
+	\renewcommand\lefttrees{0.20,3.20,5.20,15.20,21.80,22.80}
+	\renewcommand\righttrees{2.20,6.20,11.20,12.20,19.20,22.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.58/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.42/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.42/3.00,2.58/2.00,5.00/1.58}
+	\pgfmathsetmacro{\distance}{21.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 111
+	\renewcommand\lefttrees{0.40,3.40,5.40,15.40,22.00,23.00}
+	\renewcommand\righttrees{2.40,6.40,11.40,12.40,19.40,23.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.53/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.47/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.47/3.00,2.53/2.00,5.00/1.53}
+	\pgfmathsetmacro{\distance}{22}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 112
+	\renewcommand\lefttrees{0.60,3.60,5.60,15.60,22.20,23.20}
+	\renewcommand\righttrees{2.60,6.60,11.60,12.60,19.60,23.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.47/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.53/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.53/3.00,2.47/2.00,5.00/1.47}
+	\pgfmathsetmacro{\distance}{22.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 113
+	\renewcommand\lefttrees{0.80,3.80,5.80,15.80,22.40,23.40}
+	\renewcommand\righttrees{2.80,6.80,11.80,12.80,19.80,23.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.42/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.58/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.58/3.00,2.42/2.00,5.00/1.42}
+	\pgfmathsetmacro{\distance}{22.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 114
+	\renewcommand\lefttrees{0.00,1.00,4.00,6.00,16.00,22.60}
+	\renewcommand\righttrees{0.00,3.00,7.00,12.00,13.00,20.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.37/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.63/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.63/3.00,2.37/2.00,5.00/1.37}
+	\pgfmathsetmacro{\distance}{22.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 115
+	\renewcommand\lefttrees{0.20,1.20,4.20,6.20,16.20,22.80}
+	\renewcommand\righttrees{0.20,3.20,7.20,12.20,13.20,20.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.32/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.68/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.68/3.00,2.32/2.00,5.00/1.32}
+	\pgfmathsetmacro{\distance}{22.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 116
+	\renewcommand\lefttrees{0.40,1.40,4.40,6.40,16.40,23.00}
+	\renewcommand\righttrees{0.40,3.40,7.40,12.40,13.40,20.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.26/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.74/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.74/3.00,2.26/2.00,5.00/1.26}
+	\pgfmathsetmacro{\distance}{23}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 117
+	\renewcommand\lefttrees{0.60,1.60,4.60,6.60,16.60,23.20}
+	\renewcommand\righttrees{0.60,3.60,7.60,12.60,13.60,20.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.21/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.79/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.79/3.00,2.21/2.00,5.00/1.21}
+	\pgfmathsetmacro{\distance}{23.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 118
+	\renewcommand\lefttrees{0.80,1.80,4.80,6.80,16.80,23.40}
+	\renewcommand\righttrees{0.80,3.80,7.80,12.80,13.80,20.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.16/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.84/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.84/3.00,2.16/2.00,5.00/1.16}
+	\pgfmathsetmacro{\distance}{23.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 119
+	\renewcommand\lefttrees{0.00,1.00,2.00,5.00,7.00,17.00}
+	\renewcommand\righttrees{0.00,1.00,4.00,8.00,13.00,14.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.11/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.89/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.89/3.00,2.11/2.00,5.00/1.11}
+	\pgfmathsetmacro{\distance}{23.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 120
+	\renewcommand\lefttrees{0.20,1.20,2.20,5.20,7.20,17.20}
+	\renewcommand\righttrees{0.20,1.20,4.20,8.20,13.20,14.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.05/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,1.95/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,3.95/3.00,2.05/2.00,5.00/1.05}
+	\pgfmathsetmacro{\distance}{23.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 121
+	\renewcommand\lefttrees{0.40,1.40,2.40,5.40,7.40,17.40}
+	\renewcommand\righttrees{0.40,1.40,4.40,8.40,13.40,14.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{24}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 122
+	\renewcommand\lefttrees{0.60,1.60,2.60,5.60,7.60,17.60}
+	\renewcommand\righttrees{0.60,1.60,4.60,8.60,13.60,14.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{24.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 123
+	\renewcommand\lefttrees{0.80,1.80,2.80,5.80,7.80,17.80}
+	\renewcommand\righttrees{0.80,1.80,4.80,8.80,13.80,14.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.05,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.05/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{24.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 124
+	\renewcommand\lefttrees{0.00,1.00,2.00,3.00,6.00,8.00}
+	\renewcommand\righttrees{0.00,1.00,2.00,5.00,9.00,14.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.11,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.11/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{24.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 125
+	\renewcommand\lefttrees{0.20,1.20,2.20,3.20,6.20,8.20}
+	\renewcommand\righttrees{0.20,1.20,2.20,5.20,9.20,14.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.16,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.16/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{24.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 126
+	\renewcommand\lefttrees{0.40,1.40,2.40,3.40,6.40,8.40}
+	\renewcommand\righttrees{0.40,1.40,2.40,5.40,9.40,14.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.21,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.21/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{25}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 127
+	\renewcommand\lefttrees{0.60,1.60,2.60,3.60,6.60,8.60}
+	\renewcommand\righttrees{0.60,1.60,2.60,5.60,9.60,14.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.26,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.26/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{25.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 128
+	\renewcommand\lefttrees{0.80,1.80,2.80,3.80,6.80,8.80}
+	\renewcommand\righttrees{0.80,1.80,2.80,5.80,9.80,14.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.32,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.32/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{25.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 129
+	\renewcommand\lefttrees{1.00,2.00,3.00,4.00,7.00,9.00}
+	\renewcommand\righttrees{0.00,1.00,2.00,3.00,6.00,10.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.37,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.37/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{25.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 130
+	\renewcommand\lefttrees{1.20,2.20,3.20,4.20,7.20,9.20}
+	\renewcommand\righttrees{0.20,1.20,2.20,3.20,6.20,10.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.42,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.42/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{25.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 131
+	\renewcommand\lefttrees{1.40,2.40,3.40,4.40,7.40,9.40}
+	\renewcommand\righttrees{0.40,1.40,2.40,3.40,6.40,10.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.47,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.47/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{26}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 132
+	\renewcommand\lefttrees{1.60,2.60,3.60,4.60,7.60,9.60}
+	\renewcommand\righttrees{0.60,1.60,2.60,3.60,6.60,10.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.53,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.53/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{26.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 133
+	\renewcommand\lefttrees{1.80,2.80,3.80,4.80,7.80,9.80}
+	\renewcommand\righttrees{0.80,1.80,2.80,3.80,6.80,10.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.58,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.58/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{26.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 134
+	\renewcommand\lefttrees{2.00,3.00,4.00,5.00,8.00,10.00}
+	\renewcommand\righttrees{1.00,2.00,3.00,4.00,7.00,11.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.63,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.63/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{26.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 135
+	\renewcommand\lefttrees{2.20,3.20,4.20,5.20,8.20,10.20}
+	\renewcommand\righttrees{1.20,2.20,3.20,4.20,7.20,11.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.68,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.68/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{26.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 136
+	\renewcommand\lefttrees{2.40,3.40,4.40,5.40,8.40,10.40}
+	\renewcommand\righttrees{1.40,2.40,3.40,4.40,7.40,11.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.74,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.74/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{27}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 137
+	\renewcommand\lefttrees{2.60,3.60,4.60,5.60,8.60,10.60}
+	\renewcommand\righttrees{1.60,2.60,3.60,4.60,7.60,11.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.79,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.79/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{27.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 138
+	\renewcommand\lefttrees{2.80,3.80,4.80,5.80,8.80,10.80}
+	\renewcommand\righttrees{1.80,2.80,3.80,4.80,7.80,11.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.84,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.84/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{27.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 139
+	\renewcommand\lefttrees{3.00,4.00,5.00,6.00,9.00,11.00}
+	\renewcommand\righttrees{2.00,3.00,4.00,5.00,8.00,12.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.89,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.89/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{27.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 140
+	\renewcommand\lefttrees{3.20,4.20,5.20,6.20,9.20,11.20}
+	\renewcommand\righttrees{2.20,3.20,4.20,5.20,8.20,12.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/2.95,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,2.95/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{27.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 141
+	\renewcommand\lefttrees{3.40,4.40,5.40,6.40,9.40,11.40}
+	\renewcommand\righttrees{2.40,3.40,4.40,5.40,8.40,12.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,3.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{28}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 142
+	\renewcommand\lefttrees{3.60,4.60,5.60,6.60,9.60,11.60}
+	\renewcommand\righttrees{2.60,3.60,4.60,5.60,8.60,12.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.00,0.00/0.00,2.00/0.00,4.00/0.00,3.00/3.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{28.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 143
+	\renewcommand\lefttrees{3.80,4.80,5.80,6.80,9.80,11.80}
+	\renewcommand\righttrees{2.80,3.80,4.80,5.80,8.80,12.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.05/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.05,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.95,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{28.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 144
+	\renewcommand\lefttrees{4.00,5.00,6.00,7.00,10.00,12.00}
+	\renewcommand\righttrees{0.00,3.00,4.00,5.00,6.00,9.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.11/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.11,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.89,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{28.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 145
+	\renewcommand\lefttrees{4.20,5.20,6.20,7.20,10.20,12.20}
+	\renewcommand\righttrees{0.20,3.20,4.20,5.20,6.20,9.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.16/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.16,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.84,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{28.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 146
+	\renewcommand\lefttrees{4.40,5.40,6.40,7.40,10.40,12.40}
+	\renewcommand\righttrees{0.40,3.40,4.40,5.40,6.40,9.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.21/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.21,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.79,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{29}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 147
+	\renewcommand\lefttrees{4.60,5.60,6.60,7.60,10.60,12.60}
+	\renewcommand\righttrees{0.60,3.60,4.60,5.60,6.60,9.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.26/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.26,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.74,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{29.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 148
+	\renewcommand\lefttrees{4.80,5.80,6.80,7.80,10.80,12.80}
+	\renewcommand\righttrees{0.80,3.80,4.80,5.80,6.80,9.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.32/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.32,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.68,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{29.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 149
+	\renewcommand\lefttrees{5.00,6.00,7.00,8.00,11.00,13.00}
+	\renewcommand\righttrees{1.00,4.00,5.00,6.00,7.00,10.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.37/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.37,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.63,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{29.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 150
+	\renewcommand\lefttrees{5.20,6.20,7.20,8.20,11.20,13.20}
+	\renewcommand\righttrees{1.20,4.20,5.20,6.20,7.20,10.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.42/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.42,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.58,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{29.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 151
+	\renewcommand\lefttrees{5.40,6.40,7.40,8.40,11.40,13.40}
+	\renewcommand\righttrees{1.40,4.40,5.40,6.40,7.40,10.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.47/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.47,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.53,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{30}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 152
+	\renewcommand\lefttrees{5.60,6.60,7.60,8.60,11.60,13.60}
+	\renewcommand\righttrees{1.60,4.60,5.60,6.60,7.60,10.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.53/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.53,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.47,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{30.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 153
+	\renewcommand\lefttrees{5.80,6.80,7.80,8.80,11.80,13.80}
+	\renewcommand\righttrees{1.80,4.80,5.80,6.80,7.80,10.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.58/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.58,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.42,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{30.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 154
+	\renewcommand\lefttrees{6.00,7.00,8.00,9.00,12.00,14.00}
+	\renewcommand\righttrees{0.00,2.00,5.00,6.00,7.00,8.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.63/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.63,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.37,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{30.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 155
+	\renewcommand\lefttrees{6.20,7.20,8.20,9.20,12.20,14.20}
+	\renewcommand\righttrees{0.20,2.20,5.20,6.20,7.20,8.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.68/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.68,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.32,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{30.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 156
+	\renewcommand\lefttrees{6.40,7.40,8.40,9.40,12.40,14.40}
+	\renewcommand\righttrees{0.40,2.40,5.40,6.40,7.40,8.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.74/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.74,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.26,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{31}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 157
+	\renewcommand\lefttrees{6.60,7.60,8.60,9.60,12.60,14.60}
+	\renewcommand\righttrees{0.60,2.60,5.60,6.60,7.60,8.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.79/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.79,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.21,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{31.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 158
+	\renewcommand\lefttrees{6.80,7.80,8.80,9.80,12.80,14.80}
+	\renewcommand\righttrees{0.80,2.80,5.80,6.80,7.80,8.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.84/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.84,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.16,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{31.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 159
+	\renewcommand\lefttrees{0.00,7.00,8.00,9.00,10.00,13.00}
+	\renewcommand\righttrees{1.00,3.00,6.00,7.00,8.00,9.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.89/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.89,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.11,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{31.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 160
+	\renewcommand\lefttrees{0.20,7.20,8.20,9.20,10.20,13.20}
+	\renewcommand\righttrees{1.20,3.20,6.20,7.20,8.20,9.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,0.95/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/1.95,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.05,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{31.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 161
+	\renewcommand\lefttrees{0.40,7.40,8.40,9.40,10.40,13.40}
+	\renewcommand\righttrees{1.40,3.40,6.40,7.40,8.40,9.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{32}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 162
+	\renewcommand\lefttrees{0.60,7.60,8.60,9.60,10.60,13.60}
+	\renewcommand\righttrees{1.60,3.60,6.60,7.60,8.60,9.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,2.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{32.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 163
+	\renewcommand\lefttrees{0.80,7.80,8.80,9.80,10.80,13.80}
+	\renewcommand\righttrees{1.80,3.80,6.80,7.80,8.80,9.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.05/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.95/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.05/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{32.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 164
+	\renewcommand\lefttrees{1.00,8.00,9.00,10.00,11.00,14.00}
+	\renewcommand\righttrees{2.00,4.00,7.00,8.00,9.00,10.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.11/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.89/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.11/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{32.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 165
+	\renewcommand\lefttrees{1.20,8.20,9.20,10.20,11.20,14.20}
+	\renewcommand\righttrees{2.20,4.20,7.20,8.20,9.20,10.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.16/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.84/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.16/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{32.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 166
+	\renewcommand\lefttrees{1.40,8.40,9.40,10.40,11.40,14.40}
+	\renewcommand\righttrees{2.40,4.40,7.40,8.40,9.40,10.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.21/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.79/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.21/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{33}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 167
+	\renewcommand\lefttrees{1.60,8.60,9.60,10.60,11.60,14.60}
+	\renewcommand\righttrees{2.60,4.60,7.60,8.60,9.60,10.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.26/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.74/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.26/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{33.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 168
+	\renewcommand\lefttrees{1.80,8.80,9.80,10.80,11.80,14.80}
+	\renewcommand\righttrees{2.80,4.80,7.80,8.80,9.80,10.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.32/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.68/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.32/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{33.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 169
+	\renewcommand\lefttrees{0.00,2.00,9.00,10.00,11.00,12.00}
+	\renewcommand\righttrees{3.00,5.00,8.00,9.00,10.00,11.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.37/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.63/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.37/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{33.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 170
+	\renewcommand\lefttrees{0.20,2.20,9.20,10.20,11.20,12.20}
+	\renewcommand\righttrees{3.20,5.20,8.20,9.20,10.20,11.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.42/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.58/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.42/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{33.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 171
+	\renewcommand\lefttrees{0.40,2.40,9.40,10.40,11.40,12.40}
+	\renewcommand\righttrees{3.40,5.40,8.40,9.40,10.40,11.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.47/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.53/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.47/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{34}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 172
+	\renewcommand\lefttrees{0.60,2.60,9.60,10.60,11.60,12.60}
+	\renewcommand\righttrees{3.60,5.60,8.60,9.60,10.60,11.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.53/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.47/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.53/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{34.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 173
+	\renewcommand\lefttrees{0.80,2.80,9.80,10.80,11.80,12.80}
+	\renewcommand\righttrees{3.80,5.80,8.80,9.80,10.80,11.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.58/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.42/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.58/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{34.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 174
+	\renewcommand\lefttrees{0.00,1.00,3.00,10.00,11.00,12.00}
+	\renewcommand\righttrees{0.00,4.00,6.00,9.00,10.00,11.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.63/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.37/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.63/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{34.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 175
+	\renewcommand\lefttrees{0.20,1.20,3.20,10.20,11.20,12.20}
+	\renewcommand\righttrees{0.20,4.20,6.20,9.20,10.20,11.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.68/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.32/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.68/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{34.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 176
+	\renewcommand\lefttrees{0.40,1.40,3.40,10.40,11.40,12.40}
+	\renewcommand\righttrees{0.40,4.40,6.40,9.40,10.40,11.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.74/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.26/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.74/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{35}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 177
+	\renewcommand\lefttrees{0.60,1.60,3.60,10.60,11.60,12.60}
+	\renewcommand\righttrees{0.60,4.60,6.60,9.60,10.60,11.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.79/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.21/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.79/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{35.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 178
+	\renewcommand\lefttrees{0.80,1.80,3.80,10.80,11.80,12.80}
+	\renewcommand\righttrees{0.80,4.80,6.80,9.80,10.80,11.80}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.84/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.16/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.84/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{35.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 179
+	\renewcommand\lefttrees{0.00,1.00,2.00,4.00,11.00,12.00}
+	\renewcommand\righttrees{0.00,1.00,5.00,7.00,10.00,11.00}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.89/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.11/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.89/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{35.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 180
+	\renewcommand\lefttrees{0.20,1.20,2.20,4.20,11.20,12.20}
+	\renewcommand\righttrees{0.20,1.20,5.20,7.20,10.20,11.20}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,1.95/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.05/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,4.95/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{35.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 181
+	\renewcommand\lefttrees{0.40,1.40,2.40,4.40,11.40,12.40}
+	\renewcommand\righttrees{0.40,1.40,5.40,7.40,10.40,11.40}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,2.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{36}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 182
+	\renewcommand\lefttrees{0.60,1.60,2.60,4.60,11.60,12.60}
+	\renewcommand\righttrees{0.60,1.60,5.60,7.60,10.60,11.60}
+	\renewcommand\GreenCars{3.00/0.00,5.00/0.00,2.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,2.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{36.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 183
+	\renewcommand\lefttrees{0.80,1.80,2.80,4.80,11.80,12.80}
+	\renewcommand\righttrees{0.80,1.80,5.80,7.80,10.80,11.80}
+	\renewcommand\GreenCars{2.95/0.00,5.00/0.00,2.05/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.95/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.95/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{36.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 184
+	\renewcommand\lefttrees{1.00,2.00,3.00,5.00,12.00,13.00}
+	\renewcommand\righttrees{1.00,2.00,6.00,8.00,11.00,12.00}
+	\renewcommand\GreenCars{2.89/0.00,5.00/0.00,2.11/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.89/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.89/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{36.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 185
+	\renewcommand\lefttrees{1.20,2.20,3.20,5.20,12.20,13.20}
+	\renewcommand\righttrees{1.20,2.20,6.20,8.20,11.20,12.20}
+	\renewcommand\GreenCars{2.84/0.00,5.00/0.00,2.16/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.84/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.84/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{36.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 186
+	\renewcommand\lefttrees{1.40,2.40,3.40,5.40,12.40,13.40}
+	\renewcommand\righttrees{1.40,2.40,6.40,8.40,11.40,12.40}
+	\renewcommand\GreenCars{2.79/0.00,5.00/0.00,2.21/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.79/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.79/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{37}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 187
+	\renewcommand\lefttrees{1.60,2.60,3.60,5.60,12.60,13.60}
+	\renewcommand\righttrees{1.60,2.60,6.60,8.60,11.60,12.60}
+	\renewcommand\GreenCars{2.74/0.00,5.00/0.00,2.26/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.74/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.74/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{37.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 188
+	\renewcommand\lefttrees{1.80,2.80,3.80,5.80,12.80,13.80}
+	\renewcommand\righttrees{1.80,2.80,6.80,8.80,11.80,12.80}
+	\renewcommand\GreenCars{2.68/0.00,5.00/0.00,2.32/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.68/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.68/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{37.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 189
+	\renewcommand\lefttrees{0.00,2.00,3.00,4.00,6.00,13.00}
+	\renewcommand\righttrees{2.00,3.00,7.00,9.00,12.00,13.00}
+	\renewcommand\GreenCars{2.63/0.00,5.00/0.00,2.37/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.63/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.63/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{37.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 190
+	\renewcommand\lefttrees{0.20,2.20,3.20,4.20,6.20,13.20}
+	\renewcommand\righttrees{2.20,3.20,7.20,9.20,12.20,13.20}
+	\renewcommand\GreenCars{2.58/0.00,5.00/0.00,2.42/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.58/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.58/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{37.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 191
+	\renewcommand\lefttrees{0.40,2.40,3.40,4.40,6.40,13.40}
+	\renewcommand\righttrees{2.40,3.40,7.40,9.40,12.40,13.40}
+	\renewcommand\GreenCars{2.53/0.00,5.00/0.00,2.47/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.53/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.53/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{38}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 192
+	\renewcommand\lefttrees{0.60,2.60,3.60,4.60,6.60,13.60}
+	\renewcommand\righttrees{2.60,3.60,7.60,9.60,12.60,13.60}
+	\renewcommand\GreenCars{2.47/0.00,5.00/0.00,2.53/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.47/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.47/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{38.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 193
+	\renewcommand\lefttrees{0.80,2.80,3.80,4.80,6.80,13.80}
+	\renewcommand\righttrees{2.80,3.80,7.80,9.80,12.80,13.80}
+	\renewcommand\GreenCars{2.42/0.00,5.00/0.00,2.58/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.42/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.42/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{38.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 194
+	\renewcommand\lefttrees{1.00,3.00,4.00,5.00,7.00,14.00}
+	\renewcommand\righttrees{3.00,4.00,8.00,10.00,13.00,14.00}
+	\renewcommand\GreenCars{2.37/0.00,5.00/0.00,2.63/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.37/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.37/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{38.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 195
+	\renewcommand\lefttrees{1.20,3.20,4.20,5.20,7.20,14.20}
+	\renewcommand\righttrees{3.20,4.20,8.20,10.20,13.20,14.20}
+	\renewcommand\GreenCars{2.32/0.00,5.00/0.00,2.68/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.32/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.32/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{38.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 196
+	\renewcommand\lefttrees{1.40,3.40,4.40,5.40,7.40,14.40}
+	\renewcommand\righttrees{3.40,4.40,8.40,10.40,13.40,14.40}
+	\renewcommand\GreenCars{2.26/0.00,5.00/0.00,2.74/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.26/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.26/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{39}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 197
+	\renewcommand\lefttrees{1.60,3.60,4.60,5.60,7.60,14.60}
+	\renewcommand\righttrees{3.60,4.60,8.60,10.60,13.60,14.60}
+	\renewcommand\GreenCars{2.21/0.00,5.00/0.00,2.79/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.21/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.21/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{39.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 198
+	\renewcommand\lefttrees{1.80,3.80,4.80,5.80,7.80,14.80}
+	\renewcommand\righttrees{3.80,4.80,8.80,10.80,13.80,14.80}
+	\renewcommand\GreenCars{2.16/0.00,5.00/0.00,2.84/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.16/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.16/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{39.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 199
+	\renewcommand\lefttrees{0.00,2.00,4.00,5.00,6.00,8.00}
+	\renewcommand\righttrees{4.00,5.00,9.00,11.00,14.00,15.00}
+	\renewcommand\GreenCars{2.11/0.00,5.00/0.00,2.89/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.11/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.11/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{39.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 200
+	\renewcommand\lefttrees{0.20,2.20,4.20,5.20,6.20,8.20}
+	\renewcommand\righttrees{4.20,5.20,9.20,11.20,14.20,15.20}
+	\renewcommand\GreenCars{2.05/0.00,5.00/0.00,2.95/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.05/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.05/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{39.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 201
+	\renewcommand\lefttrees{0.40,2.40,4.40,5.40,6.40,8.40}
+	\renewcommand\righttrees{4.40,5.40,9.40,11.40,14.40,15.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{40}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 202
+	\renewcommand\lefttrees{0.60,2.60,4.60,5.60,6.60,8.60}
+	\renewcommand\righttrees{4.60,5.60,9.60,11.60,14.60,15.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{40.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 203
+	\renewcommand\lefttrees{0.80,2.80,4.80,5.80,6.80,8.80}
+	\renewcommand\righttrees{4.80,5.80,9.80,11.80,14.80,15.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.05,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.05/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{40.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 204
+	\renewcommand\lefttrees{1.00,3.00,5.00,6.00,7.00,9.00}
+	\renewcommand\righttrees{5.00,6.00,10.00,12.00,15.00,16.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.11,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.11/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{40.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 205
+	\renewcommand\lefttrees{1.20,3.20,5.20,6.20,7.20,9.20}
+	\renewcommand\righttrees{5.20,6.20,10.20,12.20,15.20,16.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.16,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.16/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{40.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 206
+	\renewcommand\lefttrees{1.40,3.40,5.40,6.40,7.40,9.40}
+	\renewcommand\righttrees{5.40,6.40,10.40,12.40,15.40,16.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.21,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.21/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{41}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 207
+	\renewcommand\lefttrees{1.60,3.60,5.60,6.60,7.60,9.60}
+	\renewcommand\righttrees{5.60,6.60,10.60,12.60,15.60,16.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.26,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.26/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{41.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 208
+	\renewcommand\lefttrees{1.80,3.80,5.80,6.80,7.80,9.80}
+	\renewcommand\righttrees{5.80,6.80,10.80,12.80,15.80,16.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.32,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.32/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{41.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 209
+	\renewcommand\lefttrees{2.00,4.00,6.00,7.00,8.00,10.00}
+	\renewcommand\righttrees{6.00,7.00,11.00,13.00,16.00,17.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.37,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.37/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{41.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 210
+	\renewcommand\lefttrees{2.20,4.20,6.20,7.20,8.20,10.20}
+	\renewcommand\righttrees{6.20,7.20,11.20,13.20,16.20,17.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.42,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.42/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{41.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 211
+	\renewcommand\lefttrees{2.40,4.40,6.40,7.40,8.40,10.40}
+	\renewcommand\righttrees{6.40,7.40,11.40,13.40,16.40,17.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.47,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.47/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{42}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 212
+	\renewcommand\lefttrees{2.60,4.60,6.60,7.60,8.60,10.60}
+	\renewcommand\righttrees{6.60,7.60,11.60,13.60,16.60,17.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.53,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.53/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{42.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 213
+	\renewcommand\lefttrees{2.80,4.80,6.80,7.80,8.80,10.80}
+	\renewcommand\righttrees{6.80,7.80,11.80,13.80,16.80,17.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.58,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.58/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{42.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 214
+	\renewcommand\lefttrees{3.00,5.00,7.00,8.00,9.00,11.00}
+	\renewcommand\righttrees{0.00,7.00,8.00,12.00,14.00,17.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.63,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.63/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{42.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 215
+	\renewcommand\lefttrees{3.20,5.20,7.20,8.20,9.20,11.20}
+	\renewcommand\righttrees{0.20,7.20,8.20,12.20,14.20,17.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.68,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.68/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{42.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 216
+	\renewcommand\lefttrees{3.40,5.40,7.40,8.40,9.40,11.40}
+	\renewcommand\righttrees{0.40,7.40,8.40,12.40,14.40,17.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.74,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.74/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{43}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 217
+	\renewcommand\lefttrees{3.60,5.60,7.60,8.60,9.60,11.60}
+	\renewcommand\righttrees{0.60,7.60,8.60,12.60,14.60,17.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.79,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.79/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{43.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 218
+	\renewcommand\lefttrees{3.80,5.80,7.80,8.80,9.80,11.80}
+	\renewcommand\righttrees{0.80,7.80,8.80,12.80,14.80,17.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.84,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.84/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{43.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 219
+	\renewcommand\lefttrees{4.00,6.00,8.00,9.00,10.00,12.00}
+	\renewcommand\righttrees{0.00,1.00,8.00,9.00,13.00,15.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.89,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.89/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{43.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 220
+	\renewcommand\lefttrees{4.20,6.20,8.20,9.20,10.20,12.20}
+	\renewcommand\righttrees{0.20,1.20,8.20,9.20,13.20,15.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/2.95,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,0.95/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{43.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 221
+	\renewcommand\lefttrees{4.40,6.40,8.40,9.40,10.40,12.40}
+	\renewcommand\righttrees{0.40,1.40,8.40,9.40,13.40,15.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/3.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{44}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 222
+	\renewcommand\lefttrees{4.60,6.60,8.60,9.60,10.60,12.60}
+	\renewcommand\righttrees{0.60,1.60,8.60,9.60,13.60,15.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.00/3.00,0.00/0.00,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/3.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{44.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 223
+	\renewcommand\lefttrees{4.80,6.80,8.80,9.80,10.80,12.80}
+	\renewcommand\righttrees{0.80,1.80,8.80,9.80,13.80,15.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.05/3.00,0.00/0.05,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.95,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{44.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 224
+	\renewcommand\lefttrees{0.00,5.00,7.00,9.00,10.00,11.00}
+	\renewcommand\righttrees{1.00,2.00,9.00,10.00,14.00,16.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.11/3.00,0.00/0.11,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.89,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{44.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 225
+	\renewcommand\lefttrees{0.20,5.20,7.20,9.20,10.20,11.20}
+	\renewcommand\righttrees{1.20,2.20,9.20,10.20,14.20,16.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.16/3.00,0.00/0.16,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.84,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{44.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 226
+	\renewcommand\lefttrees{0.40,5.40,7.40,9.40,10.40,11.40}
+	\renewcommand\righttrees{1.40,2.40,9.40,10.40,14.40,16.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.21/3.00,0.00/0.21,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.79,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{45}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 227
+	\renewcommand\lefttrees{0.60,5.60,7.60,9.60,10.60,11.60}
+	\renewcommand\righttrees{1.60,2.60,9.60,10.60,14.60,16.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.26/3.00,0.00/0.26,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.74,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{45.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 228
+	\renewcommand\lefttrees{0.80,5.80,7.80,9.80,10.80,11.80}
+	\renewcommand\righttrees{1.80,2.80,9.80,10.80,14.80,16.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.32/3.00,0.00/0.32,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.68,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{45.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 229
+	\renewcommand\lefttrees{1.00,6.00,8.00,10.00,11.00,12.00}
+	\renewcommand\righttrees{0.00,2.00,3.00,10.00,11.00,15.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.37/3.00,0.00/0.37,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.63,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{45.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 230
+	\renewcommand\lefttrees{1.20,6.20,8.20,10.20,11.20,12.20}
+	\renewcommand\righttrees{0.20,2.20,3.20,10.20,11.20,15.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.42/3.00,0.00/0.42,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.58,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{45.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 231
+	\renewcommand\lefttrees{1.40,6.40,8.40,10.40,11.40,12.40}
+	\renewcommand\righttrees{0.40,2.40,3.40,10.40,11.40,15.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.47/3.00,0.00/0.47,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.53,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{46}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 232
+	\renewcommand\lefttrees{1.60,6.60,8.60,10.60,11.60,12.60}
+	\renewcommand\righttrees{0.60,2.60,3.60,10.60,11.60,15.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.53/3.00,0.00/0.53,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.47,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{46.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 233
+	\renewcommand\lefttrees{1.80,6.80,8.80,10.80,11.80,12.80}
+	\renewcommand\righttrees{0.80,2.80,3.80,10.80,11.80,15.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.58/3.00,0.00/0.58,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.42,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{46.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 234
+	\renewcommand\lefttrees{2.00,7.00,9.00,11.00,12.00,13.00}
+	\renewcommand\righttrees{1.00,3.00,4.00,11.00,12.00,16.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.63/3.00,0.00/0.63,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.37,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{46.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 235
+	\renewcommand\lefttrees{2.20,7.20,9.20,11.20,12.20,13.20}
+	\renewcommand\righttrees{1.20,3.20,4.20,11.20,12.20,16.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.68/3.00,0.00/0.68,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.32,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{46.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 236
+	\renewcommand\lefttrees{2.40,7.40,9.40,11.40,12.40,13.40}
+	\renewcommand\righttrees{1.40,3.40,4.40,11.40,12.40,16.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.74/3.00,0.00/0.74,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.26,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{47}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 237
+	\renewcommand\lefttrees{2.60,7.60,9.60,11.60,12.60,13.60}
+	\renewcommand\righttrees{1.60,3.60,4.60,11.60,12.60,16.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.79/3.00,0.00/0.79,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.21,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{47.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 238
+	\renewcommand\lefttrees{2.80,7.80,9.80,11.80,12.80,13.80}
+	\renewcommand\righttrees{1.80,3.80,4.80,11.80,12.80,16.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.84/3.00,0.00/0.84,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.16,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{47.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 239
+	\renewcommand\lefttrees{3.00,8.00,10.00,12.00,13.00,14.00}
+	\renewcommand\righttrees{0.00,2.00,4.00,5.00,12.00,13.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.89/3.00,0.00/0.89,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.11,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{47.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 240
+	\renewcommand\lefttrees{3.20,8.20,10.20,12.20,13.20,14.20}
+	\renewcommand\righttrees{0.20,2.20,4.20,5.20,12.20,13.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{0.95/3.00,0.00/0.95,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.05,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{47.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 241
+	\renewcommand\lefttrees{3.40,8.40,10.40,12.40,13.40,14.40}
+	\renewcommand\righttrees{0.40,2.40,4.40,5.40,12.40,13.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.00/3.00,0.00/1.00,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{48}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 242
+	\renewcommand\lefttrees{3.60,8.60,10.60,12.60,13.60,14.60}
+	\renewcommand\righttrees{0.60,2.60,4.60,5.60,12.60,13.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.00/3.00,0.00/1.00,1.00/0.00,4.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{48.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 243
+	\renewcommand\lefttrees{3.80,8.80,10.80,12.80,13.80,14.80}
+	\renewcommand\righttrees{0.80,2.80,4.80,5.80,12.80,13.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.05/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.05/3.00,0.00/1.00,0.95/0.00,3.95/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{48.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 244
+	\renewcommand\lefttrees{4.00,9.00,11.00,13.00,14.00,15.00}
+	\renewcommand\righttrees{1.00,3.00,5.00,6.00,13.00,14.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.11/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.11/3.00,0.00/1.00,0.89/0.00,3.89/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{48.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 245
+	\renewcommand\lefttrees{4.20,9.20,11.20,13.20,14.20,15.20}
+	\renewcommand\righttrees{1.20,3.20,5.20,6.20,13.20,14.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.16/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.16/3.00,0.00/1.00,0.84/0.00,3.84/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{48.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 246
+	\renewcommand\lefttrees{4.40,9.40,11.40,13.40,14.40,15.40}
+	\renewcommand\righttrees{1.40,3.40,5.40,6.40,13.40,14.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.21/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.21/3.00,0.00/1.00,0.79/0.00,3.79/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{49}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 247
+	\renewcommand\lefttrees{4.60,9.60,11.60,13.60,14.60,15.60}
+	\renewcommand\righttrees{1.60,3.60,5.60,6.60,13.60,14.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.26/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.26/3.00,0.00/1.00,0.74/0.00,3.74/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{49.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 248
+	\renewcommand\lefttrees{4.80,9.80,11.80,13.80,14.80,15.80}
+	\renewcommand\righttrees{1.80,3.80,5.80,6.80,13.80,14.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.32/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.32/3.00,0.00/1.00,0.68/0.00,3.68/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{49.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 249
+	\renewcommand\lefttrees{5.00,10.00,12.00,14.00,15.00,16.00}
+	\renewcommand\righttrees{2.00,4.00,6.00,7.00,14.00,15.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.37/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.37/3.00,0.00/1.00,0.63/0.00,3.63/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{49.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 250
+	\renewcommand\lefttrees{5.20,10.20,12.20,14.20,15.20,16.20}
+	\renewcommand\righttrees{2.20,4.20,6.20,7.20,14.20,15.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.42/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.42/3.00,0.00/1.00,0.58/0.00,3.58/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{49.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 251
+	\renewcommand\lefttrees{5.40,10.40,12.40,14.40,15.40,16.40}
+	\renewcommand\righttrees{2.40,4.40,6.40,7.40,14.40,15.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.47/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.47/3.00,0.00/1.00,0.53/0.00,3.53/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{50}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 252
+	\renewcommand\lefttrees{5.60,10.60,12.60,14.60,15.60,16.60}
+	\renewcommand\righttrees{2.60,4.60,6.60,7.60,14.60,15.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.53/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.53/3.00,0.00/1.00,0.47/0.00,3.47/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{50.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 253
+	\renewcommand\lefttrees{5.80,10.80,12.80,14.80,15.80,16.80}
+	\renewcommand\righttrees{2.80,4.80,6.80,7.80,14.80,15.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.58/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.58/3.00,0.00/1.00,0.42/0.00,3.42/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{50.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 254
+	\renewcommand\lefttrees{6.00,11.00,13.00,15.00,16.00,17.00}
+	\renewcommand\righttrees{0.00,3.00,5.00,7.00,8.00,15.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.63/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.63/3.00,0.00/1.00,0.37/0.00,3.37/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{50.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 255
+	\renewcommand\lefttrees{6.20,11.20,13.20,15.20,16.20,17.20}
+	\renewcommand\righttrees{0.20,3.20,5.20,7.20,8.20,15.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.68/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.68/3.00,0.00/1.00,0.32/0.00,3.32/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{50.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 256
+	\renewcommand\lefttrees{6.40,11.40,13.40,15.40,16.40,17.40}
+	\renewcommand\righttrees{0.40,3.40,5.40,7.40,8.40,15.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.74/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.74/3.00,0.00/1.00,0.26/0.00,3.26/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{51}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 257
+	\renewcommand\lefttrees{6.60,11.60,13.60,15.60,16.60,17.60}
+	\renewcommand\righttrees{0.60,3.60,5.60,7.60,8.60,15.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.79/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.79/3.00,0.00/1.00,0.21/0.00,3.21/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{51.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 258
+	\renewcommand\lefttrees{6.80,11.80,13.80,15.80,16.80,17.80}
+	\renewcommand\righttrees{0.80,3.80,5.80,7.80,8.80,15.80}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.84/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.84/3.00,0.00/1.00,0.16/0.00,3.16/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{51.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 259
+	\renewcommand\lefttrees{0.00,7.00,12.00,14.00,16.00,17.00}
+	\renewcommand\righttrees{1.00,4.00,6.00,8.00,9.00,16.00}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.89/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.89/3.00,0.00/1.00,0.11/0.00,3.11/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{51.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 260
+	\renewcommand\lefttrees{0.20,7.20,12.20,14.20,16.20,17.20}
+	\renewcommand\righttrees{1.20,4.20,6.20,8.20,9.20,16.20}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,3.95/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{1.95/3.00,0.00/1.00,0.05/0.00,3.05/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{51.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 261
+	\renewcommand\lefttrees{0.40,7.40,12.40,14.40,16.40,17.40}
+	\renewcommand\righttrees{1.40,4.40,6.40,8.40,9.40,16.40}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{52}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 262
+	\renewcommand\lefttrees{0.60,7.60,12.60,14.60,16.60,17.60}
+	\renewcommand\righttrees{1.60,4.60,6.60,8.60,9.60,16.60}
+	\renewcommand\GreenCars{2.00/0.00,5.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,3.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{52.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 263
+	\renewcommand\lefttrees{0.80,7.80,12.80,14.80,16.80,17.80}
+	\renewcommand\righttrees{1.80,4.80,6.80,8.80,9.80,16.80}
+	\renewcommand\GreenCars{1.95/0.00,4.95/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.05/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.95/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.95/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{52.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 264
+	\renewcommand\lefttrees{1.00,8.00,13.00,15.00,17.00,18.00}
+	\renewcommand\righttrees{2.00,5.00,7.00,9.00,10.00,17.00}
+	\renewcommand\GreenCars{1.89/0.00,4.89/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.11/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.89/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.89/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{52.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 265
+	\renewcommand\lefttrees{1.20,8.20,13.20,15.20,17.20,18.20}
+	\renewcommand\righttrees{2.20,5.20,7.20,9.20,10.20,17.20}
+	\renewcommand\GreenCars{1.84/0.00,4.84/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.16/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.84/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.84/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{52.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 266
+	\renewcommand\lefttrees{1.40,8.40,13.40,15.40,17.40,18.40}
+	\renewcommand\righttrees{2.40,5.40,7.40,9.40,10.40,17.40}
+	\renewcommand\GreenCars{1.79/0.00,4.79/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.21/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.79/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.79/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{53}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 267
+	\renewcommand\lefttrees{1.60,8.60,13.60,15.60,17.60,18.60}
+	\renewcommand\righttrees{2.60,5.60,7.60,9.60,10.60,17.60}
+	\renewcommand\GreenCars{1.74/0.00,4.74/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.26/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.74/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.74/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{53.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 268
+	\renewcommand\lefttrees{1.80,8.80,13.80,15.80,17.80,18.80}
+	\renewcommand\righttrees{2.80,5.80,7.80,9.80,10.80,17.80}
+	\renewcommand\GreenCars{1.68/0.00,4.68/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.32/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.68/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.68/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{53.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 269
+	\renewcommand\lefttrees{0.00,2.00,9.00,14.00,16.00,18.00}
+	\renewcommand\righttrees{3.00,6.00,8.00,10.00,11.00,18.00}
+	\renewcommand\GreenCars{1.63/0.00,4.63/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.37/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.63/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.63/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{53.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 270
+	\renewcommand\lefttrees{0.20,2.20,9.20,14.20,16.20,18.20}
+	\renewcommand\righttrees{3.20,6.20,8.20,10.20,11.20,18.20}
+	\renewcommand\GreenCars{1.58/0.00,4.58/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.42/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.58/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.58/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{53.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 271
+	\renewcommand\lefttrees{0.40,2.40,9.40,14.40,16.40,18.40}
+	\renewcommand\righttrees{3.40,6.40,8.40,10.40,11.40,18.40}
+	\renewcommand\GreenCars{1.53/0.00,4.53/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.47/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.53/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.53/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{54}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 272
+	\renewcommand\lefttrees{0.60,2.60,9.60,14.60,16.60,18.60}
+	\renewcommand\righttrees{3.60,6.60,8.60,10.60,11.60,18.60}
+	\renewcommand\GreenCars{1.47/0.00,4.47/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.53/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.47/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.47/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{54.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 273
+	\renewcommand\lefttrees{0.80,2.80,9.80,14.80,16.80,18.80}
+	\renewcommand\righttrees{3.80,6.80,8.80,10.80,11.80,18.80}
+	\renewcommand\GreenCars{1.42/0.00,4.42/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.58/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.42/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.42/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{54.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 274
+	\renewcommand\lefttrees{1.00,3.00,10.00,15.00,17.00,19.00}
+	\renewcommand\righttrees{4.00,7.00,9.00,11.00,12.00,19.00}
+	\renewcommand\GreenCars{1.37/0.00,4.37/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.63/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.37/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.37/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{54.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 275
+	\renewcommand\lefttrees{1.20,3.20,10.20,15.20,17.20,19.20}
+	\renewcommand\righttrees{4.20,7.20,9.20,11.20,12.20,19.20}
+	\renewcommand\GreenCars{1.32/0.00,4.32/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.68/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.32/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.32/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{54.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 276
+	\renewcommand\lefttrees{1.40,3.40,10.40,15.40,17.40,19.40}
+	\renewcommand\righttrees{4.40,7.40,9.40,11.40,12.40,19.40}
+	\renewcommand\GreenCars{1.26/0.00,4.26/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.74/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.26/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.26/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{55}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 277
+	\renewcommand\lefttrees{1.60,3.60,10.60,15.60,17.60,19.60}
+	\renewcommand\righttrees{4.60,7.60,9.60,11.60,12.60,19.60}
+	\renewcommand\GreenCars{1.21/0.00,4.21/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.79/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.21/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.21/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{55.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 278
+	\renewcommand\lefttrees{1.80,3.80,10.80,15.80,17.80,19.80}
+	\renewcommand\righttrees{4.80,7.80,9.80,11.80,12.80,19.80}
+	\renewcommand\GreenCars{1.16/0.00,4.16/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.84/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.16/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.16/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{55.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 279
+	\renewcommand\lefttrees{2.00,4.00,11.00,16.00,18.00,20.00}
+	\renewcommand\righttrees{0.00,5.00,8.00,10.00,12.00,13.00}
+	\renewcommand\GreenCars{1.11/0.00,4.11/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.89/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.11/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.11/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{55.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 280
+	\renewcommand\lefttrees{2.20,4.20,11.20,16.20,18.20,20.20}
+	\renewcommand\righttrees{0.20,5.20,8.20,10.20,12.20,13.20}
+	\renewcommand\GreenCars{1.05/0.00,4.05/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{2.95/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.05/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.05/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{55.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 281
+	\renewcommand\lefttrees{2.40,4.40,11.40,16.40,18.40,20.40}
+	\renewcommand\righttrees{0.40,5.40,8.40,10.40,12.40,13.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{56}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 282
+	\renewcommand\lefttrees{2.60,4.60,11.60,16.60,18.60,20.60}
+	\renewcommand\righttrees{0.60,5.60,8.60,10.60,12.60,13.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{56.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 283
+	\renewcommand\lefttrees{2.80,4.80,11.80,16.80,18.80,20.80}
+	\renewcommand\righttrees{0.80,5.80,8.80,10.80,12.80,13.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.05/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{56.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 284
+	\renewcommand\lefttrees{3.00,5.00,12.00,17.00,19.00,21.00}
+	\renewcommand\righttrees{1.00,6.00,9.00,11.00,13.00,14.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.11/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{56.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 285
+	\renewcommand\lefttrees{3.20,5.20,12.20,17.20,19.20,21.20}
+	\renewcommand\righttrees{1.20,6.20,9.20,11.20,13.20,14.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.16/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{56.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 286
+	\renewcommand\lefttrees{3.40,5.40,12.40,17.40,19.40,21.40}
+	\renewcommand\righttrees{1.40,6.40,9.40,11.40,13.40,14.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.21/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{57}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 287
+	\renewcommand\lefttrees{3.60,5.60,12.60,17.60,19.60,21.60}
+	\renewcommand\righttrees{1.60,6.60,9.60,11.60,13.60,14.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.26/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{57.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 288
+	\renewcommand\lefttrees{3.80,5.80,12.80,17.80,19.80,21.80}
+	\renewcommand\righttrees{1.80,6.80,9.80,11.80,13.80,14.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.32/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{57.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 289
+	\renewcommand\lefttrees{4.00,6.00,13.00,18.00,20.00,22.00}
+	\renewcommand\righttrees{2.00,7.00,10.00,12.00,14.00,15.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.37/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{57.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 290
+	\renewcommand\lefttrees{4.20,6.20,13.20,18.20,20.20,22.20}
+	\renewcommand\righttrees{2.20,7.20,10.20,12.20,14.20,15.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.42/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{57.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 291
+	\renewcommand\lefttrees{4.40,6.40,13.40,18.40,20.40,22.40}
+	\renewcommand\righttrees{2.40,7.40,10.40,12.40,14.40,15.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.47/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{58}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 292
+	\renewcommand\lefttrees{4.60,6.60,13.60,18.60,20.60,22.60}
+	\renewcommand\righttrees{2.60,7.60,10.60,12.60,14.60,15.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.53/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{58.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 293
+	\renewcommand\lefttrees{4.80,6.80,13.80,18.80,20.80,22.80}
+	\renewcommand\righttrees{2.80,7.80,10.80,12.80,14.80,15.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.58/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{58.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 294
+	\renewcommand\lefttrees{0.00,5.00,7.00,14.00,19.00,21.00}
+	\renewcommand\righttrees{0.00,3.00,8.00,11.00,13.00,15.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.63/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{58.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 295
+	\renewcommand\lefttrees{0.20,5.20,7.20,14.20,19.20,21.20}
+	\renewcommand\righttrees{0.20,3.20,8.20,11.20,13.20,15.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.68/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{58.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 296
+	\renewcommand\lefttrees{0.40,5.40,7.40,14.40,19.40,21.40}
+	\renewcommand\righttrees{0.40,3.40,8.40,11.40,13.40,15.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.74/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{59}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 297
+	\renewcommand\lefttrees{0.60,5.60,7.60,14.60,19.60,21.60}
+	\renewcommand\righttrees{0.60,3.60,8.60,11.60,13.60,15.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.79/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{59.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 298
+	\renewcommand\lefttrees{0.80,5.80,7.80,14.80,19.80,21.80}
+	\renewcommand\righttrees{0.80,3.80,8.80,11.80,13.80,15.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.84/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{59.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 299
+	\renewcommand\lefttrees{1.00,6.00,8.00,15.00,20.00,22.00}
+	\renewcommand\righttrees{0.00,1.00,4.00,9.00,12.00,14.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.89/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{59.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 300
+	\renewcommand\lefttrees{1.20,6.20,8.20,15.20,20.20,22.20}
+	\renewcommand\righttrees{0.20,1.20,4.20,9.20,12.20,14.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,0.95/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{59.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 301
+	\renewcommand\lefttrees{1.40,6.40,8.40,15.40,20.40,22.40}
+	\renewcommand\righttrees{0.40,1.40,4.40,9.40,12.40,14.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{60}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 302
+	\renewcommand\lefttrees{1.60,6.60,8.60,15.60,20.60,22.60}
+	\renewcommand\righttrees{0.60,1.60,4.60,9.60,12.60,14.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/1.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/3.00,0.00/1.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{60.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 303
+	\renewcommand\lefttrees{1.80,6.80,8.80,15.80,20.80,22.80}
+	\renewcommand\righttrees{0.80,1.80,4.80,9.80,12.80,14.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.95,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.95,0.00/1.05,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{60.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 304
+	\renewcommand\lefttrees{2.00,7.00,9.00,16.00,21.00,23.00}
+	\renewcommand\righttrees{1.00,2.00,5.00,10.00,13.00,15.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.89,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.89,0.00/1.11,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{60.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 305
+	\renewcommand\lefttrees{2.20,7.20,9.20,16.20,21.20,23.20}
+	\renewcommand\righttrees{1.20,2.20,5.20,10.20,13.20,15.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.84,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.84,0.00/1.16,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{60.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 306
+	\renewcommand\lefttrees{2.40,7.40,9.40,16.40,21.40,23.40}
+	\renewcommand\righttrees{1.40,2.40,5.40,10.40,13.40,15.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.79,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.79,0.00/1.21,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{61}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 307
+	\renewcommand\lefttrees{2.60,7.60,9.60,16.60,21.60,23.60}
+	\renewcommand\righttrees{1.60,2.60,5.60,10.60,13.60,15.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.74,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.74,0.00/1.26,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{61.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 308
+	\renewcommand\lefttrees{2.80,7.80,9.80,16.80,21.80,23.80}
+	\renewcommand\righttrees{1.80,2.80,5.80,10.80,13.80,15.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.68,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.68,0.00/1.32,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{61.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 309
+	\renewcommand\lefttrees{0.00,3.00,8.00,10.00,17.00,22.00}
+	\renewcommand\righttrees{0.00,2.00,3.00,6.00,11.00,14.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.63,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.63,0.00/1.37,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{61.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 310
+	\renewcommand\lefttrees{0.20,3.20,8.20,10.20,17.20,22.20}
+	\renewcommand\righttrees{0.20,2.20,3.20,6.20,11.20,14.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.58,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.58,0.00/1.42,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{61.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 311
+	\renewcommand\lefttrees{0.40,3.40,8.40,10.40,17.40,22.40}
+	\renewcommand\righttrees{0.40,2.40,3.40,6.40,11.40,14.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.53,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.53,0.00/1.47,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{62}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 312
+	\renewcommand\lefttrees{0.60,3.60,8.60,10.60,17.60,22.60}
+	\renewcommand\righttrees{0.60,2.60,3.60,6.60,11.60,14.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.47,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.47,0.00/1.53,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{62.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 313
+	\renewcommand\lefttrees{0.80,3.80,8.80,10.80,17.80,22.80}
+	\renewcommand\righttrees{0.80,2.80,3.80,6.80,11.80,14.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.42,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.42,0.00/1.58,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{62.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 314
+	\renewcommand\lefttrees{1.00,4.00,9.00,11.00,18.00,23.00}
+	\renewcommand\righttrees{1.00,3.00,4.00,7.00,12.00,15.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.37,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.37,0.00/1.63,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{62.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 315
+	\renewcommand\lefttrees{1.20,4.20,9.20,11.20,18.20,23.20}
+	\renewcommand\righttrees{1.20,3.20,4.20,7.20,12.20,15.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.32,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.32,0.00/1.68,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{62.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 316
+	\renewcommand\lefttrees{1.40,4.40,9.40,11.40,18.40,23.40}
+	\renewcommand\righttrees{1.40,3.40,4.40,7.40,12.40,15.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.26,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.26,0.00/1.74,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{63}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 317
+	\renewcommand\lefttrees{1.60,4.60,9.60,11.60,18.60,23.60}
+	\renewcommand\righttrees{1.60,3.60,4.60,7.60,12.60,15.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.21,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.21,0.00/1.79,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{63.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 318
+	\renewcommand\lefttrees{1.80,4.80,9.80,11.80,18.80,23.80}
+	\renewcommand\righttrees{1.80,3.80,4.80,7.80,12.80,15.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.16,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.16,0.00/1.84,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{63.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 319
+	\renewcommand\lefttrees{2.00,5.00,10.00,12.00,19.00,24.00}
+	\renewcommand\righttrees{2.00,4.00,5.00,8.00,13.00,16.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.11,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.11,0.00/1.89,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{63.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 320
+	\renewcommand\lefttrees{2.20,5.20,10.20,12.20,19.20,24.20}
+	\renewcommand\righttrees{2.20,4.20,5.20,8.20,13.20,16.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.05,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.05,0.00/1.95,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{63.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 321
+	\renewcommand\lefttrees{2.40,5.40,10.40,12.40,19.40,24.40}
+	\renewcommand\righttrees{2.40,4.40,5.40,8.40,13.40,16.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{64}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 322
+	\renewcommand\lefttrees{2.60,5.60,10.60,12.60,19.60,24.60}
+	\renewcommand\righttrees{2.60,4.60,5.60,8.60,13.60,16.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{64.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 323
+	\renewcommand\lefttrees{2.80,5.80,10.80,12.80,19.80,24.80}
+	\renewcommand\righttrees{2.80,4.80,5.80,8.80,13.80,16.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.05/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{64.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 324
+	\renewcommand\lefttrees{0.00,3.00,6.00,11.00,13.00,20.00}
+	\renewcommand\righttrees{3.00,5.00,6.00,9.00,14.00,17.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.11/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{64.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 325
+	\renewcommand\lefttrees{0.20,3.20,6.20,11.20,13.20,20.20}
+	\renewcommand\righttrees{3.20,5.20,6.20,9.20,14.20,17.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.16/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{64.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 326
+	\renewcommand\lefttrees{0.40,3.40,6.40,11.40,13.40,20.40}
+	\renewcommand\righttrees{3.40,5.40,6.40,9.40,14.40,17.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.21/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{65}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 327
+	\renewcommand\lefttrees{0.60,3.60,6.60,11.60,13.60,20.60}
+	\renewcommand\righttrees{3.60,5.60,6.60,9.60,14.60,17.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.26/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{65.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 328
+	\renewcommand\lefttrees{0.80,3.80,6.80,11.80,13.80,20.80}
+	\renewcommand\righttrees{3.80,5.80,6.80,9.80,14.80,17.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.32/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{65.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 329
+	\renewcommand\lefttrees{1.00,4.00,7.00,12.00,14.00,21.00}
+	\renewcommand\righttrees{4.00,6.00,7.00,10.00,15.00,18.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.37/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{65.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 330
+	\renewcommand\lefttrees{1.20,4.20,7.20,12.20,14.20,21.20}
+	\renewcommand\righttrees{4.20,6.20,7.20,10.20,15.20,18.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.42/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{65.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 331
+	\renewcommand\lefttrees{1.40,4.40,7.40,12.40,14.40,21.40}
+	\renewcommand\righttrees{4.40,6.40,7.40,10.40,15.40,18.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.47/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{66}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 332
+	\renewcommand\lefttrees{1.60,4.60,7.60,12.60,14.60,21.60}
+	\renewcommand\righttrees{4.60,6.60,7.60,10.60,15.60,18.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.53/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{66.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 333
+	\renewcommand\lefttrees{1.80,4.80,7.80,12.80,14.80,21.80}
+	\renewcommand\righttrees{4.80,6.80,7.80,10.80,15.80,18.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.58/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{66.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 334
+	\renewcommand\lefttrees{0.00,2.00,5.00,8.00,13.00,15.00}
+	\renewcommand\righttrees{5.00,7.00,8.00,11.00,16.00,19.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.63/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{66.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 335
+	\renewcommand\lefttrees{0.20,2.20,5.20,8.20,13.20,15.20}
+	\renewcommand\righttrees{5.20,7.20,8.20,11.20,16.20,19.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.68/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{66.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 336
+	\renewcommand\lefttrees{0.40,2.40,5.40,8.40,13.40,15.40}
+	\renewcommand\righttrees{5.40,7.40,8.40,11.40,16.40,19.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.74/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{67}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 337
+	\renewcommand\lefttrees{0.60,2.60,5.60,8.60,13.60,15.60}
+	\renewcommand\righttrees{5.60,7.60,8.60,11.60,16.60,19.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.79/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{67.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 338
+	\renewcommand\lefttrees{0.80,2.80,5.80,8.80,13.80,15.80}
+	\renewcommand\righttrees{5.80,7.80,8.80,11.80,16.80,19.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.84/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{67.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 339
+	\renewcommand\lefttrees{0.00,1.00,3.00,6.00,9.00,14.00}
+	\renewcommand\righttrees{0.00,6.00,8.00,9.00,12.00,17.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.89/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{67.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 340
+	\renewcommand\lefttrees{0.20,1.20,3.20,6.20,9.20,14.20}
+	\renewcommand\righttrees{0.20,6.20,8.20,9.20,12.20,17.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,1.95/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{67.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 341
+	\renewcommand\lefttrees{0.40,1.40,3.40,6.40,9.40,14.40}
+	\renewcommand\righttrees{0.40,6.40,8.40,9.40,12.40,17.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{68}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 342
+	\renewcommand\lefttrees{0.60,1.60,3.60,6.60,9.60,14.60}
+	\renewcommand\righttrees{0.60,6.60,8.60,9.60,12.60,17.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/1.00}
+	\pgfmathsetmacro{\distance}{68.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 343
+	\renewcommand\lefttrees{0.80,1.80,3.80,6.80,9.80,14.80}
+	\renewcommand\righttrees{0.80,6.80,8.80,9.80,12.80,17.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.95}
+	\pgfmathsetmacro{\distance}{68.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 344
+	\renewcommand\lefttrees{0.00,1.00,2.00,4.00,7.00,10.00}
+	\renewcommand\righttrees{1.00,7.00,9.00,10.00,13.00,18.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.89}
+	\pgfmathsetmacro{\distance}{68.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 345
+	\renewcommand\lefttrees{0.20,1.20,2.20,4.20,7.20,10.20}
+	\renewcommand\righttrees{1.20,7.20,9.20,10.20,13.20,18.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.84}
+	\pgfmathsetmacro{\distance}{68.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 346
+	\renewcommand\lefttrees{0.40,1.40,2.40,4.40,7.40,10.40}
+	\renewcommand\righttrees{1.40,7.40,9.40,10.40,13.40,18.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.79}
+	\pgfmathsetmacro{\distance}{69}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 347
+	\renewcommand\lefttrees{0.60,1.60,2.60,4.60,7.60,10.60}
+	\renewcommand\righttrees{1.60,7.60,9.60,10.60,13.60,18.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.74}
+	\pgfmathsetmacro{\distance}{69.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 348
+	\renewcommand\lefttrees{0.80,1.80,2.80,4.80,7.80,10.80}
+	\renewcommand\righttrees{1.80,7.80,9.80,10.80,13.80,18.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.68}
+	\pgfmathsetmacro{\distance}{69.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 349
+	\renewcommand\lefttrees{0.00,1.00,2.00,3.00,5.00,8.00}
+	\renewcommand\righttrees{0.00,2.00,8.00,10.00,11.00,14.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.63}
+	\pgfmathsetmacro{\distance}{69.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 350
+	\renewcommand\lefttrees{0.20,1.20,2.20,3.20,5.20,8.20}
+	\renewcommand\righttrees{0.20,2.20,8.20,10.20,11.20,14.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.58}
+	\pgfmathsetmacro{\distance}{69.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 351
+	\renewcommand\lefttrees{0.40,1.40,2.40,3.40,5.40,8.40}
+	\renewcommand\righttrees{0.40,2.40,8.40,10.40,11.40,14.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.53}
+	\pgfmathsetmacro{\distance}{70}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 352
+	\renewcommand\lefttrees{0.60,1.60,2.60,3.60,5.60,8.60}
+	\renewcommand\righttrees{0.60,2.60,8.60,10.60,11.60,14.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.47}
+	\pgfmathsetmacro{\distance}{70.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 353
+	\renewcommand\lefttrees{0.80,1.80,2.80,3.80,5.80,8.80}
+	\renewcommand\righttrees{0.80,2.80,8.80,10.80,11.80,14.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.42}
+	\pgfmathsetmacro{\distance}{70.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 354
+	\renewcommand\lefttrees{0.00,1.00,2.00,3.00,4.00,6.00}
+	\renewcommand\righttrees{1.00,3.00,9.00,11.00,12.00,15.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.37}
+	\pgfmathsetmacro{\distance}{70.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 355
+	\renewcommand\lefttrees{0.20,1.20,2.20,3.20,4.20,6.20}
+	\renewcommand\righttrees{1.20,3.20,9.20,11.20,12.20,15.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.32}
+	\pgfmathsetmacro{\distance}{70.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 356
+	\renewcommand\lefttrees{0.40,1.40,2.40,3.40,4.40,6.40}
+	\renewcommand\righttrees{1.40,3.40,9.40,11.40,12.40,15.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.26}
+	\pgfmathsetmacro{\distance}{71}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 357
+	\renewcommand\lefttrees{0.60,1.60,2.60,3.60,4.60,6.60}
+	\renewcommand\righttrees{1.60,3.60,9.60,11.60,12.60,15.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.21}
+	\pgfmathsetmacro{\distance}{71.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 358
+	\renewcommand\lefttrees{0.80,1.80,2.80,3.80,4.80,6.80}
+	\renewcommand\righttrees{1.80,3.80,9.80,11.80,12.80,15.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.16}
+	\pgfmathsetmacro{\distance}{71.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 359
+	\renewcommand\lefttrees{0.00,1.00,2.00,3.00,4.00,5.00}
+	\renewcommand\righttrees{2.00,4.00,10.00,12.00,13.00,16.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.11}
+	\pgfmathsetmacro{\distance}{71.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 360
+	\renewcommand\lefttrees{0.20,1.20,2.20,3.20,4.20,5.20}
+	\renewcommand\righttrees{2.20,4.20,10.20,12.20,13.20,16.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.05}
+	\pgfmathsetmacro{\distance}{71.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 361
+	\renewcommand\lefttrees{0.40,1.40,2.40,3.40,4.40,5.40}
+	\renewcommand\righttrees{2.40,4.40,10.40,12.40,13.40,16.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{72}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 362
+	\renewcommand\lefttrees{0.60,1.60,2.60,3.60,4.60,5.60}
+	\renewcommand\righttrees{2.60,4.60,10.60,12.60,13.60,16.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.00,0.00/0.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{72.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 363
+	\renewcommand\lefttrees{0.80,1.80,2.80,3.80,4.80,5.80}
+	\renewcommand\righttrees{2.80,4.80,10.80,12.80,13.80,16.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.05,0.00/0.05,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{72.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 364
+	\renewcommand\lefttrees{0.00,1.00,2.00,3.00,4.00,5.00}
+	\renewcommand\righttrees{0.00,3.00,5.00,11.00,13.00,14.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.11,0.00/0.11,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{72.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 365
+	\renewcommand\lefttrees{0.20,1.20,2.20,3.20,4.20,5.20}
+	\renewcommand\righttrees{0.20,3.20,5.20,11.20,13.20,14.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.16,0.00/0.16,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{72.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 366
+	\renewcommand\lefttrees{0.40,1.40,2.40,3.40,4.40,5.40}
+	\renewcommand\righttrees{0.40,3.40,5.40,11.40,13.40,14.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.21,0.00/0.21,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{73}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 367
+	\renewcommand\lefttrees{0.60,1.60,2.60,3.60,4.60,5.60}
+	\renewcommand\righttrees{0.60,3.60,5.60,11.60,13.60,14.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.26,0.00/0.26,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{73.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 368
+	\renewcommand\lefttrees{0.80,1.80,2.80,3.80,4.80,5.80}
+	\renewcommand\righttrees{0.80,3.80,5.80,11.80,13.80,14.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.32,0.00/0.32,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{73.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 369
+	\renewcommand\lefttrees{1.00,2.00,3.00,4.00,5.00,6.00}
+	\renewcommand\righttrees{1.00,4.00,6.00,12.00,14.00,15.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.37,0.00/0.37,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{73.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 370
+	\renewcommand\lefttrees{1.20,2.20,3.20,4.20,5.20,6.20}
+	\renewcommand\righttrees{1.20,4.20,6.20,12.20,14.20,15.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.42,0.00/0.42,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{73.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 371
+	\renewcommand\lefttrees{1.40,2.40,3.40,4.40,5.40,6.40}
+	\renewcommand\righttrees{1.40,4.40,6.40,12.40,14.40,15.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.47,0.00/0.47,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{74}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 372
+	\renewcommand\lefttrees{1.60,2.60,3.60,4.60,5.60,6.60}
+	\renewcommand\righttrees{1.60,4.60,6.60,12.60,14.60,15.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.53,0.00/0.53,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{74.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 373
+	\renewcommand\lefttrees{1.80,2.80,3.80,4.80,5.80,6.80}
+	\renewcommand\righttrees{1.80,4.80,6.80,12.80,14.80,15.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.58,0.00/0.58,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{74.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 374
+	\renewcommand\lefttrees{0.00,2.00,3.00,4.00,5.00,6.00}
+	\renewcommand\righttrees{2.00,5.00,7.00,13.00,15.00,16.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.63,0.00/0.63,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{74.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 375
+	\renewcommand\lefttrees{0.20,2.20,3.20,4.20,5.20,6.20}
+	\renewcommand\righttrees{2.20,5.20,7.20,13.20,15.20,16.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.68,0.00/0.68,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{74.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 376
+	\renewcommand\lefttrees{0.40,2.40,3.40,4.40,5.40,6.40}
+	\renewcommand\righttrees{2.40,5.40,7.40,13.40,15.40,16.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.74,0.00/0.74,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{75}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 377
+	\renewcommand\lefttrees{0.60,2.60,3.60,4.60,5.60,6.60}
+	\renewcommand\righttrees{2.60,5.60,7.60,13.60,15.60,16.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.79,0.00/0.79,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{75.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 378
+	\renewcommand\lefttrees{0.80,2.80,3.80,4.80,5.80,6.80}
+	\renewcommand\righttrees{2.80,5.80,7.80,13.80,15.80,16.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.84,0.00/0.84,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{75.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 379
+	\renewcommand\lefttrees{1.00,3.00,4.00,5.00,6.00,7.00}
+	\renewcommand\righttrees{0.00,3.00,6.00,8.00,14.00,16.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.89,0.00/0.89,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{75.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 380
+	\renewcommand\lefttrees{1.20,3.20,4.20,5.20,6.20,7.20}
+	\renewcommand\righttrees{0.20,3.20,6.20,8.20,14.20,16.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/2.95,0.00/0.95,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{75.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 381
+	\renewcommand\lefttrees{1.40,3.40,4.40,5.40,6.40,7.40}
+	\renewcommand\righttrees{0.40,3.40,6.40,8.40,14.40,16.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/3.00,0.00/1.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{76}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 382
+	\renewcommand\lefttrees{1.60,3.60,4.60,5.60,6.60,7.60}
+	\renewcommand\righttrees{0.60,3.60,6.60,8.60,14.60,16.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.00/3.00,0.00/1.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{76.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 383
+	\renewcommand\lefttrees{1.80,3.80,4.80,5.80,6.80,7.80}
+	\renewcommand\righttrees{0.80,3.80,6.80,8.80,14.80,16.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.05/3.00,0.00/1.05,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{76.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 384
+	\renewcommand\lefttrees{0.00,2.00,4.00,5.00,6.00,7.00}
+	\renewcommand\righttrees{0.00,1.00,4.00,7.00,9.00,15.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.11/3.00,0.00/1.11,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{76.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 385
+	\renewcommand\lefttrees{0.20,2.20,4.20,5.20,6.20,7.20}
+	\renewcommand\righttrees{0.20,1.20,4.20,7.20,9.20,15.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.16/3.00,0.00/1.16,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{76.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 386
+	\renewcommand\lefttrees{0.40,2.40,4.40,5.40,6.40,7.40}
+	\renewcommand\righttrees{0.40,1.40,4.40,7.40,9.40,15.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.21/3.00,0.00/1.21,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{77}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 387
+	\renewcommand\lefttrees{0.60,2.60,4.60,5.60,6.60,7.60}
+	\renewcommand\righttrees{0.60,1.60,4.60,7.60,9.60,15.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.26/3.00,0.00/1.26,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{77.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 388
+	\renewcommand\lefttrees{0.80,2.80,4.80,5.80,6.80,7.80}
+	\renewcommand\righttrees{0.80,1.80,4.80,7.80,9.80,15.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.32/3.00,0.00/1.32,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{77.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 389
+	\renewcommand\lefttrees{0.00,1.00,3.00,5.00,6.00,7.00}
+	\renewcommand\righttrees{1.00,2.00,5.00,8.00,10.00,16.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.37/3.00,0.00/1.37,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{77.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 390
+	\renewcommand\lefttrees{0.20,1.20,3.20,5.20,6.20,7.20}
+	\renewcommand\righttrees{1.20,2.20,5.20,8.20,10.20,16.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.42/3.00,0.00/1.42,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{77.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 391
+	\renewcommand\lefttrees{0.40,1.40,3.40,5.40,6.40,7.40}
+	\renewcommand\righttrees{1.40,2.40,5.40,8.40,10.40,16.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.47/3.00,0.00/1.47,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{78}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 392
+	\renewcommand\lefttrees{0.60,1.60,3.60,5.60,6.60,7.60}
+	\renewcommand\righttrees{1.60,2.60,5.60,8.60,10.60,16.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.53/3.00,0.00/1.53,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{78.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 393
+	\renewcommand\lefttrees{0.80,1.80,3.80,5.80,6.80,7.80}
+	\renewcommand\righttrees{1.80,2.80,5.80,8.80,10.80,16.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.58/3.00,0.00/1.58,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{78.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 394
+	\renewcommand\lefttrees{1.00,2.00,4.00,6.00,7.00,8.00}
+	\renewcommand\righttrees{2.00,3.00,6.00,9.00,11.00,17.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.63/3.00,0.00/1.63,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{78.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 395
+	\renewcommand\lefttrees{1.20,2.20,4.20,6.20,7.20,8.20}
+	\renewcommand\righttrees{2.20,3.20,6.20,9.20,11.20,17.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.68/3.00,0.00/1.68,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{78.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 396
+	\renewcommand\lefttrees{1.40,2.40,4.40,6.40,7.40,8.40}
+	\renewcommand\righttrees{2.40,3.40,6.40,9.40,11.40,17.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.74/3.00,0.00/1.74,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{79}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 397
+	\renewcommand\lefttrees{1.60,2.60,4.60,6.60,7.60,8.60}
+	\renewcommand\righttrees{2.60,3.60,6.60,9.60,11.60,17.60}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.79/3.00,0.00/1.79,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{79.2}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 398
+	\renewcommand\lefttrees{1.80,2.80,4.80,6.80,7.80,8.80}
+	\renewcommand\righttrees{2.80,3.80,6.80,9.80,11.80,17.80}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.84/3.00,0.00/1.84,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{79.4}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 399
+	\renewcommand\lefttrees{0.00,2.00,3.00,5.00,7.00,8.00}
+	\renewcommand\righttrees{0.00,3.00,4.00,7.00,10.00,12.00}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.89/3.00,0.00/1.89,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{79.6}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 400
+	\renewcommand\lefttrees{0.20,2.20,3.20,5.20,7.20,8.20}
+	\renewcommand\righttrees{0.20,3.20,4.20,7.20,10.20,12.20}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,0.95/3.00,0.00/1.95,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{79.8}
+	\import{.}{Frame.Moving.Cars}
+
+	% frame No: 401
+	\renewcommand\lefttrees{0.40,2.40,3.40,5.40,7.40,8.40}
+	\renewcommand\righttrees{0.40,3.40,4.40,7.40,10.40,12.40}
+	\renewcommand\GreenCars{1.00/0.00,4.00/0.00,4.00/3.00,2.00/0.00,5.00/3.00}
+	\renewcommand\RedCars{3.00/2.00,1.00/3.00,0.00/2.00,3.00/0.00,2.00/2.00,2.00/1.00,3.00/1.00,4.00/1.00,5.00/2.00,4.00/2.00,1.00/2.00,5.00/0.00}
+	\pgfmathsetmacro{\distance}{80}
+	\import{.}{Frame.Moving.Cars}
+
+\end{document}

@@ -1,0 +1,69 @@
+\documentclass{standalone}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/userdefinitions.v003"}
+
+\begin{document}
+	\begin{tikzpicture}
+		
+		% define constants
+		\pgfmathsetmacro{\lengthlabelline}{0.8}
+		\pgfmathsetmacro{\labelxoffset}{0.5}
+		\pgfmathsetmacro{\labelyoffset}{0.1}
+		\pgfmathsetmacro{\tiklabelxoffset}{0.5}
+		\pgfmathsetmacro{\tiklabelyoffset}{0.3}
+		\pgfmathsetmacro{\tiklabelyoffset}{0.3}
+		\pgfmathsetmacro{\valuexoffset}{0.5}
+		\pgfmathsetmacro{\valueyoffset}{0.5}
+		\pgfmathsetmacro{\xsize}{4}
+		\pgfmathsetmacro{\ysize}{4}
+		
+		
+		% common code
+		\coordinate(left_upper_corner) at (0, \ysize);
+		\draw (0, 0) grid (\xsize, \ysize);
+		
+		\draw (left_upper_corner)-- ++(135:\lengthlabelline);
+		\node[rotate = -45, scale = 0.5] (input_label) at ($(left_upper_corner) + (135:\labelxoffset) + (45:\labelyoffset)$) {input};
+		\node[rotate = -45, scale = 0.5] (input_label) at ($(left_upper_corner) + (135:\labelxoffset) + (180 + 45:\labelyoffset)$) {memory};
+		
+		\foreach \direction[count=\i] in { N, E, S, W }
+		{
+			\node(input_\direction) at (\i - 1 + \tiklabelxoffset, \ysize + \tiklabelyoffset) {\direction};
+		}
+		
+		\foreach \memory in { 0, 1, 2, 3}
+		{
+			\pgfmathtruncatemacro{\memvalue}{\ysize - \memory - 1}
+			\node (memory_\memory) at (0 - \tiklabelyoffset, \memory + \tiklabelxoffset) {\memvalue};
+		}
+		
+		% hatch columns
+		\foreach \column in {0, 1}
+		{
+			\draw[pattern = north west lines, pattern color = black!50!white] (\column, 0) rectangle ({\column + 1 }, \ysize);
+		}
+		
+		% set cell values
+		\node (node_20) at (2 + \valuexoffset, 3 + \valueyoffset) {2, $\emptyset$};
+		\node (node_30) at (3 + \valuexoffset, 3 + \valueyoffset) {0, $\emptyset$};
+		\node (node_21) at (2 + \valuexoffset, 2 + \valueyoffset) {3, S};
+		\node (node_31) at (3 + \valuexoffset, 2 + \valueyoffset) {1, $\emptyset$};
+		\node (node_22) at (2 + \valuexoffset, 1 + \valueyoffset) {3, S};
+		\node (node_33) at (3 + \valuexoffset, 0 + \valueyoffset) {3, $\emptyset$};
+		
+		% hatch error cells
+		\foreach \x/\y in {0/3, 1/3, 0/2, 1/2, 0/1, 1/1, 3/1, 0/0, 1/0, 2/0}
+		{
+			\draw[pattern = north west lines, pattern color = black!50!white] (\x, \y) rectangle ({\x+1}, {\y+1});
+		}
+		
+		% hatch error cells
+		\foreach \x/\y in {3/3, 3/2, 3/0}
+		{
+			\draw[pattern = north west lines, pattern color = blue!50!white] (\x, \y) rectangle ({\x+1}, {\y+1});
+		}
+	\end{tikzpicture}
+\end{document}

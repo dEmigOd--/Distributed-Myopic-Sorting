@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage{standalone}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage{fmtcount}
+\usetikzlibrary{calc, patterns, intersections}
+
+\newcommand{\lineinput}[1]{\begingroup\endlinechar=-1 \input{#1}\endgroup}
+
+\begin{document}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_1}
+			\caption{Position 1}
+			\label{subfig:fg_3092_1}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_5}
+			\caption{Position 5}
+			\label{subfig:fg_3092_5}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_3092_1}) at position 1, (\subref{subfig:fg_3092_5}) at position 5.}
+		\label{fig:fg_3092_1}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_2}
+			\caption{Position 2}
+			\label{subfig:fg_3092_2}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_3}
+			\caption{Position 3}
+			\label{subfig:fg_3092_3}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.32\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_4}
+			\caption{Position 4}
+			\label{subfig:fg_3092_4}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_3092_2}) at position 2, (\subref{subfig:fg_3092_3}) at position 3, (\subref{subfig:fg_3092_4}) at position 4.}
+		\label{fig:fg_3092_2}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_6}
+			\caption{Position 6}
+			\label{subfig:fg_3092_6}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_7}
+			\caption{Position 7}
+			\label{subfig:fg_3092_7}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_3092_6}) at position 6, (\subref{subfig:fg_3092_7}) at position 7.}
+		\label{fig:fg_3092_3}
+	\end{figure}
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_8}
+			\caption{Position 8}
+			\label{subfig:fg_3092_8}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.48\textwidth}
+			\centering
+			\lineinput{Ver.3092/Table.Ver_3092.Position_9}
+			\caption{Position 9}
+			\label{subfig:fg_3092_9}
+		\end{subfigure}
+		\caption{State machine(s) (\subref{subfig:fg_3092_8}) at position 8, (\subref{subfig:fg_3092_9}) at position 9.}
+		\label{fig:fg_3092_4}
+	\end{figure}
+\end{document}

@@ -1,0 +1,103 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=0,
+xmax=30,
+xlabel style={font=\color{white!15!black}},
+xlabel={n},
+ymin=0,
+ymax=35000,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={Average time to completion},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1]
+  table[row sep=crcr]{%
+1	1358.474\\
+2	2602.74044265594\\
+3	1745.509\\
+4	1909.62324649299\\
+5	2449.76884422111\\
+6	6118.85915492957\\
+7	4318.46184738956\\
+8	5086.20784729587\\
+9	4837.33265513733\\
+10	6835.19912472647\\
+11	7565.20935412027\\
+12	7424.67073170732\\
+13	8021.97303634232\\
+14	11141.9074410163\\
+15	9970.22235872236\\
+16	10486.6579234973\\
+17	16411.2474226804\\
+18	20005.0427807487\\
+19	14982.3869115959\\
+20	18968.7104377104\\
+21	19865.8859223301\\
+22	19962.6544715447\\
+23	18787.2296296296\\
+24	21374.1290322581\\
+25	24372.358974359\\
+26	25451.84\\
+27	27606.4819277108\\
+28	27018.5481927711\\
+29	34177\\
+30	28343.347826087\\
+};
+\addlegendentry{Random Algorithm 1}
+
+\addplot [color=mycolor2]
+  table[row sep=crcr]{%
+1	57.5500000000002\\
+2	119.05\\
+3	148.1\\
+4	182.25\\
+5	207.85\\
+6	372.55\\
+7	382\\
+8	334.35\\
+9	545.25\\
+10	589.2\\
+11	688.3\\
+12	836.4\\
+13	801.8\\
+14	869.95\\
+15	914.45\\
+16	876.75\\
+17	1564.35\\
+18	1570.9\\
+19	1456.1\\
+20	1812.1\\
+21	1958.05\\
+22	2143.9\\
+23	2118.15\\
+24	2526\\
+25	2147.25\\
+26	3018.35\\
+27	3031.85\\
+28	3281.7\\
+29	3461.45\\
+30	3898.6\\
+};
+\addlegendentry{Deterministic Algorithm 3}
+
+\end{axis}
+\end{tikzpicture}%

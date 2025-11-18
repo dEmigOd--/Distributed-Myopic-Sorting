@@ -1,0 +1,154 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor3}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor4}{rgb}{0.63500,0.07800,0.18400}%
+\definecolor{mycolor5}{rgb}{0.85000,0.32500,0.09800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.527in,
+at={(0.758in,0.519in)},
+scale only axis,
+xmin=1,
+xmax=22,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\text{N}_\text{1}\text{ (exiting vehicle number)}$},
+ymin=0,
+ymax=140,
+ylabel style={font=\color{white!15!black}},
+ylabel={Time (seconds)},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+title={$\text{Average ticks until solution as a function of N}_\text{1}\text{. On n }\times\text{ 2 grid. (k = 5)}$},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.97,0.03)}, anchor=south east, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, draw=none, mark=asterisk, mark options={solid, mycolor1}]
+  table[row sep=crcr]{%
+1	9.0976\\
+4	24.923\\
+7	35.6518\\
+10	46.3294\\
+13	56.9956\\
+16	75.0156\\
+19	110.1702\\
+};
+\addlegendentry{$\text{n = 20; T}_{\text{est}}\text{ = 5.1one + O(1)}$}
+
+\addplot [color=mycolor1, dashed, forget plot]
+  table[row sep=crcr]{%
+1	5.66044285714289\\
+4	20.8299714285714\\
+7	35.9995\\
+10	51.1690285714286\\
+13	66.3385571428571\\
+16	81.5080857142857\\
+19	96.6776142857143\\
+};
+\addplot [color=mycolor2, draw=none, mark=asterisk, mark options={solid, mycolor2}]
+  table[row sep=crcr]{%
+1	10.8382\\
+4	29.3784\\
+7	41.468\\
+10	52.778\\
+13	64.4074\\
+16	76.9328\\
+19	95.9174\\
+22	128.3336\\
+};
+\addlegendentry{$\text{n = 24; T}_{\text{est}}\text{ = 5.1one + O(1)}$}
+
+\addplot [color=mycolor2, dashed, forget plot]
+  table[row sep=crcr]{%
+1	9.45728333333329\\
+4	24.6142666666666\\
+7	39.77125\\
+10	54.9282333333333\\
+13	70.0852166666667\\
+16	85.2422\\
+19	100.399183333333\\
+22	115.556166666667\\
+};
+\addplot [color=mycolor3, draw=none, mark=asterisk, mark options={solid, mycolor3}]
+  table[row sep=crcr]{%
+1	12.0974\\
+4	33.7158\\
+7	47.1532\\
+10	59.313\\
+13	72.2934\\
+16	84.3882\\
+19	99.232\\
+22	118.1744\\
+};
+\addlegendentry{$\text{n = 28; T}_{\text{est}}\text{ = 4.7one + O(1)}$}
+
+\addplot [color=mycolor3, dashed, forget plot]
+  table[row sep=crcr]{%
+1	16.0123666666667\\
+4	30.2362404761905\\
+7	44.4601142857143\\
+10	58.6839880952381\\
+13	72.9078619047619\\
+16	87.1317357142857\\
+19	101.35560952381\\
+22	115.579483333333\\
+};
+\addplot [color=mycolor4, draw=none, mark=asterisk, mark options={solid, mycolor4}]
+  table[row sep=crcr]{%
+1	13.9184\\
+4	36.893\\
+7	54.4894\\
+10	67.2428\\
+13	80.3852\\
+16	94.636\\
+19	107.6746\\
+22	121.464\\
+};
+\addlegendentry{$\text{n = 32; T}_{\text{est}}\text{ = 4.9one + O(1)}$}
+
+\addplot [color=mycolor4, dashed, forget plot]
+  table[row sep=crcr]{%
+1	20.4083666666667\\
+4	35.1739547619048\\
+7	49.9395428571429\\
+10	64.705130952381\\
+13	79.470719047619\\
+16	94.2363071428571\\
+19	109.001895238095\\
+22	123.767483333333\\
+};
+\addplot [color=mycolor5, draw=none, mark=asterisk, mark options={solid, mycolor5}]
+  table[row sep=crcr]{%
+1	15.2758\\
+4	42.6778\\
+7	60.5464\\
+10	74.8926\\
+13	89.8552\\
+16	102.5268\\
+19	116.351\\
+22	131.307\\
+};
+\addlegendentry{$\text{n = 36; T}_{\text{est}}\text{ = 5.2one + O(1)}$}
+
+\addplot [color=mycolor5, dashed, forget plot]
+  table[row sep=crcr]{%
+1	24.1170666666667\\
+4	39.849069047619\\
+7	55.5810714285714\\
+10	71.3130738095238\\
+13	87.0450761904762\\
+16	102.777078571429\\
+19	118.509080952381\\
+22	134.241083333333\\
+};
+\end{axis}
+\end{tikzpicture}%

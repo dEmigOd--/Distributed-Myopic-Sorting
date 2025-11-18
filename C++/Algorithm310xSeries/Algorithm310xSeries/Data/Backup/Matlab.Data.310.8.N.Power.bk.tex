@@ -1,0 +1,111 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.92900,0.69400,0.12500}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor5}{rgb}{0.46600,0.67400,0.18800}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=4.521in,
+height=3.566in,
+at={(0.758in,0.481in)},
+scale only axis,
+xmin=6,
+xmax=15,
+xlabel style={font=\color{white!15!black}},
+xlabel={$n$},
+ymin=1.1,
+ymax=2,
+ylabel style={font=\color{white!15!black}},
+ylabel={Calculated power of $n$},
+axis background/.style={fill=white},
+title style={font=\bfseries},
+%title={Power of n in the time complexity. On n 	imes m grid. (k = 5)},
+axis x line*=bottom,
+axis y line*=left,
+legend style={at={(0.97,0.03)}, anchor=south east, legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=mycolor1, mark=triangle*]
+  table[row sep=crcr]{%
+6	1.16206792811538\\
+7	1.24197361752411\\
+8	1.29441807711376\\
+9	1.33767023743602\\
+10	1.37789032184249\\
+11	1.39761558748006\\
+12	1.41708476244807\\
+13	1.43094095742108\\
+14	1.45685209963717\\
+15	1.47427256546057\\
+};
+\addlegendentry{m = 3}
+
+\addplot [color=mycolor2, mark=*]
+  table[row sep=crcr]{%
+6	1.45901128873182\\
+7	1.49736736828122\\
+8	1.52677170190475\\
+9	1.55591256812475\\
+10	1.58033325973425\\
+11	1.598104214801\\
+12	1.61525866158951\\
+13	1.62788383656397\\
+14	1.64424535630065\\
+15	1.65088036064841\\
+};
+\addlegendentry{m = 4}
+
+\addplot [color=mycolor3, mark=star]
+  table[row sep=crcr]{%
+6	1.68115232138639\\
+7	1.69987398219206\\
+8	1.72388239739766\\
+9	1.73325475846766\\
+10	1.74200398102189\\
+11	1.75156993083109\\
+12	1.75894622361943\\
+13	1.76620999153492\\
+14	1.76820064414303\\
+15	1.77454643945928\\
+};
+\addlegendentry{m = 5}
+
+\addplot [color=mycolor4, mark=square*]
+  table[row sep=crcr]{%
+6	1.82819259780495\\
+7	1.81713278407614\\
+8	1.81520269494194\\
+9	1.81918609805596\\
+10	1.82472363527075\\
+11	1.82409846575021\\
+12	1.82794047717334\\
+13	1.82807338154727\\
+14	1.83255927835559\\
+15	1.83425997984827\\
+};
+\addlegendentry{m = 6}
+
+\addplot [color=mycolor5, mark=diamond*]
+  table[row sep=crcr]{%
+6	1.96528699887094\\
+7	1.91765041555291\\
+8	1.89248764612266\\
+9	1.88200190595348\\
+10	1.87578035573534\\
+11	1.87046003568276\\
+12	1.86029491892676\\
+13	1.86188551281361\\
+14	1.85950292527883\\
+15	1.85648211233125\\
+};
+\addlegendentry{m = 7}
+
+\end{axis}
+\end{tikzpicture}%

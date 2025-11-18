@@ -1,0 +1,14 @@
+﻿  MovesEnumeratorToLatex.cpp
+C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\LittleCirclesv3.h(75,3): error C2086: 'const LittleCirclesState::ROW LittleCirclesv3::U2_ROW': redefinition
+C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\LittleCirclesv3.h(72): message : see declaration of 'LittleCirclesv3::U2_ROW'
+C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\LittleCirclesv3.h(81,3): error C2086: 'const LittleCirclesState::ROW LittleCirclesv3::mU2_ROW': redefinition
+C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\LittleCirclesv3.h(78): message : see declaration of 'LittleCirclesv3::mU2_ROW'
+C:\Users\dmitry.ra\Desktop\Studies\Articles\PhD\NPuzzleModel\C++\EnumerateNextMoves\MovesEnumeratorToLatex\MovesEnumeratorToLatex\LittleCirclesv3.h(87,1): error C3867: 'std::_Tree<std::_Tmap_traits<_Kty,_Ty,_Pr,_Alloc,false>>::empty': non-standard syntax; use '&' to create a pointer to member
+          with
+          [
+              _Kty=unsigned int,
+              _Ty=std::string,
+              _Pr=std::less<unsigned int>,
+              _Alloc=std::allocator<std::pair<const unsigned int,std::string>>
+          ]
+  PrintState.h

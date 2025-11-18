@@ -1,0 +1,91 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{amsmath, amssymb}
+\usepackage{fmtcount}% http://ctan.org/pkg/fmtcount
+\usetikzlibrary{calc, patterns}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% note, 
+%	0 - is an empty space; left uncolored
+%	1 - is an other agent; filled with black
+%	2 - is an edge; cross-hatched
+%	3 - is a do not care location
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	% model parameters
+	\pgfmathtruncatemacro{\memory}{-1}%
+	\pgfmathtruncatemacro{\visibility}{2}%
+	\pgfmathtruncatemacro{\maxtablelength}{8}%
+
+	% calculate the sizes of the neighborhood
+	\newcommand{\GetNeighborhoodSizes}[1]{%
+		\xdef\toleft{0}
+		\xdef\todown{0}
+
+		\pgfmathtruncatemacro{\tableSize}{2 * \visibility + 1}
+		\foreach \columnoffset/\rowoffset[count=\i] in #1 {%
+			\ifnum\columnoffset<\toleft%
+				\xdef\toleft{\columnoffset}%
+			\fi%
+			\ifnum\rowoffset<\todown%
+				\xdef\todown{\rowoffset}%
+			\fi%
+			\coordinate (anchor_\i) at (\columnoffset, \rowoffset);
+		}%
+
+		\xdef\xbase{\toleft}
+		\xdef\ybase{\todown}
+
+	}%
+
+	\newcommand*{\ExtractCoordinate}[1]{\path[overlay] (#1); \pgfgetlastxy{\XCoord}{\YCoord}}%
+
+	% draw this neighborhood
+	\newcommand{\DrawNeighborhood}[1]{%
+		\begin{scope}[scale=\scalefactor]
+			\begin{scope}[shift={(-\xbase, -\ybase)}]
+				\draw[fill=black] (0.5, 0.5) circle (3pt);
+				\draw (0, 0) rectangle (1,1);
+
+				\foreach \value[count=\i] in #1 {%
+					\ExtractCoordinate{anchor_\i}
+					\begin{scope}[shift={(\XCoord, \YCoord)}]
+						\ifnum\value=1%
+							\fill[black!50] (0, 0) rectangle (1, 1);
+						\fi%
+						\ifnum\value=2%
+							\begin{scope}[opacity=\opacityfactor, blend group=normal]
+								\draw[pattern=north west lines, draw = none] (0, 0) rectangle (1, 1);
+							\end{scope}
+						\fi%
+						\ifnum\value=3%
+							\begin{scope}[opacity=\opacityfactor]
+								\node[transform shape] at (0.5, 0.5) {\Large $\mathbf{X}$};
+							\end{scope}
+						\fi%
+						\draw (0, 0) rectangle (1, 1);
+					\end{scope}
+				}%
+			\end{scope}
+		\end{scope}
+	}%
+
+	% drawing parameters
+	\pgfmathsetmacro{\scalefactor}{0.3}%
+	\pgfmathsetmacro{\opacityfactor}{0.7}%
+	\pgfmathsetmacro{\tiklabelxoffset}{0.5}%
+	\pgfmathsetmacro{\tiklabelyoffset}{0.5}%
+
+	\begin{tikzpicture}
+		\newcommand{\neighborsCoordinates}{0/2, 0/1, 0/-1, 0/-2, 1/0, -1/0, 1/1, 2/0, 1/-1, -1/-1, -2/0, -1/1}
+		\newcommand{\neighbors}{}
+		\GetNeighborhoodSizes{\neighborsCoordinates}
+
+		\renewcommand{\neighbors}{2, 0, 1, 3}
+		\DrawNeighborhood{\neighbors}
+	\end{tikzpicture}
+\end{document}

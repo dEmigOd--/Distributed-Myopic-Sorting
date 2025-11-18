@@ -1,0 +1,12 @@
+Test : Time to finish as a function of the number of columns(m) (F = 1, n = 10)
+m,avg iterations
+[2,31.93;
+4,197.13;
+6,570.25;
+8,1134;
+10,1927.75;
+12,2871.38;
+14,4464.37;
+16,5484.17;
+18,7288.7;
+]

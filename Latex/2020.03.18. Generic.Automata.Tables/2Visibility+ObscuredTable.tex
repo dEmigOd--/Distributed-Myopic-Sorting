@@ -1,0 +1,22 @@
+\documentclass{article}
+
+\usepackage{tikz}
+\usepackage{standalone}
+\usetikzlibrary{calc}
+
+\begin{document}
+	% model parameters
+	\pgfmathtruncatemacro{\memory}{2}
+	\pgfmathtruncatemacro{\visibility}{2}
+	\pgfmathtruncatemacro{\obscure}{1}
+
+	\pgfmathsetmacro{\maxtablelength}{8}
+	\begin{figure}
+		\centering
+		\resizebox{\textwidth}{!}{%
+			\input{GenericTable}
+		}%
+		\caption{Table for agents with $\memory$-bit memory and visibility=$\visibility$. Vehicles obscure visible range. Note, visible state 
+			($0$ - empty space, $1$ - an other agent, $2$ - an edge, \textbullet\ - is current agent).}
+	\end{figure}
+\end{document}

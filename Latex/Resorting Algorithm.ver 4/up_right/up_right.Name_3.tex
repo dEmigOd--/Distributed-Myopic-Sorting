@@ -1,0 +1,84 @@
+\documentclass{standalone}
+
+\usepackage{silence}
+%Disable all warnings issued by latex starting with "You have..."
+\WarningFilter{latex}{You have requested package}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/userdefinitions.v001"}
+\usepackage{"C:/Users/dmitry.ra/Desktop/Studies/Articles/PhD/Latex\space Technical/additionaldefinitions.v001"}
+
+\begin{document}
+	\begin{tikzpicture}
+	
+		% set image sizes
+		\pgfmathsetmacro{\xsize}{4}
+		\pgfmathsetmacro{\ysize}{5}
+		% set walls needed
+% important:---------------------------------------------------------------------------		
+		\pgfmathtruncatemacro\NeedNorthWall{0}
+		\pgfmathtruncatemacro\NeedEastWall{0}
+		\pgfmathtruncatemacro\NeedSouthWall{1}
+
+		\pgfmathsetmacro{\wallwidth}{0.2}
+		\newdimen\dummydim
+		\dummydim = \wallwidth pt
+		\ifdim\dummydim>1 pt
+			\pgfmathsetmacro{\wallwidth}{1}
+		\fi
+		% define corners
+		\coordinate (LBC) at (0, 1-\wallwidth);
+		\coordinate (LUC) at (0, \ysize-1+\wallwidth);
+		\coordinate (RUC) at (\xsize-1+\wallwidth, \ysize-1+\wallwidth);
+		\coordinate (RBC) at (\xsize-1+\wallwidth, 1-\wallwidth);
+		
+		\fill[color = white] (LBC) rectangle (RUC);
+		
+		\filldraw[color=yellow!50!white] ($(LUC)+(0.5,-0.5-\wallwidth)$) circle (0.25);
+		% draw state priority
+% important:---------------------------------------------------------------------------
+		\node (state_name) at ($(LUC)+(0.5,-0.5-\wallwidth)$) {20};
+		
+		% draw walls
+		\ifnum\NeedNorthWall>0		
+			\draw (0,\ysize-1) -- (\xsize - 1 + \wallwidth - \wallwidth * \NeedEastWall,\ysize-1);
+			\path[pattern=north east lines, pattern color=black!50!white] (0, \ysize-1) rectangle (RUC);
+		\fi
+		\ifnum\NeedEastWall>0
+			\draw (\xsize-1, 1 - \wallwidth + \wallwidth * \NeedSouthWall) -- (\xsize-1,\ysize - 1 + \wallwidth - \wallwidth * \NeedNorthWall);
+			\path[pattern=north east lines, pattern color=black!50!white] (\xsize-1,1-\wallwidth) rectangle (RUC);
+		\fi
+		\ifnum\NeedSouthWall>0
+			\draw (0, 1) -- (\xsize-1 + \wallwidth - \wallwidth * \NeedEastWall,1);
+			\path[pattern=north east lines, pattern color=black!50!white] (0, 1) rectangle (RBC);
+		\fi
+		
+% important:---------------------------------------------------------------------------		
+		% draw interesting cells
+		\foreach \x/\y/\label in { 1/1/1, 1/2/ , 2/2/-1 }
+		{
+			\draw (\x, \y) rectangle (\x + 1, \y + 1);
+			\node (label_\x\y) at (\x + 0.5, \y + 0.5) {\label};
+		}
+		
+		% draw agent
+		\pgfmathsetmacro{\slightoffset}{0.05}
+		\pgfmathsetmacro{\arrooffset}{0.25}
+% important:---------------------------------------------------------------------------		
+		\pgfmathtruncatemacro\direction{3} % 0 - north, 1 - east, 2 - south, 3 - west
+		\foreach \x/\y in { 2/2 }
+		{
+			\draw[rounded corners] (\x + \slightoffset, \y + \slightoffset) rectangle (\x + 1 - \slightoffset, \y + 1 - \slightoffset);
+			\ifnum\direction=0
+				\draw[-latex] (\x+0.5, \y+1-\arrooffset) -- (\x+0.5,\y+1+\arrooffset);
+			\fi
+			\ifnum\direction=1
+				\draw[-latex] (\x+1-\arrooffset, \y+0.5) -- (\x+1+\arrooffset,\y+0.5);
+			\fi
+			\ifnum\direction=2
+				\draw[-latex] (\x+0.5, \y+\arrooffset) -- (\x+0.5,\y-\arrooffset);
+			\fi
+			\ifnum\direction=3
+				\draw[-latex] (\x+\arrooffset, \y+0.5) -- (\x-\arrooffset,\y+0.5);
+			\fi
+		}
+	\end{tikzpicture}
+\end{document}
