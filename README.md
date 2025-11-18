@@ -1,2 +1,2 @@
-# Distributed-Miopic-Sorting
-MATLAB implementation for a Distributed Sorting of Miopic Agents
+# Distributed-Myopic-Sorting
+MATLAB implementation for a Distributed Sorting of Myopic Agents
